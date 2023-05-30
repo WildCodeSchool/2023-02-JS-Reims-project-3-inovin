@@ -1,3 +1,14 @@
+Nom du projet : Ino'vin
+Début du projet : 26 mai 2023
+Fin du projet : 26 juillet 2023
+
+Collaborateurs du projet :
+[Célia](https://www.linkedin.com/in/c%C3%A9lia-kleczynski-4b556b268/);
+[Ahmed](https://www.linkedin.com/in/ahmedelamri/);
+[Mohammed](https://www.linkedin.com/in/mohamed-berkoussi4900/);
+[Enzo](https://www.linkedin.com/in/enzo-andre-7ba6a7269/);
+[Nassim](www.linkedin.com/in/nassimcr);
+
 ## Concept
 
 This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
