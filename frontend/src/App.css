@@ -6,7 +6,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(40, 36, 36);
 }
 
 .QuestionnaireChoix {
@@ -78,8 +77,4 @@ h1,
 h2 {
   display: flex;
   justify-content: center;
-}
-
-h1 {
-  color: #fff1e8;
 }
