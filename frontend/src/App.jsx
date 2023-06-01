@@ -3,6 +3,7 @@ import { Link, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Wine from "./pages/Wine";
+import Navbar from "./components/Navbar";
 import "./App.css";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/Wine" element={<Wine />} />
         </Routes>
       </nav>
+      <Navbar />
     </div>
   );
 }
