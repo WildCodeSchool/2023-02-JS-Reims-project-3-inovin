@@ -16,5 +16,8 @@ CREATE TABLE user_wine (
 
 CREATE TABLE wine (
   id INT unsigned PRIMARY KEY not null AUTO_INCREMENT,
+  name varchar(80) NOT NULL,
   grape_variety varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO wine (name, grape_variety) VALUES ('NOM', 'VARIETE'), ('NOM2', 'VARIETE2'), ('NOM3', 'VARIETE3');
