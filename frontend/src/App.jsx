@@ -3,13 +3,14 @@ import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Contact from "./pages/Contact";
-
+import Navbar from "./components/Navbar";
 import "./App.css";
 
 function App() {
   return (
     <>
       <header>
+        <Navbar />
         <nav>
           <Link to="/">Home</Link>
           <Link to="/profile">Profil</Link>
