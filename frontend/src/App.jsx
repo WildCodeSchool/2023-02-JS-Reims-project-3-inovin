@@ -9,6 +9,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -27,7 +28,6 @@ function App() {
           <Route path="/Wine" element={<Wine />} />
         </Routes>
       </nav>
-      <Navbar />
     </div>
   );
 }
