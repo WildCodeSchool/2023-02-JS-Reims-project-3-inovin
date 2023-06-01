@@ -26,16 +26,26 @@ pool.getConnection().catch(() => {
 });
 
 // declare and fill models: that's where you should register your own managers
+//  déclarer et remplir des modèles : c'est là que vous devez enregistrer
+//   vos propres gestionnaires
 
 const models = {};
 
-const ItemManager = require("./ItemManager");
+const UserManager = require("./UserManager");
 
-models.item = new ItemManager();
-models.item.setDatabase(pool);
+models.user = new UserManager();
+models.user.setDatabase(pool);
+
+const WineManager = require("./WineManager");
+
+models.wine = new WineManager();
+models.wine.setDatabase(pool);
 
 // bonus: use a proxy to personalize error message,
+// bonus : utiliser un proxy pour personnaliser le message d'erreur,
+
 // when asking for a non existing model
+// lors de la demande d'un modèle non existant
 
 const handler = {
   get(obj, prop) {
