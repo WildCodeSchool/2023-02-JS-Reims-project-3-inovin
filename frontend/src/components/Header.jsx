@@ -1,3 +1,4 @@
+import React from "react";
 import Logo from "../Pictures/Logo.jpg";
 
 export default function Header() {

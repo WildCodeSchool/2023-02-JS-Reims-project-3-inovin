@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*Component Header*/
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.header img {
+  width: 3rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.header h1 {
+  color: #dec439;
+  padding-top: 0.7rem;
+}
+
+/*Page Home*/
+.Home {
+  h2 {
+    text-align: center;
+    color: #dec439;
+    padding: 10%;
+    margin-top: 6rem;
+  }
+}
+
+/*Page SignIn*/
+.Sign {
+  .bouton {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
