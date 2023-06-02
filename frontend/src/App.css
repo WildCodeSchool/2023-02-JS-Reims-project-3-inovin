@@ -1,5 +1,6 @@
 * {
-  margin: 0.1rem;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -79,63 +80,23 @@ h1,
 h2 {
   display: flex;
   justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-h3 {
-  margin-left: 1rem;
+.App-link {
+  color: #61dafb;
 }
 
-.Framb {
-  background-color: #ea4e64;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.Cerise {
-  background-color: #d83d3b;
-}
-
-.Rubis {
-  background-color: #b71c1a;
-}
-
-.Pourpre {
-  background-color: #9a2049;
-}
-
-.Violet {
-  background-color: #901766;
-}
-
-.Grenat {
-  background-color: #733451;
-}
-
-.Tuile {
-  background-color: #8d3217;
-}
-
-.JauneVert {
-  background-color: #f0d979;
-}
-
-.JaunePaille {
-  background-color: #e9c650;
-}
-
-.OrVert {
-  background-color: #e6c041;
-}
-.OrJaune {
-  background-color: #d6aa2f;
-}
-
-.Dore {
-  background-color: #d6aa2f;
-}
-
-.Ambre {
-  background-color: #d6aa2f;
-}
-
-.Roux {
-  background-color: #c67e2a;
+button {
+  font-size: calc(10px + 2vmin);
 }
