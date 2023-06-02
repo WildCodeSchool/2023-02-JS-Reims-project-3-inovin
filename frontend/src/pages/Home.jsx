@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "../components/Header";
+import Navbar from "../components/Navbar";
 import SignIn from "../components/SignIN";
 
 export default function Home() {
   return (
     <div className="Home">
-      <Header element={Header} />
+      <Navbar element={Navbar} />
       <SignIn element={SignIn} />
     </div>
   );
