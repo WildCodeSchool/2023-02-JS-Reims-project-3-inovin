@@ -1,10 +1,10 @@
 import "./App.css";
-import Questionnaire from "./components/Questionnaire";
+import Formulaire from "./components/Formulaire";
 
 function App() {
   return (
     <div className="App">
-      <Questionnaire />
+      <Formulaire />
     </div>
   );
 }

@@ -1,20 +1,6 @@
 import { useState } from "react";
-import Framboise from "../Images/framboise.jpg";
-import Cerise from "../Images/cerise.jpg";
-import Rubis from "../Images/rubis.jpg";
-import Pourpre from "../Images/pourpre.jpg";
-import Violet from "../Images/violet.jpg";
-import Grenat from "../Images/grenat.jpg";
-import Tuile from "../Images/tuilé.png";
-import JauneVert from "../Images/jauneVert.png";
-import JaunePaille from "../Images/JaunePaille.png";
-import OrVert from "../Images/OrVert.png";
-import OrJaune from "../Images/OrJaune.png";
-import Dore from "../Images/Dore.png";
-import Ambre from "../Images/Ambre.png";
-import Roux from "../Images/Roux.png";
 
-export default function Questionnaire() {
+export default function Formulaire() {
   const [formState, setFormState] = useState({
     part1: "",
     part2: "",
@@ -42,211 +28,155 @@ export default function Questionnaire() {
               <div className="QuestionnaireCheckbox DivTest">
                 <label className="QuestionnaireChoix">
                   <input
+                    className="Framb"
                     type="checkbox"
                     value={formState.part1}
                     onChange={(event) =>
                       setFormState({ ...formState, part1: event.target.value })
                     }
-                  />
-                  <img
-                    className="QuestionnaireCouleur"
-                    src={Framboise}
-                    alt="Framboise couleur"
                   />
                   Framboise
                 </label>
                 <label className="QuestionnaireChoix">
                   <input
+                    className="Cerise"
                     type="checkbox"
                     value={formState.part1}
                     onChange={(event) =>
                       setFormState({ ...formState, part1: event.target.value })
                     }
-                  />
-                  <img
-                    className="QuestionnaireCouleur"
-                    src={Cerise}
-                    alt="Cerise couleur"
                   />
                   Cerise
                 </label>
                 <label className="QuestionnaireChoix">
                   <input
+                    className="Rubis"
                     type="checkbox"
                     value={formState.part1}
                     onChange={(event) =>
                       setFormState({ ...formState, part1: event.target.value })
                     }
-                  />
-                  <img
-                    className="QuestionnaireCouleur"
-                    src={Rubis}
-                    alt="Rubis couleur"
                   />
                   Rubis
                 </label>
                 <label className="QuestionnaireChoix">
                   <input
+                    className="Pourpre"
                     type="checkbox"
                     value={formState.part1}
                     onChange={(event) =>
                       setFormState({ ...formState, part1: event.target.value })
                     }
-                  />
-                  <img
-                    className="QuestionnaireCouleur"
-                    src={Pourpre}
-                    alt="Pourpre couleur"
                   />
                   Pourpre
                 </label>
                 <label className="QuestionnaireChoix">
                   <input
+                    className="Violet"
                     type="checkbox"
                     value={formState.part1}
                     onChange={(event) =>
                       setFormState({ ...formState, part1: event.target.value })
                     }
-                  />
-                  <img
-                    className="QuestionnaireCouleur"
-                    src={Violet}
-                    alt="Violet couleur"
                   />
                   Violet
                 </label>
                 <label className="QuestionnaireChoix">
                   <input
+                    className="Grenat"
                     type="checkbox"
                     value={formState.part1}
                     onChange={(event) =>
                       setFormState({ ...formState, part1: event.target.value })
                     }
-                  />
-                  <img
-                    className="QuestionnaireCouleur"
-                    src={Grenat}
-                    alt="Grenat couleur"
                   />
                   Grenat
                 </label>
                 <label className="QuestionnaireChoix">
                   <input
+                    className="Tuile"
                     type="checkbox"
                     value={formState.part1}
                     onChange={(event) =>
                       setFormState({ ...formState, part1: event.target.value })
                     }
-                  />
-                  <img
-                    className="QuestionnaireCouleur"
-                    src={Tuile}
-                    alt="Tuilé couleur"
                   />
                   Tuilé
                 </label>
                 <label className="QuestionnaireChoix">
                   <input
+                    className="JauneVert"
                     type="checkbox"
                     value={formState.part1}
                     onChange={(event) =>
                       setFormState({ ...formState, part1: event.target.value })
                     }
-                  />
-                  <img
-                    className="QuestionnaireCouleur"
-                    src={JauneVert}
-                    alt="Jaune Vert couleur"
                   />
                   Jaune Vert
                 </label>
                 <label className="QuestionnaireChoix">
                   <input
+                    className="JaunePaille"
                     type="checkbox"
                     value={formState.part1}
                     onChange={(event) =>
                       setFormState({ ...formState, part1: event.target.value })
                     }
-                  />
-                  <img
-                    className="QuestionnaireCouleur"
-                    src={JaunePaille}
-                    alt="Jaune Paille couleur"
                   />
                   Jaune Paille
                 </label>
                 <label className="QuestionnaireChoix">
                   <input
+                    className="OrVert"
                     type="checkbox"
                     value={formState.part1}
                     onChange={(event) =>
                       setFormState({ ...formState, part1: event.target.value })
                     }
-                  />
-                  <img
-                    className="QuestionnaireCouleur"
-                    src={OrVert}
-                    alt="OrVert couleur"
                   />
                   Or Vert
                 </label>
                 <label className="QuestionnaireChoix">
                   <input
+                    className="OrJaune"
                     type="checkbox"
                     value={formState.part1}
                     onChange={(event) =>
                       setFormState({ ...formState, part1: event.target.value })
                     }
-                  />
-                  <img
-                    className="QuestionnaireCouleur"
-                    src={OrJaune}
-                    alt="Or Jaune couleur"
                   />
                   Or Jaune
                 </label>
                 <label className="QuestionnaireChoix">
                   <input
+                    className="Dore"
                     type="checkbox"
                     value={formState.part1}
                     onChange={(event) =>
                       setFormState({ ...formState, part1: event.target.value })
                     }
-                  />
-                  <img
-                    className="QuestionnaireCouleur"
-                    src={Dore}
-                    alt="Doré couleur"
                   />
                   Doré
                 </label>
                 <label className="QuestionnaireChoix">
                   <input
+                    className="Ambre"
                     type="checkbox"
                     value={formState.part1}
                     onChange={(event) =>
                       setFormState({ ...formState, part1: event.target.value })
                     }
-                  />
-                  <img
-                    className="QuestionnaireCouleur"
-                    src={Ambre}
-                    alt="Ambré couleur"
                   />
                   Ambré
                 </label>
                 <label className="QuestionnaireChoix">
                   <input
+                    className="Roux"
                     type="checkbox"
                     value={formState.part1}
                     onChange={(event) =>
                       setFormState({ ...formState, part1: event.target.value })
                     }
-                  />
-                  <img
-                    className="QuestionnaireCouleur"
-                    src={Roux}
-                    alt="Roux couleur"
                   />
                   Roux
                 </label>
@@ -594,19 +524,6 @@ export default function Questionnaire() {
                   Persistante
                 </label>
               </div>
-              {/* <h3>Arômes</h3>
-              <div>
-                <label className="QuestionnaireChoix">
-                  <input
-                    type="text"
-                    maxLength={100}
-                    value={formState.part3}
-                    onChange={(event) =>
-                      setFormState({ ...formState, part3: event.target.value })
-                    }
-                  />
-                </label>
-              </div> */}
               <h3>Equilibre</h3>
               <div>
                 <label className="QuestionnaireChoix">
