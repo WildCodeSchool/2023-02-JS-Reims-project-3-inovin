@@ -14,8 +14,8 @@ class WineManager extends AbstractManager {
 
   update(wine) {
     return this.database.query(
-      `update ${this.table} set grape_variety = ? where id = ?`,
-      [wine.grape_variety, wine.id]
+      `update ${this.table} set name = ? grape_variety = ? where id = ?`,
+      [wine.name, wine.grape_variety, wine.id]
     );
   }
 }
