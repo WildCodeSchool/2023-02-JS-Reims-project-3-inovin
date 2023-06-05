@@ -1,11 +1,14 @@
 import { useRef } from "react";
+import "../App.scss";
 
 function Register() {
   const usernameRef = useRef();
   const passwordRef = useRef();
+  const emailref = useRef();
 
   return (
     <form
+      className="Inscription"
       onSubmit={(event) => {
         event.preventDefault();
 
@@ -21,6 +24,7 @@ function Register() {
             body: JSON.stringify({
               username: usernameRef.current.value,
               password: passwordRef.current.value,
+              email: emailref.current.value,
             }),
           }
         );
@@ -39,7 +43,13 @@ function Register() {
           name="password"
         />
       </div>
-      <button type="submit">Go</button>
+      <div>
+        <label htmlFor="email">Email</label>
+        <input ref={emailref} type="text" id="email" name="email" />
+      </div>
+      <button className="Envoie" type="submit">
+        Go
+      </button>
     </form>
   );
 }

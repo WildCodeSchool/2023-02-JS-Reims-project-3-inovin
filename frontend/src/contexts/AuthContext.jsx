@@ -3,18 +3,6 @@ import PropTypes from "prop-types";
 
 const AuthContext = createContext();
 
-// export const AuthContextProvider = memo(function AuthContextProvider({
-//   children,
-// }) {
-//   const [token, setToken] = useState();
-
-//   return (
-//     <AuthContext.Provider value={{ token, setToken }}>
-//       {children}
-//     </AuthContext.Provider>
-//   );
-// });
-
 export function AuthContextProvider({ children }) {
   const [token, setToken] = useState();
 

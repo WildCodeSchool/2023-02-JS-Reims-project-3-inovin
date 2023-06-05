@@ -1,12 +1,13 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import SignIn from "../components/SignIN";
+import "../App.scss";
+import Notation from "../components/Notation";
 
 export default function Home() {
   return (
     <div className="Home">
-      <Navbar element={Navbar} />
       <SignIn element={SignIn} />
+      <Notation element={Notation} />
     </div>
   );
 }

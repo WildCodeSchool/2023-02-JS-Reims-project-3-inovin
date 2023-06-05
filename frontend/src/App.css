@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*Component Header*/
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.header img {
+  width: 3rem;
+}
+
+.header h1 {
+  color: #dec439;
+  flex-grow: 1;
+  text-align: center;
+}
