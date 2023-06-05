@@ -18,7 +18,7 @@ export default function Formulaire() {
 
   return (
     <>
-      <h1>Questionnaire</h1>
+      <h1 className="bl">Vin 1</h1>
       <form className="Questionnaire">
         <div>
           {currentPart === 1 && (

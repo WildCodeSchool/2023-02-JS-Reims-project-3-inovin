@@ -32,7 +32,7 @@ export default function Questionnaire() {
 
   return (
     <>
-      <h1>Questionnaire</h1>
+      <h1 className="bl">Questionnaire</h1>
       <form className="Questionnaire">
         <div>
           {currentPart === 1 && (

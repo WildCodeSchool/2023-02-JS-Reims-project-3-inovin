@@ -9,6 +9,26 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #020202;
+}
+
+/*Component Header*/
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.header img {
+  width: 3rem;
+}
+
+.header h1 {
+  color: #dec439;
+  flex-grow: 1;
+  text-align: center;
 }
 
 .QuestionnaireChoix {
@@ -16,12 +36,7 @@ body {
   display: flex;
   align-items: center;
   margin-left: 1rem;
-}
-
-.QuestionnaireCouleur {
-  width: 1.6rem;
-  height: 1.6rem;
-  margin-right: 0.5rem;
+  padding-bottom: 0.1rem;
 }
 
 .QuestionnaireCheckbox input {
@@ -32,8 +47,8 @@ body {
 
 .Questionnaire {
   margin: 0.5rem;
-  border: 3px solid #ac7056;
-  background-color: #fff1e8;
+  border: 3px solid #dec439;
+  background-color: #ffffff;
   border-radius: 2rem;
   padding: 0.5rem;
 }
@@ -46,7 +61,7 @@ body {
 .QuestionnaireButton {
   border-radius: 2rem;
   background-color: transparent;
-  border: 2px solid #ac7056;
+  border: 2px solid #dec439;
   padding: 0.5rem;
   margin-right: 1rem;
   margin-top: 1rem;
@@ -60,12 +75,13 @@ body {
 input[type="text"] {
   background-color: transparent;
   border: none;
-  border-bottom: 3px dashed #ac7056;
+  border-bottom: 3px dashed #000000;
 }
 
 input[type="checkbox"] {
   appearance: none;
-  border: 3px solid #ac7056;
+  padding: 1rem;
+  border: 3px solid #000000;
   border-radius: 0.5rem;
   outline: none;
   transition: 0.5s;
@@ -80,23 +96,67 @@ h1,
 h2 {
   display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+h3 {
+  margin-left: 1rem;
+}
+
+.bl {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Framb {
+  background-color: #ea4e64;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Cerise {
+  background-color: #d83d3b;
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+.Rubis {
+  background-color: #b71c1a;
+}
+
+.Pourpre {
+  background-color: #9a2049;
+}
+
+.Violet {
+  background-color: #901766;
+}
+
+.Grenat {
+  background-color: #733451;
+}
+
+.Tuile {
+  background-color: #8d3217;
+}
+
+.JauneVert {
+  background-color: #f0d979;
+}
+
+.JaunePaille {
+  background-color: #e9c650;
+}
+
+.OrVert {
+  background-color: #e6c041;
+}
+.OrJaune {
+  background-color: #d6aa2f;
+}
+
+.Dore {
+  background-color: #d6aa2f;
+}
+
+.Ambre {
+  background-color: #d6aa2f;
+}
+
+.Roux {
+  background-color: #c67e2a;
 }
