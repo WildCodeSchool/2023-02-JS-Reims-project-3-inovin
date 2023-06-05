@@ -7,7 +7,6 @@ function WineTastingForm() {
     fetch("http://localhost:3050/questions")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setQuestions(data);
       });
   }, []);
