@@ -9,8 +9,8 @@ CREATE TABLE user (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO user (firstname, lastname, date_of_birth, mail, password) 
-VALUES 
-('?', '?', '????-??-??','name@mail.com', 'password');
+VALUES ('?', '?', '????-??-??','name@mail.com', 'password');
+
 
 CREATE TABLE user_wine (
   id INT unsigned PRIMARY KEY not null AUTO_INCREMENT,

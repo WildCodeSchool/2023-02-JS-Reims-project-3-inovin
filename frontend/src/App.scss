@@ -7,23 +7,19 @@
 
 .header {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   background-color: black;
-  position: relative;
-  padding-bottom: 0.5rem;
 }
 
 .header img {
   width: 3rem;
-  position: absolute;
-  left: 0;
-  top: 0;
 }
 
 .header h1 {
   color: #dec439;
-  padding-top: 0.7rem;
+  flex-grow: 1;
+  text-align: center;
 }
 
 /*Page Home*/
