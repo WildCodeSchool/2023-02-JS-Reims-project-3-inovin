@@ -28,7 +28,8 @@
   "devDependencies": {
     "concurrently": "^7.6.0",
     "cross-env": "^7.0.3",
-    "husky": "^8.0.3"
+    "husky": "^8.0.3",
+    "sass": "^1.62.1"
   },
   "dependencies": {
     "prop-types": "^15.8.1"
