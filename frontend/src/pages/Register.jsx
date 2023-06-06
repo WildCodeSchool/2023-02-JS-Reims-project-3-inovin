@@ -119,6 +119,8 @@ function Register() {
             >
               Blanc
             </button>
+          </div>
+          <div id="choiceOfTastes" className="taste-buttons">
             <button
               type="button"
               className={selectedTaste === "doux" ? "selected" : ""}

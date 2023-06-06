@@ -60,7 +60,7 @@
 
 .taste-buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 10px;
 }
 
@@ -76,4 +76,19 @@
 .taste-buttons button.selected {
   background-color: green;
   color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  .Inscription {
+    padding-left: 5%;
+  }
+
+  .taste-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .taste-buttons button {
+    margin-bottom: 10px;
+  }
 }
