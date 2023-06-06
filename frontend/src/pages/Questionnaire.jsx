@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CouleurFramb from "../Images/Couleur-Framb.jpg";
+// import CouleurFramb from "../Images/Couleur-Framb.jpg";
 
 export default function Questionnaire() {
   const [formState, setFormState] = useState({
@@ -37,7 +37,7 @@ export default function Questionnaire() {
                   />
                   <img
                     className="QuestionnaireCouleur"
-                    src={CouleurFramb}
+                    // src={CouleurFramb}
                     alt="Framboise couleur"
                   />
                   Framboise
