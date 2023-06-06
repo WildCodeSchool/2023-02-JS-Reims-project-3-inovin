@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "./Checkbox.css";
+import Visuel from "../Pictures/Vue.png";
+import Olfatif from "../Pictures/Odorat.png";
+import Gustatif from "../Pictures/Gout.png";
 
 export default function Questionnaire() {
   const [formState, setFormState] = useState({
@@ -22,7 +25,10 @@ export default function Questionnaire() {
       <div>
         {currentPart === 1 && (
           <div>
-            <h2>Examen Visuel</h2>
+            <h2>
+              Examen Visuel
+              <img className="QuestionnaireImage" src={Visuel} alt="Oeil" />
+            </h2>
             <h3>Couleur et nuances</h3>
             <div className="DivTest checkbox-1">
               <label className="QuestionnaireChoix">
@@ -130,7 +136,10 @@ export default function Questionnaire() {
       <div>
         {currentPart === 2 && (
           <div>
-            <h2>Examen Olfactif</h2>
+            <h2>
+              Examen Olfactif
+              <img className="QuestionnaireImageNez" src={Olfatif} alt="Nez" />
+            </h2>
             <h3>Intensité des arômes</h3>
             <div className="DivTest checkbox-1">
               <label className="QuestionnaireChoix">
@@ -325,7 +334,10 @@ export default function Questionnaire() {
       <div>
         {currentPart === 3 && (
           <div>
-            <h2>Examen gustatif</h2>
+            <h2>
+              Examen gustatif
+              <img className="QuestionnaireImage" src={Gustatif} alt="Bouche" />
+            </h2>
             <h3>Saveurs</h3>
             <div className="DivTest checkbox-1">
               <label className="QuestionnaireChoix">
