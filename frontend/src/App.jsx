@@ -6,14 +6,13 @@ import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import Wine from "./pages/Wine";
 import Navbar from "./components/Navbar";
-import "./App.css";
 import "./App.scss";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <ul>
+      <ul className="link">
         <li>
           <Link to="/">Home</Link>
         </li>

@@ -40,3 +40,40 @@
     flex-direction: column;
   }
 }
+
+.link {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.5rem;
+}
+
+.PresInscip {
+  text-align: center;
+  padding: 5rem;
+}
+
+.Inscription {
+  text-align: justify;
+  line-height: 5;
+  padding-left: 35%;
+}
+
+.taste-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.taste-buttons button {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #eaeaea;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.taste-buttons button.selected {
+  background-color: green;
+  color: #fff;
+}
