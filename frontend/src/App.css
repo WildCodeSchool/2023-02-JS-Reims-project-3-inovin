@@ -9,7 +9,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #020202;
 }
 
 /*Component Header*/
@@ -31,18 +30,14 @@ body {
   text-align: center;
 }
 
+/*Component Questionnaire*/
+
 .QuestionnaireChoix {
   font-size: 1rem;
   display: flex;
   align-items: center;
   margin-left: 1rem;
-  padding-bottom: 0.1rem;
-}
-
-.QuestionnaireCheckbox input {
-  width: 1.9rem;
-  height: 1.9rem;
-  margin-right: 0.5rem;
+  padding-bottom: 0.2rem;
 }
 
 .Questionnaire {
@@ -56,6 +51,7 @@ body {
 .DivTest {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding: 0.5rem;
 }
 
 .QuestionnaireButton {
@@ -75,88 +71,16 @@ body {
 input[type="text"] {
   background-color: transparent;
   border: none;
-  border-bottom: 3px dashed #000000;
+  border-bottom: 2px dashed #000000;
 }
 
-input[type="checkbox"] {
-  appearance: none;
-  padding: 1rem;
-  border: 3px solid #000000;
-  border-radius: 0.5rem;
-  outline: none;
-  transition: 0.5s;
-}
-
-input[type="checkbox"]:checked {
-  background-color: green;
-  border: 2px solid white;
-}
-
-h1,
 h2 {
+  padding-bottom: 1rem;
   display: flex;
   justify-content: center;
 }
 
 h3 {
+  padding-bottom: 0.5rem;
   margin-left: 1rem;
-}
-
-.bl {
-  color: white;
-}
-
-.Framb {
-  background-color: #ea4e64;
-}
-
-.Cerise {
-  background-color: #d83d3b;
-}
-
-.Rubis {
-  background-color: #b71c1a;
-}
-
-.Pourpre {
-  background-color: #9a2049;
-}
-
-.Violet {
-  background-color: #901766;
-}
-
-.Grenat {
-  background-color: #733451;
-}
-
-.Tuile {
-  background-color: #8d3217;
-}
-
-.JauneVert {
-  background-color: #f0d979;
-}
-
-.JaunePaille {
-  background-color: #e9c650;
-}
-
-.OrVert {
-  background-color: #e6c041;
-}
-.OrJaune {
-  background-color: #d6aa2f;
-}
-
-.Dore {
-  background-color: #d6aa2f;
-}
-
-.Ambre {
-  background-color: #d6aa2f;
-}
-
-.Roux {
-  background-color: #c67e2a;
 }
