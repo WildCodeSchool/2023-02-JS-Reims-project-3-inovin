@@ -74,7 +74,7 @@
   }
 }
 .glasses figure {
-  border: thick double #dec439;
+  border: 6px solid #cec1c1;
 }
 
 /* TABLETTE EN MODE PAYSAGE | Component FourGlass */
@@ -105,7 +105,7 @@
 }
 
 .glasses figure {
-  border: thick double #dec439;
+  border: 6px solid #cec1c1;
 }
 
 @media screen and (min-width: 1024px) {

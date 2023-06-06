@@ -14,23 +14,23 @@ export default function Glasses() {
 
       <div className="glasses">
         <figure className="glass_1" /* onClick={quizDisplay} */>
-          <img src={glassWine} alt="glass of wine" />
           <figcaption> VIN 1 </figcaption>
+          <img src={glassWine} alt="glass of wine" />
         </figure>
 
         <figure className="glass_2" /* onClick={quizDisplay} */>
-          <img src={glassWine} alt="glass of wine" />
           <figcaption> VIN 2 </figcaption>
+          <img src={glassWine} alt="glass of wine" />
         </figure>
 
         <figure className="glass_4" /* onClick={quizDisplay} */>
-          <img src={glassWine} alt="glass of wine" />
           <figcaption> VIN 3 </figcaption>
+          <img src={glassWine} alt="glass of wine" />
         </figure>
 
         <figure className="glass_4" /* onClick={quizDisplay} */>
-          <img src={glassWine} alt="glass of wine" />
           <figcaption> VIN 4 </figcaption>
+          <img src={glassWine} alt="glass of wine" />
         </figure>
       </div>
     </section>
