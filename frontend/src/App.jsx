@@ -1,12 +1,12 @@
 import "./App.css";
-import Formulaire from "./components/Formulaire";
 import Navbar from "./components/Navbar";
+import Questionnaire from "./components/Questionnaire";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Formulaire />
+      <Questionnaire />
     </div>
   );
 }
