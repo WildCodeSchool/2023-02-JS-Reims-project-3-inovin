@@ -1,32 +1,38 @@
 import React, { useEffect, useState } from "react";
 
 function WineTastingForm() {
-  const [questions, setQuestions] = useState({});
+  const [options, setOptions] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3050/questions")
+    fetch("http://localhost:3050/options")
       .then((response) => response.json())
       .then((data) => {
-        setQuestions(data);
+        setOptions(data);
       });
   }, []);
 
+  if (!options) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
-      {Object.keys(questions).map((section) => (
+      {Object.keys(options).map((section) => (
         <div key={section}>
           <h2>{section}</h2>
-          {Object.keys(questions[section]).map((question) => (
-            <div key={question}>
-              <h3>{question}</h3>
-              {Object.keys(questions[section][question]).map((option) => (
-                <div key={option}>
-                  <input type="checkbox" id={option} name={option} />
-                  <label htmlFor={option}>{option}</label>
-                </div>
-              ))}
-            </div>
-          ))}
+          {options[section] &&
+            Object.keys(options[section]).map((optionName) => (
+              <div key={optionName}>
+                <h3>{optionName}</h3>
+                {options[section][optionName] &&
+                  Object.keys(options[section][optionName]).map((option) => (
+                    <div key={option}>
+                      <input type="checkbox" id={option} name={option} />
+                      <label htmlFor={option}>{option}</label>
+                    </div>
+                  ))}
+              </div>
+            ))}
         </div>
       ))}
     </div>
