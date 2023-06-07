@@ -1,31 +1,34 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Link, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-import Contact from "./pages/Contact";
+import Wine from "./pages/Wine";
 import Navbar from "./components/Navbar";
 import "./App.css";
 
 function App() {
   return (
-    <>
-      <header>
-        <Navbar />
-        <nav>
+    <div className="App">
+      <Navbar />
+      <ul>
+        <li>
           <Link to="/">Home</Link>
-          <Link to="/profile">Profil</Link>
-          <Link to="/contact">Contact</Link>
-        </nav>
-      </header>
-
-      <main className="App">
+        </li>
+        <li>
+          <Link to="/Profile">Profile</Link>
+        </li>
+        <li>
+          <Link to="/Wine">Wine</Link>
+        </li>
+      </ul>
+      <nav>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/Wine" element={<Wine />} />
         </Routes>
-      </main>
-    </>
+      </nav>
+    </div>
   );
 }
 
