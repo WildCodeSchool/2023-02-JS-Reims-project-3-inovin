@@ -26,6 +26,8 @@ pool.getConnection().catch(() => {
 });
 
 // declare and fill models: that's where you should register your own managers
+//  déclarer et remplir des modèles : c'est là que vous devez enregistrer
+//   vos propres gestionnaires
 
 const models = {};
 
@@ -40,7 +42,10 @@ models.wine = new WineManager();
 models.wine.setDatabase(pool);
 
 // bonus: use a proxy to personalize error message,
+// bonus : utiliser un proxy pour personnaliser le message d'erreur,
+
 // when asking for a non existing model
+// lors de la demande d'un modèle non existant
 
 const handler = {
   get(obj, prop) {
