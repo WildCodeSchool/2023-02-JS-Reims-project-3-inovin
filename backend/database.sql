@@ -36,9 +36,6 @@ CREATE TABLE options (
 );
 INSERT INTO options (option_name, question_id)
 VALUES
-('Couleur et nuance', (SELECT id FROM question WHERE title = 'Examen visuel')),
-('Intensité de la couleur', (SELECT id FROM question WHERE title = 'Examen visuel')),
-('Fluidité des larmes', (SELECT id FROM question WHERE title = 'Examen visuel')),
 ('Framboise', (SELECT id FROM question WHERE title = 'Couleur et nuance')), 
 ('Cerise', (SELECT id FROM question WHERE title = 'Couleur et nuance')),
 ('Rubis', (SELECT id FROM question WHERE title = 'Couleur et nuance')),
