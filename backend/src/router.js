@@ -2,7 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 
-const optionController = require("./controllers/optionController");
+const optionController = require("./controllers/optionsController");
 
 router.get("/options", optionController.browse);
 router.get("/options/:id", optionController.read);

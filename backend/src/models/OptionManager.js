@@ -1,22 +1,22 @@
 const AbstractManager = require("./AbstractManager");
 
-class OptionManager extends AbstractManager {
+class ItemManager extends AbstractManager {
   constructor() {
-    super({ table: "option" });
+    super({ table: "options" });
   }
 
-  insert(option) {
+  insert(options) {
     return this.database.query(`insert into ${this.table} (title) values (?)`, [
-      option.title,
+      options.name,
     ]);
   }
 
-  update(option) {
+  update(options) {
     return this.database.query(
       `update ${this.table} set title = ? where id = ?`,
-      [option.title, option.id]
+      [options.name, options.id]
     );
   }
 }
 
-module.exports = OptionManager;
+module.exports = ItemManager;
