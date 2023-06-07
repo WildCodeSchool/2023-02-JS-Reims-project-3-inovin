@@ -2,7 +2,6 @@ const express = require("express");
 
 const router = express.Router();
 
-
 const optionController = require("./controllers/optionsController");
 
 router.get("/options", optionController.browse);
@@ -26,6 +25,5 @@ router.get("/wines/:id", wineControllers.read);
 router.put("/wines/:id", wineControllers.edit);
 router.post("/wines", wineControllers.add);
 router.delete("/wines/:id", wineControllers.destroy);
-
 
 module.exports = router;

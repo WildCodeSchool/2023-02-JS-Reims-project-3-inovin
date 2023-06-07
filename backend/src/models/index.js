@@ -31,7 +31,6 @@ pool.getConnection().catch(() => {
 
 const models = {};
 
-
 const OptionManager = require("./OptionManager");
 
 models.options = new OptionManager();
@@ -46,7 +45,6 @@ const WineManager = require("./WineManager");
 
 models.wine = new WineManager();
 models.wine.setDatabase(pool);
-
 
 // bonus: use a proxy to personalize error message,
 // bonus : utiliser un proxy pour personnaliser le message d'erreur,

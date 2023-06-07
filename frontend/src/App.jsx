@@ -4,8 +4,6 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
-    
-import "./App.css";
 
 function App() {
   return (

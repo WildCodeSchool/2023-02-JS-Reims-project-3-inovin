@@ -80,8 +80,6 @@ CREATE TABLE response (
   FOREIGN KEY (question_id) REFERENCES question(id)
 );
 
-INSERT INTO item (title) VALUES ('Stuff'), ('Doodads'); 
-
 CREATE TABLE user (
   id INT unsigned PRIMARY KEY not null AUTO_INCREMENT,
   firstname varchar(80) NOT NULL,
