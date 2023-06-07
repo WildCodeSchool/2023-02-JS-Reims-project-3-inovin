@@ -17,15 +17,15 @@ function App() {
           <Link to="/">Home</Link>
           <Link to="/profile">Profil</Link>
           <Link to="/contact">Contact</Link>
-          <Link to="/FourGlass">FourGlass</Link>
+          <Link to="/fourglass">FourGlass</Link>
         </nav>
       </header>
 
       <main className="App">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Questionnaire" element={<Questionnaire />} />
-          <Route path="/FourGlass" element={<FourGlass />} />
+          <Route path="/questionnaire" element={<Questionnaire />} />
+          <Route path="/fourglass" element={<FourGlass />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
