@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 // import CouleurFramb from "../Images/Couleur-Framb.jpg";
 
 export default function Questionnaire() {
@@ -16,6 +17,8 @@ export default function Questionnaire() {
   const HandlePreviousClick = () => {
     setCurrentPart(currentPart - 1);
   };
+
+  function HandleFilledGlass() {}
 
   return (
     <>
@@ -220,10 +223,16 @@ export default function Questionnaire() {
                 >
                   Précédent
                 </button>
-                {/* Route React à ajouté entre la balise button validé */}
-                <button className="QuestionnaireButton" type="button">
-                  Validé
-                </button>
+
+                <Link to="/FourGlass">
+                  <button
+                    className="QuestionnaireButton"
+                    type="button"
+                    onClick={HandleFilledGlass}
+                  >
+                    Validé
+                  </button>
+                </Link>
               </div>
             </div>
           )}
