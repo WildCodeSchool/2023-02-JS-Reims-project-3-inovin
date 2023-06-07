@@ -58,7 +58,7 @@ const add = (req, res) => {
   models.wine
     .insert(wine)
     .then(([result]) => {
-      res.location(`/items/${result.insertId}`).sendStatus(201);
+      res.location(`/wines/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
