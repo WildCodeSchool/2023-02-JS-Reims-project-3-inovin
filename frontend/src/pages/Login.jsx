@@ -18,7 +18,7 @@ function Login() {
         fetch(
           `${
             import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-          }/login`,
+          }/users`,
           {
             method: "post",
             headers: {
