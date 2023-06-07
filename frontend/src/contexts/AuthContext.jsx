@@ -20,7 +20,3 @@ AuthContextProvider.propTypes = {
 };
 
 export const useAuth = () => useContext(AuthContext);
-
-/* const SomeComponent = memo(function SomeComponent(props) {
-  // ...
-}); */

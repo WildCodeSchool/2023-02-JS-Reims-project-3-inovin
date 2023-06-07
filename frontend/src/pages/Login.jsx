@@ -32,7 +32,6 @@ function Login() {
           .then((response) => response.json())
           .then((data) => {
             setToken(data.token);
-
             navigate("/");
           });
       }}
