@@ -79,3 +79,31 @@ CREATE TABLE response (
   question_id INT,
   FOREIGN KEY (question_id) REFERENCES question(id)
 );
+
+INSERT INTO item (title) VALUES ('Stuff'), ('Doodads'); 
+
+CREATE TABLE user (
+  id INT unsigned PRIMARY KEY not null AUTO_INCREMENT,
+  firstname varchar(80) NOT NULL,
+  lastname varchar(80) NOT NULL,
+  date_of_birth DATE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO user (firstname, lastname,date_of_birth) 
+VALUES ('Ahmed','Elamri', '1991-03-23');
+
+
+CREATE TABLE user_wine (
+  id INT unsigned PRIMARY KEY not null AUTO_INCREMENT,
+  user_id INT unsigned not null,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  wine_id INT unsigned not null,
+  FOREIGN KEY (wine_id) REFERENCES wines(id),
+  note varchar(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE wine (
+  id INT unsigned PRIMARY KEY not null AUTO_INCREMENT,
+  grape_variety varchar(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
