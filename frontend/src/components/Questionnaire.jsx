@@ -1,8 +1,10 @@
 import { useState } from "react";
 import "./Checkbox.css";
+import SliderSucre from "./SliderSucre";
 import Visuel from "../Pictures/Vue.png";
 import Olfatif from "../Pictures/Odorat.png";
 import Gustatif from "../Pictures/Gout.png";
+import SliderAlcool from "./SliderAlcool";
 
 export default function Questionnaire() {
   const [formState, setFormState] = useState({
@@ -469,6 +471,11 @@ export default function Questionnaire() {
                   }
                 />
               </label>
+            </div>
+            <h3>Les vins</h3>
+            <div className="DivTest checkbox-1">
+              <SliderSucre />
+              <SliderAlcool />
             </div>
             <div className="QuestBut">
               <button
