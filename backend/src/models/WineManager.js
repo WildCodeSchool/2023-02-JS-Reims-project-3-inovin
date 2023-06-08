@@ -7,15 +7,15 @@ class WineManager extends AbstractManager {
 
   insert(wine) {
     return this.database.query(
-      `insert into ${this.table} (grape_variety, AUTRE , AUTRE) values (?,?,?)`,
-      [wine.grape_variety, wine.autre]
+      `insert into ${this.table} (grape_variety) values (?)`,
+      [wine.grape_variety]
     );
   }
 
   update(wine) {
     return this.database.query(
-      `update ${this.table} set grape_variety = ? , AUTRE = ? ,AUTRE = ? where id = ?`,
-      [wine.grape_variety, wine.autre, wine.autre, wine.id]
+      `update ${this.table} set name = ? grape_variety = ? where id = ?`,
+      [wine.name, wine.grape_variety, wine.id]
     );
   }
 }

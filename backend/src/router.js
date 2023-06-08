@@ -12,13 +12,13 @@ router.delete("/options/:id", optionController.destroy);
 
 const userControllers = require("./controllers/userControllers");
 
+const wineControllers = require("./controllers/wineControllers");
+
 router.get("/users", userControllers.browse);
 router.get("/users/:id", userControllers.read);
 router.put("/users/:id", userControllers.edit);
 router.post("/users", userControllers.add);
 router.delete("/users/:id", userControllers.destroy);
-
-const wineControllers = require("./controllers/wineControllers");
 
 router.get("/wines", wineControllers.browse);
 router.get("/wines/:id", wineControllers.read);
