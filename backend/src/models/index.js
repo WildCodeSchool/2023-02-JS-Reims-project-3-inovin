@@ -31,6 +31,11 @@ pool.getConnection().catch(() => {
 
 const models = {};
 
+const OptionManager = require("./OptionManager");
+
+models.options = new OptionManager();
+models.options.setDatabase(pool);
+
 const UserManager = require("./UserManager");
 
 models.user = new UserManager();
