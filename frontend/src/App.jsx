@@ -6,6 +6,7 @@ import Profile from "./pages/Profile";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Wine from "./pages/Wine";
 import Navbar from "./components/Navbar";
 import "./App.css";
 import "./App.scss";
@@ -13,12 +14,13 @@ import "./App.scss";
 function App() {
   const { token, setToken } = useAuth();
   return (
-    <>
-      <header>
-        <Navbar />
-        <nav>
+    <div className="App">
+      <Navbar />
+      <ul>
+        <li>
           <Link to="/">Home</Link>
           <Link to="/profile">Profil</Link>
+          <Link to="/Wine">Wine</Link>
           <Link to="/contact">Contact</Link>
           {token == null ? (
             <>
@@ -40,9 +42,10 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/Wine" element={<Wine />} />
         </Routes>
-      </main>
-    </>
+      </nav>
+    </div>
   );
 }
 
