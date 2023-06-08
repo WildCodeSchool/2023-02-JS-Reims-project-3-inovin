@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import Wine from "./pages/Wine";
 import Navbar from "./components/Navbar";
@@ -10,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <ul>
+      <ul className="link">
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -26,6 +28,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/Wine" element={<Wine />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </nav>
     </div>
