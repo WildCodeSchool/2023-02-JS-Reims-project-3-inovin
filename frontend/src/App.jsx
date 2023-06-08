@@ -8,6 +8,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Wine from "./pages/Wine";
 import Navbar from "./components/Navbar";
+import FourGlass from "./pages/FourGlass";
+import Questionnaire from "./pages/Questionnaire";
 import "./App.css";
 import "./App.scss";
 
@@ -23,6 +25,7 @@ function App() {
               <Link to="/">Home</Link>
               <Link to="/profile">Profil</Link>
               <Link to="/contact">Contact</Link>
+              <Link to="/fourglass">FourGlass</Link>
               {token == null ? (
                 <>
                   <Link to="/register">S'Inscrire</Link>
@@ -41,6 +44,8 @@ function App() {
       <main className="App">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/questionnaire" element={<Questionnaire />} />
+          <Route path="/fourglass" element={<FourGlass />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/register" element={<Register />} />
