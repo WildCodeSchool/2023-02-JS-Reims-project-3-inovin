@@ -8,7 +8,7 @@ function Register() {
 
   return (
     <form
-      className="Inscription"
+      className="inscription"
       onSubmit={(event) => {
         event.preventDefault();
 
@@ -47,7 +47,7 @@ function Register() {
         <label htmlFor="email">Email</label>
         <input ref={emailref} type="text" id="email" name="email" />
       </div>
-      <button className="Envoie" type="submit">
+      <button className="submit" type="submit">
         Go
       </button>
     </form>

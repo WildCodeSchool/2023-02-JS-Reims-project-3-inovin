@@ -1,4 +1,4 @@
-.Home {
+.home {
   h2 {
     text-align: center;
     color: #dec439;
@@ -8,8 +8,8 @@
 }
 
 /*Page SignIn*/
-.Sign {
-  .bouton {
+.sign {
+  .button {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -17,7 +17,7 @@
 }
 
 /*Page Register*/
-.Inscription {
+.inscription {
   border: 5px solid #dec439;
   border-radius: 1rem;
   display: grid;
@@ -25,7 +25,7 @@
   justify-content: center;
   grid-gap: 1rem;
   margin: 5rem;
-  .envoie {
+  .submit {
     text-align: center;
   }
 }
