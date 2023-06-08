@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Wine from "./pages/Wine";
 import Navbar from "./components/Navbar";
+import Questionnaire from "./components/Questionnaire";
 import "./App.css";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/Wine" element={<Wine />} />
         </Routes>
       </nav>
+      <Questionnaire />
     </div>
   );
 }

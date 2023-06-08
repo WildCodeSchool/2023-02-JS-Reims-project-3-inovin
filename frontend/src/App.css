@@ -3,6 +3,14 @@
   padding: 0;
 }
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /*Component Header*/
 
 .header {
@@ -20,4 +28,67 @@
   color: #dec439;
   flex-grow: 1;
   text-align: center;
+}
+
+/*Component Questionnaire*/
+
+.QuestionnaireChoix {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  padding-bottom: 0.2rem;
+}
+
+.Questionnaire {
+  margin: 0.5rem;
+  border: 3px solid #dec439;
+  background-color: #ffffff;
+  border-radius: 2rem;
+  padding: 0.5rem;
+}
+
+.DivTest {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0.5rem;
+}
+
+.QuestionnaireButton {
+  border-radius: 2rem;
+  background-color: transparent;
+  border: 2px solid #dec439;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.QuestBut {
+  display: flex;
+  justify-content: center;
+}
+
+input[type="text"] {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px dashed #000000;
+}
+
+h2 {
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+h3 {
+  padding-bottom: 0.5rem;
+  margin-left: 1rem;
+}
+
+.QuestionnaireImageNez {
+  width: 3rem;
+}
+
+.QuestionnaireImage {
+  width: 4rem;
 }
