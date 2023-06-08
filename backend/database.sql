@@ -72,14 +72,6 @@ VALUES
 ('Persistante', (SELECT id FROM question WHERE title = 'Persistance aromatique'));
 
 
-
-CREATE TABLE response (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  response VARCHAR(255) NOT NULL,
-  question_id INT,
-  FOREIGN KEY (question_id) REFERENCES question(id)
-);
-
 CREATE TABLE user (
   id INT unsigned PRIMARY KEY not null AUTO_INCREMENT,
   firstname varchar(80) NOT NULL,
@@ -90,18 +82,30 @@ CREATE TABLE user (
 INSERT INTO user (firstname, lastname,date_of_birth) 
 VALUES ('Ahmed','Elamri', '1991-03-23');
 
-
-CREATE TABLE user_wine (
-  id INT unsigned PRIMARY KEY not null AUTO_INCREMENT,
-  user_id INT unsigned not null,
-  FOREIGN KEY (user_id) REFERENCES users(id),
-  wine_id INT unsigned not null,
-  FOREIGN KEY (wine_id) REFERENCES wines(id),
-  note varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 CREATE TABLE wine (
   id INT unsigned PRIMARY KEY not null AUTO_INCREMENT,
   grape_variety varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE user_wine (
+  id INT unsigned PRIMARY KEY not null AUTO_INCREMENT,
+  user_id INT unsigned not null,
+  FOREIGN KEY (user_id) REFERENCES user(id),
+  wine_id INT unsigned not null,
+  FOREIGN KEY (wine_id) REFERENCES wine(id),
+  note varchar(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+
+CREATE TABLE response (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  response VARCHAR(255) NOT NULL,
+  question_id INT,
+  FOREIGN KEY (question_id) REFERENCES question(id),
+  user_id INT UNSIGNED,  
+  FOREIGN KEY (user_id) REFERENCES user(id),
+  wine_id INT UNSIGNED, 
+  FOREIGN KEY (wine_id) REFERENCES wine(id)
+);
