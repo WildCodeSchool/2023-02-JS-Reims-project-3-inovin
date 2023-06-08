@@ -21,7 +21,6 @@ function App() {
           <ul>
             <li>
               <Link to="/">Home</Link>
-              <Link to="/Wine">Wine</Link>
               <Link to="/profile">Profil</Link>
               <Link to="/contact">Contact</Link>
               {token == null ? (
