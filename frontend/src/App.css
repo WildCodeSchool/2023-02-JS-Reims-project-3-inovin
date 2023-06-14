@@ -26,7 +26,7 @@
 h2 {
   text-align: center;
   color: #dec439;
-  padding: 10%;
+  padding: 5rem;
   margin-top: 6rem;
 }
 
@@ -52,7 +52,6 @@ h2 {
 .Inscription {
   text-align: justify;
   line-height: 5;
-  padding-left: 35%;
 }
 
 .taste-buttons {
@@ -76,10 +75,6 @@ h2 {
 }
 
 @media screen and (max-width: 600px) {
-  .Inscription {
-    padding-left: 5%;
-  }
-
   .taste-buttons {
     flex-direction: column;
     align-items: center;
