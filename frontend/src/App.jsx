@@ -18,26 +18,8 @@ function App() {
   return (
     <div className="App">
       <header>
-        <Navbar />
         <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-              <Link to="/profile">Profil</Link>
-              <Link to="/contact">Contact</Link>
-              <Link to="/fourglass">FourGlass</Link>
-              {token == null ? (
-                <>
-                  <Link to="/register">S'Inscrire</Link>
-                  <Link to="/login">Se connecter</Link>
-                </>
-              ) : (
-                <button type="button" onClick={() => setToken(null)}>
-                  Déconnexion
-                </button>
-              )}
-            </li>
-          </ul>
+          <Navbar />
         </nav>
       </header>
 
