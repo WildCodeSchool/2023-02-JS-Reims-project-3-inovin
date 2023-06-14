@@ -1,9 +1,10 @@
 import React from "react";
+import SignIn from "../components/SignIn";
 
 export default function Home() {
   return (
     <div className="Home">
-      <h1>hello</h1>
+      <SignIn element={SignIn} />
     </div>
   );
 }
