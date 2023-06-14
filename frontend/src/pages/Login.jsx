@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { useAuth } from "../contexts/AuthContext";
 
 function Login() {
@@ -18,7 +17,7 @@ function Login() {
         fetch(
           `${
             import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-          }/users`,
+          }/login`,
           {
             method: "post",
             headers: {
@@ -33,7 +32,6 @@ function Login() {
           .then((response) => response.json())
           .then((data) => {
             setToken(data.token);
-
             navigate("/");
           });
       }}
