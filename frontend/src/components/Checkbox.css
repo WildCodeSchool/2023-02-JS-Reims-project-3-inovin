@@ -76,7 +76,7 @@
     border: 3px solid var(--active-inner);
     border-top: 0;
     border-left: 0;
-    left: 0.6rem;
+    left: 0.5rem;
     top: 0.1rem;
     transform: rotate(var(--r, 20deg));
   }
@@ -96,7 +96,7 @@
 }
 
 /*Couleur bouton*/
-#Framb {
+#Framboise {
   background-color: #ea4e64;
 }
 
@@ -141,13 +141,13 @@
 }
 
 #Dore {
-  background-color: #d6aa2f;
+  background-color: #d19330;
 }
 
 #Ambre {
-  background-color: #d6aa2f;
+  background-color: #e69134;
 }
 
-Roux {
+#Roux {
   background-color: #c67e2a;
 }
