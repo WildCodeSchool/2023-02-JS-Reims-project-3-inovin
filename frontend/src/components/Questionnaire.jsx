@@ -76,11 +76,6 @@ const questions = [
           "Défaut",
         ],
       },
-      {
-        title: "Arômes",
-        type: "text",
-        responses: [""],
-      },
     ],
   },
   {
@@ -98,6 +93,11 @@ const questions = [
         type: "checkbox",
         responses: ["Courte", "Moyenne", "Persistante"],
       },
+      {
+        title: "Slider Acide",
+        type: "range",
+        responses: [""],
+      },
     ],
   },
 ];
@@ -107,8 +107,12 @@ export default function Questionnaire() {
     "Couleur et nuances": "",
     Brillance: "",
     "Fluidité des larmes": "",
-    part2: "",
-    part3: "",
+    "Intensité de la couleur": "",
+    "Intensité des arômes": "",
+    Impression: "",
+    "Familles Arômatiques": "",
+    Structure: "",
+    "Persistance Arômatiques": "",
   });
 
   const [currentPart, setCurrentPart] = useState(0);
@@ -137,7 +141,7 @@ export default function Questionnaire() {
         {currentQuestions.questions.map((question) => (
           <div key={question.title}>
             <h3>{question.title}</h3>
-            <div className="DivTest">
+            <div className="Questions">
               {question.responses.map((response) => (
                 <div className="checkbox-1" key={response}>
                   <label className="QuestionnaireChoix">
