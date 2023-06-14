@@ -3,6 +3,7 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(7, 1fr);
   align-items: center;
+  margin-left: 1rem;
 }
 
 .Range {
