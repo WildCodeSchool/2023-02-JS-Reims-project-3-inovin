@@ -76,11 +76,14 @@ CREATE TABLE response (
 
 CREATE TABLE user (
   id INT unsigned PRIMARY KEY not null AUTO_INCREMENT,
+  username varchar(80) NOT NULL,
   firstname varchar(80) NOT NULL,
   lastname varchar(80) NOT NULL,
-  date_of_birth DATE
+  date_of_birth DATE,
+  email varchar(255) NOT NULL,
+  password varchar(255) NOT NULL,
+  choice_of_tastes varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 
 CREATE TABLE user_wine (
   id INT unsigned AUTO_INCREMENT PRIMARY KEY,
@@ -90,7 +93,6 @@ CREATE TABLE user_wine (
   FOREIGN KEY (user_id) REFERENCES user(id),
   FOREIGN KEY (wine_id) REFERENCES wine(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 
 CREATE TABLE wine (
   id INT unsigned PRIMARY KEY not null AUTO_INCREMENT,

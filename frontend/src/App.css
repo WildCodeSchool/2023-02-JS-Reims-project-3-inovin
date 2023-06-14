@@ -22,6 +22,69 @@
   text-align: center;
 }
 
+/*Page Home*/
+h2 {
+  text-align: center;
+  color: #dec439;
+  padding: 5rem;
+  margin-top: 6rem;
+}
+
+/*Page SignIn*/
+
+.bouton {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.link {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.5rem;
+}
+
+.PresInscip {
+  text-align: center;
+  padding: 5rem;
+}
+
+.Inscription {
+  text-align: justify;
+  line-height: 5;
+}
+
+.taste-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.taste-buttons button {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #eaeaea;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.taste-buttons button.selected {
+  background-color: green;
+  color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  .taste-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .taste-buttons button {
+    margin-bottom: 10px;
+  }
+}
+
 /*Component FourGlass*/
 
 .title_4glasses {
@@ -46,7 +109,7 @@
   text-align: center;
 }
 
-/* MODE TABLETTE portrait | Component FourGlass */
+/* MODE TABLETTE portrait | Component FourGlass */
 
 @media screen and (min-width: 768px) and (max-width: 900px) {
   .title_4glasses {
@@ -73,6 +136,7 @@
     font-size: xx-large;
   }
 }
+
 .glasses figure {
   border: 6px solid #cec1c1;
 }

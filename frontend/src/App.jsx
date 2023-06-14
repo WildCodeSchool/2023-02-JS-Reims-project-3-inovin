@@ -2,10 +2,10 @@ import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { useAuth } from "./contexts/AuthContext";
 import Home from "./pages/Home";
-import Profile from "./pages/Profile";
-import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Profile from "./pages/Profile";
+import Contact from "./pages/Contact";
 import Wine from "./pages/Wine";
 import Navbar from "./components/Navbar";
 import FourGlass from "./pages/FourGlass";
@@ -51,6 +51,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/Wine" element={<Wine />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </main>
     </div>
