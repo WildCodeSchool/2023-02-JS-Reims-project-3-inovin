@@ -1,14 +1,6 @@
 * {
-  margin: 0;
+  margin: auto;
   padding: 0;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /*Component Header*/
@@ -28,6 +20,118 @@ body {
   color: #dec439;
   flex-grow: 1;
   text-align: center;
+}
+
+/*Component FourGlass*/
+
+.title_4glasses {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.glasses {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.glasses img {
+  height: 150px;
+  margin: auto;
+}
+
+.glasses figcaption {
+  text-align: center;
+}
+
+/* MODE TABLETTE portrait | Component FourGlass */
+
+@media screen and (min-width: 768px) and (max-width: 900px) {
+  .title_4glasses {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    font-size: xx-large;
+  }
+
+  .glasses {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+
+  .glasses img {
+    height: 300px;
+    margin: auto;
+  }
+
+  .glasses figcaption {
+    text-align: center;
+    font-size: xx-large;
+  }
+}
+.glasses figure {
+  border: 6px solid #cec1c1;
+}
+
+/* TABLETTE EN MODE PAYSAGE | Component FourGlass */
+
+@media screen and (min-width: 900px) and (max-width: 1024px) {
+  .title_4glasses {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    font-size: xxx-large;
+  }
+
+  .glasses {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+
+  .glasses img {
+    height: 300px;
+    margin: auto;
+  }
+
+  .glasses figcaption {
+    text-align: center;
+  }
+}
+
+.glasses figure {
+  border: 6px solid #cec1c1;
+}
+
+@media screen and (min-width: 1024px) {
+  .title_4glasses {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    font-size: xxx-large;
+  }
+
+  .glasses {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
+    grid-gap: 20px;
+  }
+
+  .glasses img {
+    height: 300px;
+    margin: auto;
+  }
+
+  .glasses figcaption {
+    text-align: center;
+    font-size: xx-large;
+  }
 }
 
 /*Component Questionnaire*/
