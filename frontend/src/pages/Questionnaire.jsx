@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Score from "../components/Score";
 // import CouleurFramb from "../Images/Couleur-Framb.jpg";
 
 export default function Questionnaire() {
@@ -215,6 +216,7 @@ export default function Questionnaire() {
                   />
                 </label>
               </div>
+              <Score />
               <div className="QuestBut">
                 <button
                   className="QuestionnaireButton"
