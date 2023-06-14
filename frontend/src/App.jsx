@@ -1,6 +1,5 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import { useAuth } from "./contexts/AuthContext";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Contact from "./pages/Contact";
@@ -14,7 +13,6 @@ import "./App.css";
 import "./App.scss";
 
 function App() {
-  const { token, setToken } = useAuth();
   return (
     <div className="App">
       <header>

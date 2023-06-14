@@ -2,6 +2,9 @@
   margin: auto;
   padding: 0;
 }
+body {
+  background-color: rgb(239, 229, 211);
+}
 
 /*Component Header*/
 
@@ -27,7 +30,17 @@
 .title_4glasses {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 1rem;
+  font-style: italic;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #000000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 0.5px #ffffff;
+}
+.title_4glasses:hover {
+  color: whitesmoke;
 }
 
 .glasses {
@@ -44,16 +57,29 @@
 
 .glasses figcaption {
   text-align: center;
+  font-family: "Libre Baskerville", sans-serif;
+  margin-top: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background: black;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.glassAll {
+  border: 2px solid #080808;
+  background: rgba(235, 220, 139, 0.78);
 }
 
 /* MODE TABLETTE portrait | Component FourGlass */
 
-@media screen and (min-width: 768px) and (max-width: 900px) {
+/* @media screen and (min-width: 768px) and (max-width: 900px) {
   .title_4glasses {
     display: flex;
     justify-content: center;
     margin: 1rem;
     font-size: xx-large;
+    font-style: italic;
   }
 
   .glasses {
@@ -72,19 +98,17 @@
     text-align: center;
     font-size: xx-large;
   }
-}
-.glasses figure {
-  border: 6px solid #cec1c1;
-}
+} */
 
 /* TABLETTE EN MODE PAYSAGE | Component FourGlass */
 
-@media screen and (min-width: 900px) and (max-width: 1024px) {
+/* @media screen and (min-width: 900px) and (max-width: 1024px) {
   .title_4glasses {
     display: flex;
     justify-content: center;
     margin: 1rem;
-    font-size: xxx-large;
+    font-size: xx-large;
+    font-style: italic;
   }
 
   .glasses {
@@ -102,10 +126,6 @@
   .glasses figcaption {
     text-align: center;
   }
-}
-
-.glasses figure {
-  border: 6px solid #cec1c1;
 }
 
 @media screen and (min-width: 1024px) {
@@ -113,14 +133,15 @@
     display: flex;
     justify-content: center;
     margin: 1rem;
-    font-size: xxx-large;
+    font-size: xx-large;
+    font-style: italic;
   }
 
   .glasses {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    /* grid-template-rows: repeat(2, 1fr); */
-    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr); */
+/* grid-template-rows: repeat(2, 1fr); */
+/* grid-gap: 20px;
   }
 
   .glasses img {
@@ -132,4 +153,4 @@
     text-align: center;
     font-size: xx-large;
   }
-}
+} */

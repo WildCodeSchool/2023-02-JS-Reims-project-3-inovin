@@ -18,8 +18,6 @@ export default function Questionnaire() {
     setCurrentPart(currentPart - 1);
   };
 
-  function HandleFilledGlass() {}
-
   return (
     <>
       <h1>Questionnaire</h1>
@@ -225,11 +223,7 @@ export default function Questionnaire() {
                 </button>
 
                 <Link to="/FourGlass">
-                  <button
-                    className="QuestionnaireButton"
-                    type="button"
-                    onClick={HandleFilledGlass}
-                  >
+                  <button className="QuestionnaireButton" type="button">
                     Validé
                   </button>
                 </Link>
