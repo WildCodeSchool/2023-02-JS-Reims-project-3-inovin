@@ -15,15 +15,9 @@ INSERT INTO question (title, category_id)
 VALUES 
 ('Couleur et nuance', (SELECT id FROM category WHERE name = 'Examen visuel')), 
 ('Intensité de la couleur', (SELECT id FROM category WHERE name = 'Examen visuel')), 
-('Fluidité des larmes', (SELECT id FROM category WHERE name = 'Examen visuel'));
-
-INSERT INTO question (title, category_id)
-VALUES 
+('Fluidité des larmes', (SELECT id FROM category WHERE name = 'Examen visuel')),
 ('Intensité des arômes', (SELECT id FROM category WHERE name = 'Examen olfactif')), 
-('Familles aromatiques', (SELECT id FROM category WHERE name = 'Examen olfactif'));
-
-INSERT INTO question (title, category_id)
-VALUES 
+('Familles aromatiques', (SELECT id FROM category WHERE name = 'Examen olfactif')),
 ('Saveurs', (SELECT id FROM category WHERE name = 'Examen gustatif')), 
 ('Structure', (SELECT id FROM category WHERE name = 'Examen gustatif')),
 ('Arômes', (SELECT id FROM category WHERE name = 'Examen gustatif'));
@@ -34,6 +28,7 @@ CREATE TABLE options (
   question_id INT,
   FOREIGN KEY (question_id) REFERENCES question(id)
 );
+
 INSERT INTO options (option_name, question_id)
 VALUES
 ('Framboise', (SELECT id FROM question WHERE title = 'Couleur et nuance')), 
@@ -73,15 +68,11 @@ VALUES
 
 CREATE TABLE response (
   id INT PRIMARY KEY AUTO_INCREMENT,
-  response VARCHAR(255) NOT NULL,
+  option_id INT NOT NULL,
+  FOREIGN KEY (option_id) REFERENCES options(id),
   question_id INT,
-  FOREIGN KEY (question_id) REFERENCES question(id),
-  user_id INT UNSIGNED,  
-  FOREIGN KEY (user_id) REFERENCES user(id),
-  wine_id INT UNSIGNED, 
-  FOREIGN KEY (wine_id) REFERENCES wine(id)
-);
-
+  FOREIGN KEY (question_id) REFERENCES question(id)
+  );
 
 CREATE TABLE user (
   id INT unsigned PRIMARY KEY not null AUTO_INCREMENT,
