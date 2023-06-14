@@ -4,10 +4,10 @@ CREATE TABLE user (
   username varchar(80) NOT NULL,
   firstname varchar(80) NOT NULL,
   lastname varchar(80) NOT NULL,
-  dateofbirth DATE,
+  date_of_birth DATE,
   email varchar(255) NOT NULL,
   password varchar(255) NOT NULL,
-  choiceoftastes varchar(80) NOT NULL
+  choice_of_tastes varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE user_wine (

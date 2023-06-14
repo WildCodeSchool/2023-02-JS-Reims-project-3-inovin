@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Register() {
-  const usernameRef = useRef();
+  const userNameRef = useRef();
   const passwordRef = useRef();
   const emailRef = useRef();
   const firstNameRef = useRef();
@@ -16,12 +16,12 @@ function Register() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const username = usernameRef.current.value;
+    const userName = userNameRef.current.value;
     const password = passwordRef.current.value;
     const email = emailRef.current.value;
-    const firstname = firstNameRef.current.value;
-    const lastname = lastNameRef.current.value;
-    const dateofbirth = dateOfBirthRef.current.value;
+    const firstName = firstNameRef.current.value;
+    const lastName = lastNameRef.current.value;
+    const dateOfBirth = dateOfBirthRef.current.value;
 
     try {
       const response = await fetch(
@@ -32,13 +32,13 @@ function Register() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            username,
+            userName,
             password,
             email,
-            firstname,
-            lastname,
-            dateofbirth,
-            choiceoftastes: selectedTaste,
+            firstName,
+            lastName,
+            dateOfBirth,
+            choiceOfTastes: selectedTaste,
           }),
         }
       );
@@ -65,7 +65,7 @@ function Register() {
       <form className="Inscription" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Nom d'utilisateur : </label>
-          <input ref={usernameRef} type="text" id="username" name="username" />
+          <input ref={userNameRef} type="text" id="username" name="username" />
         </div>
         <div>
           <label htmlFor="password">Mot de passe : </label>
