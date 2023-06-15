@@ -181,7 +181,7 @@ export default function Questionnaire() {
             </div>
           </div>
         ))}
-        {currentPart < 3 && (
+        {currentPart < 2 && (
           <div className="QuestBut">
             <button
               className="QuestionnaireButton"
@@ -189,6 +189,17 @@ export default function Questionnaire() {
               onClick={HandleNextClick}
             >
               Suivant
+            </button>
+          </div>
+        )}
+        {currentPart >= 2 && (
+          <div className="QuestBut">
+            <button
+              className="QuestionnaireButton"
+              type="button"
+              onClick={HandleNextClick}
+            >
+              Validé
             </button>
           </div>
         )}
