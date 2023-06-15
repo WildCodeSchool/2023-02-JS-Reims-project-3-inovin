@@ -2,12 +2,11 @@ import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Register() {
-  const userNameRef = useRef();
-  const passwordRef = useRef();
-  const emailRef = useRef();
   const firstNameRef = useRef();
   const lastNameRef = useRef();
   const dateOfBirthRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
 
   const [selectedTaste, setSelectedTaste] = useState("");
 
@@ -16,12 +15,11 @@ function Register() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const userName = userNameRef.current.value;
-    const password = passwordRef.current.value;
-    const email = emailRef.current.value;
     const firstName = firstNameRef.current.value;
     const lastName = lastNameRef.current.value;
     const dateOfBirth = dateOfBirthRef.current.value;
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
 
     try {
       const response = await fetch(
@@ -32,12 +30,11 @@ function Register() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            userName,
-            password,
-            email,
             firstName,
             lastName,
             dateOfBirth,
+            email,
+            password,
             choiceOfTastes: selectedTaste,
           }),
         }
@@ -64,21 +61,8 @@ function Register() {
       </div>
       <form className="Inscription" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="username">Nom d'utilisateur : </label>
-          <input ref={userNameRef} type="text" id="username" name="username" />
-        </div>
-        <div>
-          <label htmlFor="password">Mot de passe : </label>
-          <input
-            ref={passwordRef}
-            type="password"
-            id="password"
-            name="password"
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email : </label>
-          <input ref={emailRef} type="email" id="email" name="email" />
+          <label htmlFor="lastName">Nom :</label>
+          <input ref={lastNameRef} type="text" id="lastName" name="lastName" />
         </div>
         <div>
           <label htmlFor="firstName">Prénom : </label>
@@ -90,16 +74,25 @@ function Register() {
           />
         </div>
         <div>
-          <label htmlFor="lastName">Nom :</label>
-          <input ref={lastNameRef} type="text" id="lastName" name="lastName" />
-        </div>
-        <div>
           <label htmlFor="dateOfBirth">Date de naissance : </label>
           <input
             ref={dateOfBirthRef}
             type="date"
             id="dateOfBirth"
             name="dateOfBirth"
+          />
+        </div>
+        <div>
+          <label htmlFor="email">Email : </label>
+          <input ref={emailRef} type="email" id="email" name="email" />
+        </div>
+        <div>
+          <label htmlFor="password">Mot de passe : </label>
+          <input
+            ref={passwordRef}
+            type="password"
+            id="password"
+            name="password"
           />
         </div>
         <div>
