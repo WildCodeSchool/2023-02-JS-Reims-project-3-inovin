@@ -197,3 +197,67 @@ h2 {
     font-size: xx-large;
   }
 }
+
+/*Component Questionnaire*/
+
+.QuestionnaireChoix {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  margin-left: 1.3rem;
+  padding-bottom: 0.2rem;
+}
+
+.Questionnaire {
+  margin: 0.5rem;
+  border: 3px solid #dec439;
+  background-color: #ffffff;
+  border-radius: 2rem;
+  padding: 0.9rem;
+}
+
+.Questions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0.5rem;
+  gap: 0.2rem;
+}
+
+.QuestionnaireButton {
+  border-radius: 2rem;
+  background-color: transparent;
+  border: 2px solid #dec439;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.QuestBut {
+  display: flex;
+  justify-content: center;
+}
+
+input[type="text"] {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px dashed #000000;
+}
+
+h2 {
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+h3 {
+  padding-bottom: 0.5rem;
+  margin-left: 1rem;
+}
+
+.QuestionnaireImageNez {
+  width: 3rem;
+}
+
+.QuestionnaireImage {
+  width: 4rem;
+}

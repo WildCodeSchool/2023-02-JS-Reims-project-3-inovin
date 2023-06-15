@@ -1,0 +1,153 @@
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  .checkbox-1 input[type="checkbox"] {
+    --active-inner: #25ce28;
+    --focus: 2px #dec539bb;
+    --border: #000000;
+    --border-hover: #050505;
+    --background: transparent;
+    appearance: none;
+    height: 1.5rem;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    cursor: pointer;
+    border: 2px solid var(--bc, var(--border));
+    margin-right: 0.5rem;
+    padding: 0.1rem;
+  }
+
+  .checkbox-1 input[type="checkbox"]:after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
+      opacity var(--d-o, 0.2s);
+  }
+
+  .checkbox-1 input[type="checkbox"]:checked {
+    --b: var(--active);
+    --bc: var(--active);
+    --d-o: 0.3s;
+    --d-t: 0.6s;
+    --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+  }
+
+  .checkbox-1 input[type="checkbox"]:disabled {
+    --b: var(--disabled);
+    cursor: not-allowed;
+    opacity: 0.9;
+  }
+
+  .checkbox-1 input[type="checkbox"]:disabled:checked {
+    --b: var(--disabled-inner);
+    --bc: var(--border);
+  }
+
+  .checkbox-1 input[type="checkbox"]:hover:not(:checked):not(:disabled) {
+    --bc: var(--border-hover);
+  }
+
+  .checkbox-1 input[type="checkbox"]:focus {
+    box-shadow: 0 0 0 var(--focus);
+  }
+
+  .checkbox-1 input[type="checkbox"]:not(.switch) {
+    width: 1.5rem;
+  }
+
+  .checkbox-1 input[type="checkbox"]:not(.switch):after {
+    opacity: var(--o, 0);
+  }
+
+  .checkbox-1 input[type="checkbox"]:not(.switch):checked {
+    --o: 1;
+  }
+
+  .checkbox-1 input[type="checkbox"]:not(.switch) {
+    border-radius: 0.4rem;
+  }
+
+  .checkbox-1 input[type="checkbox"]:not(.switch):after {
+    width: 0.5rem;
+    height: 1rem;
+    border: 3px solid var(--active-inner);
+    border-top: 0;
+    border-left: 0;
+    left: 0.5rem;
+    top: 0.1rem;
+    transform: rotate(var(--r, 20deg));
+  }
+
+  .checkbox-1 input[type="checkbox"]:not(.switch):checked {
+    --r: 43deg;
+  }
+}
+
+.checkbox-1 * {
+  box-sizing: inherit;
+}
+
+.checkbox-1 *:before,
+.checkbox-1 *:after {
+  box-sizing: inherit;
+}
+
+/*Couleur bouton*/
+#Framboise {
+  background-color: #ea4e64;
+}
+
+#Cerise {
+  background-color: #d83d3b;
+}
+
+#Rubis {
+  background-color: #b71c1a;
+}
+
+#Pourpre {
+  background-color: #9a2049;
+}
+
+#Violet {
+  background-color: #901766;
+}
+
+#Grenat {
+  background-color: #733451;
+}
+
+#Tuile {
+  background-color: #8d3217;
+}
+
+#JauneVert {
+  background-color: #f0d979;
+}
+
+#JaunePaille {
+  background-color: #e9c650;
+}
+
+#OrVert {
+  background-color: #e6c041;
+}
+
+#OrJaune {
+  background-color: #d6aa2f;
+}
+
+#Dore {
+  background-color: #d19330;
+}
+
+#Ambre {
+  background-color: #e69134;
+}
+
+#Roux {
+  background-color: #c67e2a;
+}
