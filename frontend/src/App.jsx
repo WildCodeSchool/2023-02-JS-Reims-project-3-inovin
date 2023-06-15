@@ -10,6 +10,7 @@ import Wine from "./pages/Wine";
 import Navbar from "./components/Navbar";
 import FourGlass from "./pages/FourGlass";
 import Questionnaire from "./pages/Questionnaire";
+import Score from "./pages/Score";
 import "./App.css";
 import "./App.scss";
 
@@ -45,6 +46,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/questionnaire" element={<Questionnaire />} />
+          <Route path="/questionnaire/note" element={<Score />} />
           <Route path="/fourglass" element={<FourGlass />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/profile" element={<Profile />} />
