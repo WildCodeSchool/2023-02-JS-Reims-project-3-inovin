@@ -31,7 +31,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
+  margin: 2rem;
   font-style: italic;
   font-size: 2rem;
   text-transform: capitalize;
@@ -52,7 +52,7 @@ body {
 
 .glasses img {
   height: 150px;
-  margin: auto;
+  margin: 3rem;
 }
 
 .glasses figcaption {
@@ -73,7 +73,7 @@ body {
 
 /* MODE TABLETTE portrait | Component FourGlass */
 
-/* @media screen and (min-width: 768px) and (max-width: 900px) {
+@media screen and (min-width: 768px) and (max-width: 900px) {
   .title_4glasses {
     display: flex;
     justify-content: center;
@@ -90,19 +90,19 @@ body {
   }
 
   .glasses img {
-    height: 300px;
-    margin: auto;
+    height: 200px;
+    margin: 3rem;
   }
 
   .glasses figcaption {
     text-align: center;
     font-size: xx-large;
   }
-} */
+}
 
 /* TABLETTE EN MODE PAYSAGE | Component FourGlass */
 
-/* @media screen and (min-width: 900px) and (max-width: 1024px) {
+@media screen and (min-width: 900px) and (max-width: 1024px) {
   .title_4glasses {
     display: flex;
     justify-content: center;
@@ -119,8 +119,10 @@ body {
   }
 
   .glasses img {
-    height: 300px;
-    margin: auto;
+    height: 250px;
+    margin: 2rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
   }
 
   .glasses figcaption {
@@ -139,18 +141,18 @@ body {
 
   .glasses {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); */
-/* grid-template-rows: repeat(2, 1fr); */
-/* grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
   }
 
   .glasses img {
     height: 300px;
-    margin: auto;
+    margin: 6rem;
   }
 
   .glasses figcaption {
     text-align: center;
     font-size: xx-large;
   }
-} */
+}
