@@ -76,7 +76,6 @@ CREATE TABLE response (
 
 CREATE TABLE user (
   id INT unsigned PRIMARY KEY not null AUTO_INCREMENT,
-  username varchar(80) NOT NULL,
   firstname varchar(80) NOT NULL,
   lastname varchar(80) NOT NULL,
   date_of_birth DATE,

@@ -2,12 +2,11 @@ import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Register() {
-  const userNameRef = useRef();
-  const passwordRef = useRef();
-  const emailRef = useRef();
   const firstNameRef = useRef();
   const lastNameRef = useRef();
   const dateOfBirthRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
 
   const [selectedTaste, setSelectedTaste] = useState("");
 
@@ -16,12 +15,11 @@ function Register() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const userName = userNameRef.current.value;
-    const password = passwordRef.current.value;
-    const email = emailRef.current.value;
     const firstName = firstNameRef.current.value;
     const lastName = lastNameRef.current.value;
     const dateOfBirth = dateOfBirthRef.current.value;
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
 
     try {
       const response = await fetch(
@@ -32,12 +30,11 @@ function Register() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            userName,
-            password,
-            email,
             firstName,
             lastName,
             dateOfBirth,
+            email,
+            password,
             choiceOfTastes: selectedTaste,
           }),
         }
