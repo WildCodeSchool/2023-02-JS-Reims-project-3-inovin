@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Checkbox.css";
 import Visuel from "../Pictures/Vue.png";
 import Olfatif from "../Pictures/Odorat.png";
@@ -94,9 +95,14 @@ const questions = [
         responses: ["Courte", "Moyenne", "Persistante"],
       },
       {
-        title: "Tous les vins",
+        title: "Acide Jeune",
         type: "range",
-        responses: [""],
+        responses: ["Nerveuse", "Pointue", "Vive", "Fraîche", "Molle"],
+      },
+      {
+        title: "Alcool",
+        type: "range",
+        responses: ["Alcooleux", "Capiteux", "Gras", "Généreux", "Faible"],
       },
     ],
   },
@@ -113,6 +119,8 @@ export default function Questionnaire() {
     "Familles Arômatiques": "",
     Structure: "",
     "Persistance Arômatiques": "",
+    "Acide Jeune": "",
+    Alcool: "",
   });
 
   const [currentPart, setCurrentPart] = useState(0);
@@ -141,44 +149,51 @@ export default function Questionnaire() {
         {currentQuestions.questions.map((question) => (
           <div key={question.title}>
             <h3 className="titre">{question.title}</h3>
-            <div className="Questions">
-              {question.responses.map((response) => (
-                <div className="checkbox-1" key={response}>
-                  <label className="QuestionnaireChoix">
-                    {question.type === "checkbox" && (
-                      <input
-                        id={response.replaceAll(" ", "")}
-                        type={question.type}
-                        checked={formState[question.title] === response}
-                        onChange={(event) =>
-                          setFormState({
-                            ...formState,
-                            [question.title]: event.target.checked
-                              ? response
-                              : "",
-                          })
-                        }
-                      />
-                    )}
-                    {question.type === "text" && (
-                      <input
-                        id={response.replaceAll(" ", "")}
-                        type={question.type}
-                        value={formState[question.title]}
-                        onChange={(event) =>
-                          setFormState({
-                            ...formState,
-                            [question.title]: event.target.value,
-                          })
-                        }
-                      />
-                    )}
-                    {question.type === "range" && <Slider />}
-                    {response}
-                  </label>
-                </div>
-              ))}
-            </div>
+            {question.type === "range" ? (
+              <Slider
+                question={question}
+                formState={formState}
+                setFormState={setFormState}
+              />
+            ) : (
+              <div className="Questions">
+                {question.responses.map((response) => (
+                  <div className="checkbox-1" key={response}>
+                    <label className="QuestionnaireChoix">
+                      {question.type === "checkbox" && (
+                        <input
+                          id={response.replaceAll(" ", "")}
+                          type={question.type}
+                          checked={formState[question.title] === response}
+                          onChange={(event) =>
+                            setFormState({
+                              ...formState,
+                              [question.title]: event.target.checked
+                                ? response
+                                : "",
+                            })
+                          }
+                        />
+                      )}
+                      {question.type === "text" && (
+                        <input
+                          id={response.replaceAll(" ", "")}
+                          type={question.type}
+                          value={formState[question.title]}
+                          onChange={(event) =>
+                            setFormState({
+                              ...formState,
+                              [question.title]: event.target.value,
+                            })
+                          }
+                        />
+                      )}
+                      {response}
+                    </label>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         ))}
         {currentPart < 2 && (
@@ -194,13 +209,15 @@ export default function Questionnaire() {
         )}
         {currentPart >= 2 && (
           <div className="QuestBut">
-            <button
-              className="QuestionnaireButton"
-              type="button"
-              onClick={HandleNextClick}
-            >
-              Validé
-            </button>
+            <Link to="/questionnaire/note">
+              <button
+                className="QuestionnaireButton"
+                type="button"
+                onClick={HandleNextClick}
+              >
+                Validé
+              </button>
+            </Link>
           </div>
         )}
         {currentPart > 0 && (
