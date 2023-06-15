@@ -33,40 +33,88 @@
 
 /*Page SignIn*/
 
-.bouton {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.link {
-  display: flex;
-  justify-content: space-around;
-  font-size: 1.5rem;
-}
-
 .PresInscip {
   text-align: center;
-  padding: 5rem;
+  margin: 1rem;
+}
+
+.Inscription label {
+  display: block;
+  margin-bottom: 0.2rem;
 }
 
 .Inscription {
-  text-align: justify;
-  line-height: 5;
+  margin: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register {
+  background-color: #dec439;
+  border: 2px solid #dec439;
+  padding: 0.5rem;
+  width: 10rem;
+  border-radius: 2rem;
+  margin: 1rem;
+}
+
+/*date inputs */
+
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 10rem;
+  color: #95a5a6;
+  font-size: 1rem;
+  border: 1px solid #ecf0f1;
+  background: #ecf0f1;
+  padding: 0.3rem;
+  display: inline-block !important;
+  visibility: visible !important;
+  border-radius: 2rem;
+}
+
+input[type="date"],
+focus {
+  color: #010707;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
+/*Input text*/
+
+.Inscription input {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  width: 20rem;
+  padding: 1rem 5rem;
+  border: 1px solid #ecf0f1;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  background-color: #ecf0f1;
 }
 
 .taste-buttons {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
 }
 
 .taste-buttons button {
   padding: 8px 16px;
-  font-size: 14px;
-  background-color: #eaeaea;
+  font-size: 1rem;
+  background-color: #ecf0f1;
   border: none;
-  border-radius: 4px;
+  border-radius: 0.6rem;
   cursor: pointer;
 }
 
@@ -123,12 +171,6 @@
 .QuestBut {
   display: flex;
   justify-content: center;
-}
-
-input[type="text"] {
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px dashed #000000;
 }
 
 .Questionnaire h2 {

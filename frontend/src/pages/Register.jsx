@@ -64,37 +64,51 @@ function Register() {
       </div>
       <form className="Inscription" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="username">Nom d'utilisateur : </label>
-          <input ref={userNameRef} type="text" id="username" name="username" />
+          <label htmlFor="lastName">
+            <input
+              placeholder="Nom de famille 👤"
+              ref={lastNameRef}
+              type="text"
+              id="lastName"
+              name="lastName"
+            />
+          </label>
         </div>
         <div>
-          <label htmlFor="password">Mot de passe : </label>
-          <input
-            ref={passwordRef}
-            type="password"
-            id="password"
-            name="password"
-          />
+          <label htmlFor="firstName">
+            <input
+              placeholder="Prénom 👤"
+              ref={firstNameRef}
+              type="text"
+              id="firstName"
+              name="firstName"
+            />
+          </label>
         </div>
         <div>
-          <label htmlFor="email">Email : </label>
-          <input ref={emailRef} type="email" id="email" name="email" />
+          <label htmlFor="email">
+            <input
+              placeholder="Adresse mail ✉️"
+              ref={emailRef}
+              type="email"
+              id="email"
+              name="email"
+            />
+          </label>
         </div>
         <div>
-          <label htmlFor="firstName">Prénom : </label>
-          <input
-            ref={firstNameRef}
-            type="text"
-            id="firstName"
-            name="firstName"
-          />
+          <label htmlFor="password">
+            <input
+              placeholder="Mot de passe 🗝️"
+              ref={passwordRef}
+              type="password"
+              id="password"
+              name="password"
+            />
+          </label>
         </div>
         <div>
-          <label htmlFor="lastName">Nom :</label>
-          <input ref={lastNameRef} type="text" id="lastName" name="lastName" />
-        </div>
-        <div>
-          <label htmlFor="dateOfBirth">Date de naissance : </label>
+          <label htmlFor="dateOfBirth">Date de naissance </label>
           <input
             ref={dateOfBirthRef}
             type="date"
@@ -119,6 +133,13 @@ function Register() {
             >
               Blanc
             </button>
+            <button
+              type="button"
+              className={selectedTaste === "rosé" ? "selected" : ""}
+              onClick={() => handleButtonClick("rosé")}
+            >
+              Rosé
+            </button>
           </div>
           <div id="choiceOfTastes" className="taste-buttons">
             <button
@@ -135,9 +156,20 @@ function Register() {
             >
               Boisé
             </button>
+            <button
+              type="button"
+              className={selectedTaste === "sec" ? "selected" : ""}
+              onClick={() => handleButtonClick("sec")}
+            >
+              Sec
+            </button>
           </div>
         </div>
-        <button type="submit">S'inscrire</button>
+        <div className="testest">
+          <button className="register" type="submit">
+            S'inscrire
+          </button>
+        </div>
       </form>
     </>
   );
