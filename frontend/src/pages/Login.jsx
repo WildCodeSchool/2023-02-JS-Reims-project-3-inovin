@@ -11,7 +11,7 @@ function Login() {
 
   return (
     <div className="PresInscip">
-      <h1>CONNECTION</h1>
+      <h1>CONNEXION</h1>
       <form
         className="Inscription"
         onSubmit={(event) => {
@@ -62,7 +62,7 @@ function Login() {
           </label>
         </div>
         <button className="register" type="submit">
-          Go
+          se connecter
         </button>
       </form>
     </div>
