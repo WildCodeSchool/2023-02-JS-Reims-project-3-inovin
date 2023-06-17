@@ -5,9 +5,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
-import Contact from "./pages/Contact";
 import Wine from "./pages/Wine";
-import Navbar from "./components/Navbar";
 import FourGlass from "./pages/FourGlass";
 import Questionnaire from "./pages/Questionnaire";
 import Score from "./pages/Score";
@@ -19,13 +17,11 @@ function App() {
   return (
     <div className="App">
       <header>
-        <Navbar />
         <nav>
           <ul>
             <li>
               <Link to="/">Home</Link>
               <Link to="/profile">Profil</Link>
-              <Link to="/contact">Contact</Link>
               <Link to="/fourglass">FourGlass</Link>
               {token == null ? (
                 <>
@@ -48,7 +44,6 @@ function App() {
           <Route path="/questionnaire" element={<Questionnaire />} />
           <Route path="/questionnaire/note" element={<Score />} />
           <Route path="/fourglass" element={<FourGlass />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
