@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import Logo from "../Pictures/logo2.png";
 
 function Register() {
   const firstNameRef = useRef();
@@ -55,120 +56,119 @@ function Register() {
   };
 
   return (
-    <>
+    <form className="Inscription" onSubmit={handleSubmit}>
+      <img src={Logo} alt="Ino Vin" />
       <div className="PresInscip">
         <h1>INSCRIPTION</h1>
       </div>
-      <form className="Inscription" onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="lastName">
-            <input
-              placeholder="Nom de famille 👤"
-              ref={lastNameRef}
-              type="text"
-              id="lastName"
-              name="lastName"
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="firstName">
-            <input
-              placeholder="Prénom 👤"
-              ref={firstNameRef}
-              type="text"
-              id="firstName"
-              name="firstName"
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="email">
-            <input
-              placeholder="Adresse mail ✉️"
-              ref={emailRef}
-              type="email"
-              id="email"
-              name="email"
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="password">
-            <input
-              placeholder="Mot de passe 🗝️"
-              ref={passwordRef}
-              type="password"
-              id="password"
-              name="password"
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="dateOfBirth">Date de naissance </label>
+      <div>
+        <label htmlFor="lastName">
           <input
-            ref={dateOfBirthRef}
-            type="date"
-            id="dateOfBirth"
-            name="dateOfBirth"
+            placeholder="Nom de famille 👤"
+            ref={lastNameRef}
+            type="text"
+            id="lastName"
+            name="lastName"
           />
-        </div>
-        <div>
-          <label htmlFor="choiceOfTastes">Choix des goûts :</label>
-          <div id="choiceOfTastes" className="taste-buttons">
-            <button
-              type="button"
-              className={selectedTaste === "rouge" ? "selected" : ""}
-              onClick={() => handleButtonClick("rouge")}
-            >
-              Rouge
-            </button>
-            <button
-              type="button"
-              className={selectedTaste === "blanc" ? "selected" : ""}
-              onClick={() => handleButtonClick("blanc")}
-            >
-              Blanc
-            </button>
-            <button
-              type="button"
-              className={selectedTaste === "rosé" ? "selected" : ""}
-              onClick={() => handleButtonClick("rosé")}
-            >
-              Rosé
-            </button>
-          </div>
-          <div id="choiceOfTastes" className="taste-buttons">
-            <button
-              type="button"
-              className={selectedTaste === "doux" ? "selected" : ""}
-              onClick={() => handleButtonClick("doux")}
-            >
-              Doux
-            </button>
-            <button
-              type="button"
-              className={selectedTaste === "boise" ? "selected" : ""}
-              onClick={() => handleButtonClick("boise")}
-            >
-              Boisé
-            </button>
-            <button
-              type="button"
-              className={selectedTaste === "sec" ? "selected" : ""}
-              onClick={() => handleButtonClick("sec")}
-            >
-              Sec
-            </button>
-          </div>
-        </div>
-        <div className="testest">
-          <button className="register" type="submit">
-            S'inscrire
+        </label>
+      </div>
+      <div>
+        <label htmlFor="firstName">
+          <input
+            placeholder="Prénom 👤"
+            ref={firstNameRef}
+            type="text"
+            id="firstName"
+            name="firstName"
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="email">
+          <input
+            placeholder="Adresse mail ✉️"
+            ref={emailRef}
+            type="email"
+            id="email"
+            name="email"
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="password">
+          <input
+            placeholder="Mot de passe 🗝️"
+            ref={passwordRef}
+            type="password"
+            id="password"
+            name="password"
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="dateOfBirth">Date de naissance </label>
+        <input
+          ref={dateOfBirthRef}
+          type="date"
+          id="dateOfBirth"
+          name="dateOfBirth"
+        />
+      </div>
+      <div>
+        <label htmlFor="choiceOfTastes">Choix des goûts :</label>
+        <div id="choiceOfTastes" className="taste-buttons">
+          <button
+            type="button"
+            className={selectedTaste === "rouge" ? "selected" : ""}
+            onClick={() => handleButtonClick("rouge")}
+          >
+            Rouge
+          </button>
+          <button
+            type="button"
+            className={selectedTaste === "blanc" ? "selected" : ""}
+            onClick={() => handleButtonClick("blanc")}
+          >
+            Blanc
+          </button>
+          <button
+            type="button"
+            className={selectedTaste === "rosé" ? "selected" : ""}
+            onClick={() => handleButtonClick("rosé")}
+          >
+            Rosé
           </button>
         </div>
-      </form>
-    </>
+        <div id="choiceOfTastes" className="taste-buttons">
+          <button
+            type="button"
+            className={selectedTaste === "doux" ? "selected" : ""}
+            onClick={() => handleButtonClick("doux")}
+          >
+            Doux
+          </button>
+          <button
+            type="button"
+            className={selectedTaste === "boise" ? "selected" : ""}
+            onClick={() => handleButtonClick("boise")}
+          >
+            Boisé
+          </button>
+          <button
+            type="button"
+            className={selectedTaste === "sec" ? "selected" : ""}
+            onClick={() => handleButtonClick("sec")}
+          >
+            Sec
+          </button>
+        </div>
+      </div>
+      <div className="testest">
+        <button className="register" type="submit">
+          S'inscrire
+        </button>
+      </div>
+    </form>
   );
 }
 
