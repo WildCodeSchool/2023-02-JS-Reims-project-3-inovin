@@ -64,6 +64,33 @@ body {
   height: 1.5rem;
 }
 
+/*Login & Register*/
+
+.form-group {
+  position: relative;
+
+  & + .form-group {
+    margin-top: 1rem;
+  }
+}
+
+.form-label {
+  position: absolute;
+  left: 1.5rem;
+  top: 0.8rem;
+  color: #504b4b;
+  z-index: 10;
+  transition: transform 150ms ease-out, font-size 150ms ease-out;
+}
+
+:not(:placeholder-shown) + .form-label,
+:focus + .form-label {
+  transform: translateY(-125%);
+  font-size: 1.5em;
+  color: #dec439;
+  top: 0.6rem;
+}
+
 /*Page Register*/
 
 .PresInscip {
@@ -85,12 +112,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
   align-items: center;
 }
 
 .Inscription img {
-  width: 7rem;
+  width: 6rem;
 }
 
 .register {
@@ -118,7 +144,7 @@ input[type="date"] {
 }
 
 input[type="date"],
-focus {
+.focus {
   color: #010707;
   box-shadow: none;
   -webkit-box-shadow: none;

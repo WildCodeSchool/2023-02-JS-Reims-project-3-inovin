@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import Logo from "../Pictures/logo3.png";
@@ -9,6 +9,23 @@ function Login() {
 
   const { setToken } = useAuth();
   const navigate = useNavigate();
+
+  const [focused, setFocused] = useState(false);
+  const [filled, setFilled] = useState(false);
+
+  const handleFocus = () => {
+    setFocused(true);
+  };
+
+  const handleBlur = (event) => {
+    const inputValue = event.target.value;
+    if (inputValue === "") {
+      setFilled(false);
+      setFocused(false);
+    } else {
+      setFilled(true);
+    }
+  };
 
   return (
     <form
@@ -42,23 +59,35 @@ function Login() {
         <img src={Logo} alt="Ino Vin" />
         <h1>CONNEXION</h1>
       </div>
-      <div>
+      <div className={`form-group ${focused ? "focused" : ""}`}>
         <input
-          placeholder="Adresse mail ✉️"
           ref={usernameRef}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          className={filled ? "filled" : ""}
           type="text"
-          id="username"
-          name="username"
+          id="email"
+          name="email"
+          placeholder="✉️"
         />
+        <label htmlFor="email" className="form-label">
+          Adresse mail
+        </label>
       </div>
-      <div>
+      <div className={`form-group ${focused ? "focused" : ""}`}>
         <input
-          placeholder="Mot de passe 🗝️"
           ref={passwordRef}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          className={filled ? "filled" : ""}
           type="password"
           id="password"
           name="password"
+          placeholder="🗝️"
         />
+        <label htmlFor="password" className="form-label">
+          Mot de Passe
+        </label>
       </div>
       <button className="register" type="submit">
         se connecter

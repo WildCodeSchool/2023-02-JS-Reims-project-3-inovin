@@ -55,47 +55,85 @@ function Register() {
     setSelectedTaste(taste);
   };
 
+  const [focused, setFocused] = useState(false);
+  const [filled, setFilled] = useState(false);
+
+  const handleFocus = () => {
+    setFocused(true);
+  };
+
+  const handleBlur = (event) => {
+    const inputValue = event.target.value;
+    if (inputValue === "") {
+      setFilled(false);
+      setFocused(false);
+    } else {
+      setFilled(true);
+    }
+  };
+
   return (
     <form className="Inscription" onSubmit={handleSubmit}>
       <img src={Logo} alt="Ino Vin" />
       <div className="PresInscip">
         <h1>INSCRIPTION</h1>
       </div>
-      <div>
+      <div className={`form-group ${focused ? "focused" : ""}`}>
         <input
-          placeholder="Nom de famille 👤"
+          placeholder="👤"
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          className={filled ? "filled" : ""}
           ref={lastNameRef}
           type="text"
           id="lastName"
           name="lastName"
         />
+        <label htmlFor="lastname" className="form-label">
+          Nom de Famille
+        </label>
       </div>
-      <div>
+      <div className={`form-group ${focused ? "focused" : ""}`}>
         <input
-          placeholder="Prénom 👤"
+          placeholder="👤"
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           ref={firstNameRef}
           type="text"
           id="firstName"
           name="firstName"
         />
+        <label htmlFor="firstname" className="form-label">
+          Prénom
+        </label>
       </div>
-      <div>
+      <div className={`form-group ${focused ? "focused" : ""}`}>
         <input
-          placeholder="Adresse mail ✉️"
+          placeholder="✉️"
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           ref={emailRef}
           type="email"
           id="email"
           name="email"
         />
+        <label htmlFor="email" className="form-label">
+          Adresse mail
+        </label>
       </div>
-      <div>
+      <div className={`form-group ${focused ? "focused" : ""}`}>
         <input
-          placeholder="Mot de passe 🗝️"
+          placeholder="🗝️"
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           ref={passwordRef}
           type="password"
           id="password"
           name="password"
         />
+        <label htmlFor="password" className="form-label">
+          Mot de Passe
+        </label>
       </div>
       <div>
         <label htmlFor="dateOfBirth">Date de naissance </label>
