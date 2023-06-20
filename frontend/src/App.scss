@@ -1,15 +1,6 @@
-.home {
-  h2 {
-    text-align: center;
-    color: #dec439;
-    padding: 10%;
-    margin-top: 6rem;
-  }
-}
-
 /*Page SignIn*/
-.sign {
-  .button {
+.Home {
+  .buttons {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -29,7 +20,10 @@
     text-align: center;
   }
 }
+
 /*Page Profil*/
 .profil {
+  background-color: #312e2e;
+  min-height: 100vh;
   text-align: center;
 }
