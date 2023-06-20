@@ -30,9 +30,9 @@ router.post("/wines", wineControllers.add);
 router.delete("/wines/:id", wineControllers.destroy);
 
 router.post(
-    "/login",
-    authControllers.getUserByEmailWithPasswordAndPassToNext,
-    verifyPassword
+  "/login",
+  authControllers.getUserByEmailWithPasswordAndPassToNext,
+  verifyPassword
 );
 
 module.exports = router;
