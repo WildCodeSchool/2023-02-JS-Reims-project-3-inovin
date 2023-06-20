@@ -12,11 +12,11 @@ export default function Home() {
         sur mesure.
       </h2>
       <div className="buttons">
-        <Link className="buttonRegister" to="/register">
-          S'inscrire
-        </Link>
         <Link className="buttonLogin" to="/login">
           Se Connecter
+        </Link>
+        <Link className="buttonRegister" to="/register">
+          S'inscrire
         </Link>
       </div>
     </div>
