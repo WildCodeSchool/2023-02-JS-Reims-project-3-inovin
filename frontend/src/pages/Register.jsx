@@ -62,48 +62,40 @@ function Register() {
         <h1>INSCRIPTION</h1>
       </div>
       <div>
-        <label htmlFor="lastName">
-          <input
-            placeholder="Nom de famille 👤"
-            ref={lastNameRef}
-            type="text"
-            id="lastName"
-            name="lastName"
-          />
-        </label>
+        <input
+          placeholder="Nom de famille 👤"
+          ref={lastNameRef}
+          type="text"
+          id="lastName"
+          name="lastName"
+        />
       </div>
       <div>
-        <label htmlFor="firstName">
-          <input
-            placeholder="Prénom 👤"
-            ref={firstNameRef}
-            type="text"
-            id="firstName"
-            name="firstName"
-          />
-        </label>
+        <input
+          placeholder="Prénom 👤"
+          ref={firstNameRef}
+          type="text"
+          id="firstName"
+          name="firstName"
+        />
       </div>
       <div>
-        <label htmlFor="email">
-          <input
-            placeholder="Adresse mail ✉️"
-            ref={emailRef}
-            type="email"
-            id="email"
-            name="email"
-          />
-        </label>
+        <input
+          placeholder="Adresse mail ✉️"
+          ref={emailRef}
+          type="email"
+          id="email"
+          name="email"
+        />
       </div>
       <div>
-        <label htmlFor="password">
-          <input
-            placeholder="Mot de passe 🗝️"
-            ref={passwordRef}
-            type="password"
-            id="password"
-            name="password"
-          />
-        </label>
+        <input
+          placeholder="Mot de passe 🗝️"
+          ref={passwordRef}
+          type="password"
+          id="password"
+          name="password"
+        />
       </div>
       <div>
         <label htmlFor="dateOfBirth">Date de naissance </label>
@@ -163,7 +155,7 @@ function Register() {
           </button>
         </div>
       </div>
-      <div className="testest">
+      <div>
         <button className="register" type="submit">
           S'inscrire
         </button>

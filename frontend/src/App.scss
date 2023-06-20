@@ -4,20 +4,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-  }
-}
-
-/*Page Register*/
-.inscription {
-  border: 5px solid #dec439;
-  border-radius: 1rem;
-  display: grid;
-  grid-template-columns: repeat(2, 0.25fr);
-  justify-content: center;
-  grid-gap: 1rem;
-  margin: 5rem;
-  .submit {
-    text-align: center;
+    gap: 0.4rem;
   }
 }
 

@@ -43,26 +43,22 @@ function Login() {
         <h1>CONNEXION</h1>
       </div>
       <div>
-        <label htmlFor="username">
-          <input
-            placeholder="Adresse mail ✉️"
-            ref={usernameRef}
-            type="text"
-            id="username"
-            name="username"
-          />
-        </label>
+        <input
+          placeholder="Adresse mail ✉️"
+          ref={usernameRef}
+          type="text"
+          id="username"
+          name="username"
+        />
       </div>
       <div>
-        <label htmlFor="password">
-          <input
-            placeholder="Mot de passe 🗝️"
-            ref={passwordRef}
-            type="password"
-            id="password"
-            name="password"
-          />
-        </label>
+        <input
+          placeholder="Mot de passe 🗝️"
+          ref={passwordRef}
+          type="password"
+          id="password"
+          name="password"
+        />
       </div>
       <button className="register" type="submit">
         se connecter
