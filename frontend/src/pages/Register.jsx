@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import Logo from "../Pictures/logo2.png";
+import Logo from "../Pictures/logo3.png";
 
 function Register() {
   const firstNameRef = useRef();
