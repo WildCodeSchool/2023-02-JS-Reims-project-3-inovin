@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import Logo from "../Pictures/logo3.png";
 
 function Register() {
   const firstNameRef = useRef();
@@ -54,85 +55,150 @@ function Register() {
     setSelectedTaste(taste);
   };
 
+  const [focused, setFocused] = useState(false);
+  const [filled, setFilled] = useState(false);
+
+  const handleFocus = () => {
+    setFocused(true);
+  };
+
+  const handleBlur = (event) => {
+    const inputValue = event.target.value;
+    if (inputValue === "") {
+      setFilled(false);
+      setFocused(false);
+    } else {
+      setFilled(true);
+    }
+  };
+
   return (
-    <>
+    <form className="Inscription" onSubmit={handleSubmit}>
+      <img src={Logo} alt="Ino Vin" />
       <div className="PresInscip">
         <h1>INSCRIPTION</h1>
       </div>
-      <form className="Inscription" onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="lastName">Nom :</label>
-          <input ref={lastNameRef} type="text" id="lastName" name="lastName" />
+      <div className={`form-group ${focused ? "focused" : ""}`}>
+        <input
+          placeholder="👤"
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          className={filled ? "filled" : ""}
+          ref={lastNameRef}
+          type="text"
+          id="lastName"
+          name="lastName"
+        />
+        <label htmlFor="lastname" className="form-label">
+          Nom de Famille
+        </label>
+      </div>
+      <div className={`form-group ${focused ? "focused" : ""}`}>
+        <input
+          placeholder="👤"
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          ref={firstNameRef}
+          type="text"
+          id="firstName"
+          name="firstName"
+        />
+        <label htmlFor="firstname" className="form-label">
+          Prénom
+        </label>
+      </div>
+      <div className={`form-group ${focused ? "focused" : ""}`}>
+        <input
+          placeholder="✉️"
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          ref={emailRef}
+          type="email"
+          id="email"
+          name="email"
+        />
+        <label htmlFor="email" className="form-label">
+          Adresse mail
+        </label>
+      </div>
+      <div className={`form-group ${focused ? "focused" : ""}`}>
+        <input
+          placeholder="🗝️"
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          ref={passwordRef}
+          type="password"
+          id="password"
+          name="password"
+        />
+        <label htmlFor="password" className="form-label">
+          Mot de Passe
+        </label>
+      </div>
+      <div>
+        <label htmlFor="dateOfBirth">Date de naissance </label>
+        <input
+          ref={dateOfBirthRef}
+          type="date"
+          id="dateOfBirth"
+          name="dateOfBirth"
+        />
+      </div>
+      <div>
+        <label htmlFor="choiceOfTastes">Choix des goûts :</label>
+        <div id="choiceOfTastes" className="taste-buttons">
+          <button
+            type="button"
+            className={selectedTaste === "rouge" ? "selected" : ""}
+            onClick={() => handleButtonClick("rouge")}
+          >
+            Rouge
+          </button>
+          <button
+            type="button"
+            className={selectedTaste === "blanc" ? "selected" : ""}
+            onClick={() => handleButtonClick("blanc")}
+          >
+            Blanc
+          </button>
+          <button
+            type="button"
+            className={selectedTaste === "rosé" ? "selected" : ""}
+            onClick={() => handleButtonClick("rosé")}
+          >
+            Rosé
+          </button>
         </div>
-        <div>
-          <label htmlFor="firstName">Prénom : </label>
-          <input
-            ref={firstNameRef}
-            type="text"
-            id="firstName"
-            name="firstName"
-          />
+        <div id="choiceOfTastes" className="taste-buttons">
+          <button
+            type="button"
+            className={selectedTaste === "doux" ? "selected" : ""}
+            onClick={() => handleButtonClick("doux")}
+          >
+            Doux
+          </button>
+          <button
+            type="button"
+            className={selectedTaste === "boise" ? "selected" : ""}
+            onClick={() => handleButtonClick("boise")}
+          >
+            Boisé
+          </button>
+          <button
+            type="button"
+            className={selectedTaste === "sec" ? "selected" : ""}
+            onClick={() => handleButtonClick("sec")}
+          >
+            Sec
+          </button>
         </div>
-        <div>
-          <label htmlFor="dateOfBirth">Date de naissance : </label>
-          <input
-            ref={dateOfBirthRef}
-            type="date"
-            id="dateOfBirth"
-            name="dateOfBirth"
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email : </label>
-          <input ref={emailRef} type="email" id="email" name="email" />
-        </div>
-        <div>
-          <label htmlFor="password">Mot de passe : </label>
-          <input
-            ref={passwordRef}
-            type="password"
-            id="password"
-            name="password"
-          />
-        </div>
-        <div>
-          <label htmlFor="choiceOfTastes">Choix des goûts :</label>
-          <div id="choiceOfTastes" className="taste-buttons">
-            <button
-              type="button"
-              className={selectedTaste === "rouge" ? "selected" : ""}
-              onClick={() => handleButtonClick("rouge")}
-            >
-              Rouge
-            </button>
-            <button
-              type="button"
-              className={selectedTaste === "blanc" ? "selected" : ""}
-              onClick={() => handleButtonClick("blanc")}
-            >
-              Blanc
-            </button>
-          </div>
-          <div id="choiceOfTastes" className="taste-buttons">
-            <button
-              type="button"
-              className={selectedTaste === "doux" ? "selected" : ""}
-              onClick={() => handleButtonClick("doux")}
-            >
-              Doux
-            </button>
-            <button
-              type="button"
-              className={selectedTaste === "boise" ? "selected" : ""}
-              onClick={() => handleButtonClick("boise")}
-            >
-              Boisé
-            </button>
-          </div>
-        </div>
-        <button type="submit">S'inscrire</button>
-      </form>
-    </>
+      </div>
+      <div>
+        <button className="register" type="submit">
+          S'inscrire
+        </button>
+      </div>
+    </form>
   );
 }
 
