@@ -5,6 +5,7 @@ import Visuel from "../Pictures/Vue.png";
 import Olfatif from "../Pictures/Odorat.png";
 import Gustatif from "../Pictures/Gout.png";
 import Slider from "../components/Slider";
+import Navbar from "../components/Navbar";
 
 const questions = [
   {
@@ -136,102 +137,105 @@ export default function Questionnaire() {
   const currentQuestions = questions[currentPart];
 
   return (
-    <form className="Questionnaire">
-      <div>
-        <h2>
-          {currentQuestions.categoryTitle}
-          <img
-            className="QuestionnaireImage"
-            src={currentQuestions.categoryIcon}
-            alt={currentQuestions.categoryIconAlt}
-          />
-        </h2>
-        {currentQuestions.questions.map((question) => (
-          <div key={question.title}>
-            <h3 className="titre">{question.title}</h3>
-            {question.type === "range" ? (
-              <Slider
-                question={question}
-                formState={formState}
-                setFormState={setFormState}
-              />
-            ) : (
-              <div className="Questions">
-                {question.responses.map((response) => (
-                  <div className="checkbox-1" key={response}>
-                    <label className="QuestionnaireChoix">
-                      {question.type === "checkbox" && (
-                        <input
-                          id={response.replaceAll(" ", "")}
-                          type={question.type}
-                          checked={formState[question.title] === response}
-                          onChange={(event) =>
-                            setFormState({
-                              ...formState,
-                              [question.title]: event.target.checked
-                                ? response
-                                : "",
-                            })
-                          }
-                        />
-                      )}
-                      {question.type === "text" && (
-                        <input
-                          id={response.replaceAll(" ", "")}
-                          type={question.type}
-                          value={formState[question.title]}
-                          onChange={(event) =>
-                            setFormState({
-                              ...formState,
-                              [question.title]: event.target.value,
-                            })
-                          }
-                        />
-                      )}
-                      {response}
-                    </label>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
-        {currentPart < 2 && (
-          <div className="QuestBut">
-            <button
-              className="QuestionnaireButton"
-              type="button"
-              onClick={HandleNextClick}
-            >
-              Suivant
-            </button>
-          </div>
-        )}
-        {currentPart >= 2 && (
-          <div className="QuestBut">
-            <Link to="/questionnaire/note">
+    <>
+      <Navbar />
+      <form className="Questionnaire">
+        <div>
+          <h2>
+            {currentQuestions.categoryTitle}
+            <img
+              className="QuestionnaireImage"
+              src={currentQuestions.categoryIcon}
+              alt={currentQuestions.categoryIconAlt}
+            />
+          </h2>
+          {currentQuestions.questions.map((question) => (
+            <div key={question.title}>
+              <h3 className="titre">{question.title}</h3>
+              {question.type === "range" ? (
+                <Slider
+                  question={question}
+                  formState={formState}
+                  setFormState={setFormState}
+                />
+              ) : (
+                <div className="Questions">
+                  {question.responses.map((response) => (
+                    <div className="checkbox-1" key={response}>
+                      <label className="QuestionnaireChoix">
+                        {question.type === "checkbox" && (
+                          <input
+                            id={response.replaceAll(" ", "")}
+                            type={question.type}
+                            checked={formState[question.title] === response}
+                            onChange={(event) =>
+                              setFormState({
+                                ...formState,
+                                [question.title]: event.target.checked
+                                  ? response
+                                  : "",
+                              })
+                            }
+                          />
+                        )}
+                        {question.type === "text" && (
+                          <input
+                            id={response.replaceAll(" ", "")}
+                            type={question.type}
+                            value={formState[question.title]}
+                            onChange={(event) =>
+                              setFormState({
+                                ...formState,
+                                [question.title]: event.target.value,
+                              })
+                            }
+                          />
+                        )}
+                        {response}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+          {currentPart < 2 && (
+            <div className="QuestBut">
               <button
                 className="QuestionnaireButton"
                 type="button"
                 onClick={HandleNextClick}
               >
-                Validé
+                Suivant
               </button>
-            </Link>
-          </div>
-        )}
-        {currentPart > 0 && (
-          <div className="QuestBut">
-            <button
-              className="QuestionnaireButton"
-              type="button"
-              onClick={HandlePreviousClick}
-            >
-              Précédent
-            </button>
-          </div>
-        )}
-      </div>
-    </form>
+            </div>
+          )}
+          {currentPart >= 2 && (
+            <div className="QuestBut">
+              <Link to="/questionnaire/note">
+                <button
+                  className="QuestionnaireButton"
+                  type="button"
+                  onClick={HandleNextClick}
+                >
+                  Validé
+                </button>
+              </Link>
+            </div>
+          )}
+          {currentPart > 0 && (
+            <div className="QuestBut">
+              <button
+                className="QuestionnaireButton"
+                type="button"
+                onClick={HandlePreviousClick}
+              >
+                Précédent
+              </button>
+            </div>
+          )}
+        </div>
+      </form>
+    </>
   );
 }
