@@ -5,15 +5,22 @@ class UserManager extends AbstractManager {
     super({ table: "user" });
   }
 
+  findByEmailWithHashedPassword(email) {
+    return this.database.query(
+      `select email, hashedPassword from  ${this.table} where email = ?`,
+      [email]
+    );
+  }
+
   insert(user) {
     return this.database.query(
-      `insert into ${this.table} (firstname, lastname, date_of_birth, email, password, choice_of_tastes) values (?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (firstname, lastname, date_of_birth, email, hashedPassword, choice_of_tastes) values (?, ?, ?, ?, ?, ?)`,
       [
         user.firstName,
         user.lastName,
         user.dateOfBirth,
         user.email,
-        user.password,
+        user.hashedPassword,
         user.choiceOfTastes,
       ]
     );
