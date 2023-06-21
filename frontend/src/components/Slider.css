@@ -3,15 +3,18 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(7, 1fr);
   align-items: center;
-  margin-left: 1rem;
 }
 
 .Range {
   appearance: none;
   -webkit-appearance: slider-vertical;
   writing-mode: bt-lr;
-  margin-left: 2rem;
-  height: 11rem;
+  margin-left: 1.5rem;
+  height: 10.2rem;
+}
+
+.Slider h3 {
+  padding: 0.6rem;
 }
 
 .div1 {
