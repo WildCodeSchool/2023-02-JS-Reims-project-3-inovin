@@ -9,7 +9,12 @@ const wineControllers = require("./controllers/wineControllers");
 const optionController = require("./controllers/optionsControllers");
 
 const authControllers = require("./controllers/authControllers");
-const { hashPassword, verifyPassword } = require("./services/auth");
+
+const {
+  hashPassword,
+  verifyPassword,
+  verifyToken,
+} = require("./services/auth");
 
 router.get("/options", optionController.browse);
 router.get("/options/:id", optionController.read);
@@ -34,5 +39,10 @@ router.post(
   authControllers.getUserByEmailWithPasswordAndPassToNext,
   verifyPassword
 );
+
+router.use(verifyToken); // mur d'authentification
+
+router.post("/users", userControllers.add);
+router.get("/users", userControllers.browse);
 
 module.exports = router;
