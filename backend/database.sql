@@ -84,6 +84,12 @@ CREATE TABLE user (
   choice_of_tastes varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE wine (
+  id INT unsigned PRIMARY KEY not null AUTO_INCREMENT,
+  name varchar(80) NOT NULL,
+  grape_variety varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 CREATE TABLE user_wine (
   id INT unsigned AUTO_INCREMENT PRIMARY KEY,
   user_id INT unsigned NOT NULL,
@@ -93,11 +99,7 @@ CREATE TABLE user_wine (
   FOREIGN KEY (wine_id) REFERENCES wine(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE wine (
-  id INT unsigned PRIMARY KEY not null AUTO_INCREMENT,
-  name varchar(80) NOT NULL,
-  grape_variety varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 INSERT INTO wine (name, grape_variety) 
 VALUES 
@@ -111,7 +113,6 @@ VALUES
 ('Jacquère (cépage blanc)', 'fleurs, amandes'),
 ('Muscadet (cépage blanc)', 'poire et d amande puis les fleurs blanches notes'),
 ('Mauzac (cépage blanc)', 'notes grillées fruits jaunes confits, d abricot puis de noisette sèche avec une pointe vanillée minérales'),
-('Muscadelle (cépage blanc)', 'arômes floraux'),
 ('Muscat (cépage blanc)', 'fruité aux notes musquées'),
 ('Petit manseng (cépage blanc)', 'fruits exotiques'),
 ('Gewurztraminer (cépage blanc)', 'spécialité épicée d Alsace. Arômes de litchi, de rose, de pain d épices,  de cannelle, de foin et de fruits secs grillés'),
