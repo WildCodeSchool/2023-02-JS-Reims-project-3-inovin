@@ -9,9 +9,9 @@ export default function GlassCard({ title, isCompleted }) {
       <figure className="glassAll">
         <figcaption> {title}</figcaption>
         {isCompleted ? (
-          <img src={glassWine} alt="glass of wine" />
+          <img src={glassWine} alt="filled glass" />
         ) : (
-          <img src={glass} alt="glass" />
+          <img src={glass} alt="empty glass" />
         )}
       </figure>
     </Link>
