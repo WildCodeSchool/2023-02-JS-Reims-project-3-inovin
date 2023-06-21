@@ -1,31 +1,16 @@
-.home {
-  h2 {
-    text-align: center;
-    color: #dec439;
-    padding: 10%;
-    margin-top: 6rem;
-  }
-}
-
 /*Page SignIn*/
-.sign {
-  .button {
+.Home {
+  .buttons {
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 0.4rem;
   }
 }
 
-/*Page Register*/
-.inscription {
-  border: 5px solid #dec439;
-  border-radius: 1rem;
-  display: grid;
-  grid-template-columns: repeat(2, 0.25fr);
-  justify-content: center;
-  grid-gap: 1rem;
-  margin: 5rem;
-  .submit {
-    text-align: center;
-  }
+/*Page Profil*/
+.profil {
+  background-color: #312e2e;
+  min-height: 100vh;
+  text-align: center;
 }

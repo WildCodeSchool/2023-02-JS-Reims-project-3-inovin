@@ -1,6 +1,7 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import Logo from "../Pictures/logo3.png";
 
 function Login() {
   const usernameRef = useRef();
@@ -9,8 +10,26 @@ function Login() {
   const { setToken } = useAuth();
   const navigate = useNavigate();
 
+  const [focused, setFocused] = useState(false);
+  const [filled, setFilled] = useState(false);
+
+  const handleFocus = () => {
+    setFocused(true);
+  };
+
+  const handleBlur = (event) => {
+    const inputValue = event.target.value;
+    if (inputValue === "") {
+      setFilled(false);
+      setFocused(false);
+    } else {
+      setFilled(true);
+    }
+  };
+
   return (
     <form
+      className="Inscription"
       onSubmit={(event) => {
         event.preventDefault();
 
@@ -36,20 +55,43 @@ function Login() {
           });
       }}
     >
-      <div>
-        <label htmlFor="username">Username</label>
-        <input ref={usernameRef} type="text" id="username" name="username" />
+      <div className="PresInscip">
+        <img src={Logo} alt="Ino Vin" />
+        <h1>CONNEXION</h1>
       </div>
-      <div>
-        <label htmlFor="password">Password</label>
+      <div className={`form-group ${focused ? "focused" : ""}`}>
+        <input
+          ref={usernameRef}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          className={filled ? "filled" : ""}
+          type="text"
+          id="email"
+          name="email"
+          placeholder="✉️"
+        />
+        <label htmlFor="email" className="form-label">
+          Adresse mail
+        </label>
+      </div>
+      <div className={`form-group ${focused ? "focused" : ""}`}>
         <input
           ref={passwordRef}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          className={filled ? "filled" : ""}
           type="password"
           id="password"
           name="password"
+          placeholder="🗝️"
         />
+        <label htmlFor="password" className="form-label">
+          Mot de Passe
+        </label>
       </div>
-      <button type="submit">Go</button>
+      <button className="register" type="submit">
+        se connecter
+      </button>
     </form>
   );
 }
