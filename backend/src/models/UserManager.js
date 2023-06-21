@@ -27,12 +27,12 @@ class UserManager extends AbstractManager {
     return this.database.query(
       `insert into ${this.table} (firstname, lastname, date_of_birth, email, hashedPassword, choice_of_tastes) values (?, ?, ?, ?, ?, ?)`,
       [
-        user.firstname,
-        user.lastname,
+        user.firstName,
+        user.lastName,
         user.dateOfBirth,
         user.email,
         user.hashedPassword,
-        user.choice_of_tastes,
+        user.choiceOfTastes,
       ]
     );
   }
@@ -41,12 +41,12 @@ class UserManager extends AbstractManager {
     return this.database.query(
       `update ${this.table} set firstname = ?, lastname = ?, date_of_birth = ?, email = ?, hashedPassword = ?, choice_of_tastes = ?, where id = ?`,
       [
-        user.firstname,
-        user.lastname,
+        user.firstName,
+        user.lastName,
         user.dateOfBirth,
         user.email,
         user.hashedPassword,
-        user.choice_of_tastes,
+        user.choiceOfTastes,
         user.id,
       ]
     );
