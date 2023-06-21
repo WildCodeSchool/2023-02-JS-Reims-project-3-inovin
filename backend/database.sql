@@ -35,6 +35,8 @@ VALUES
 ('Cerise', (SELECT id FROM question WHERE title = 'Couleur et nuance')),
 ('Rubis', (SELECT id FROM question WHERE title = 'Couleur et nuance')),
 ('Pourpre', (SELECT id FROM question WHERE title = 'Couleur et nuance')),
+('Violet', (SELECT id FROM question WHERE title = 'Couleur et nuance')),
+('Grenat', (SELECT id FROM question WHERE title = 'Couleur et nuance')),
 ('Claire', (SELECT id FROM question WHERE title = 'Intensité de la couleur')), 
 ('Moyenne', (SELECT id FROM question WHERE title = 'Intensité de la couleur')),
 ('Trouble', (SELECT id FROM question WHERE title = 'Intensité de la couleur')),
