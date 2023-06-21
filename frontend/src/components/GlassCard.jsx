@@ -1,19 +1,18 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import glassWine from "../Pictures/glassWine.jpg";
+import glassWine from "../Pictures/glassWine.png";
 import glass from "../Pictures/glass.png";
 
 export default function GlassCard({ title, isCompleted }) {
-  return isCompleted ? (
-    <figure className="glassAll">
-      <figcaption> {title}</figcaption>
-      <img src={glassWine} alt="glass of wine" />
-    </figure>
-  ) : (
+  return (
     <Link to="/Questionnaire">
-      <figure className="glassGrenn">
+      <figure className="glassAll">
         <figcaption> {title}</figcaption>
-        <img src={glass} alt="glass" />
+        {isCompleted ? (
+          <img src={glassWine} alt="filled glass" />
+        ) : (
+          <img src={glass} alt="empty glass" />
+        )}
       </figure>
     </Link>
   );

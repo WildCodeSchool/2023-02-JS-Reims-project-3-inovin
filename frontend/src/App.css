@@ -265,7 +265,17 @@ select {
 .title_4glasses {
   display: flex;
   justify-content: center;
-  margin: 1rem;
+  align-items: center;
+  margin: 2rem;
+  font-style: italic;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #000000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke: 0.5px #ffffff;
+}
+.title_4glasses:hover {
+  color: whitesmoke;
 }
 
 .glasses {
@@ -277,11 +287,22 @@ select {
 
 .glasses img {
   height: 150px;
-  margin: auto;
+  margin: 3rem;
 }
 
 .glasses figcaption {
   text-align: center;
+  font-family: "Libre Baskerville", sans-serif;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  background: black;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.glassAll {
+  border: 2px solid #080808;
+  background: rgba(235, 220, 139, 0.78);
 }
 
 /* MODE TABLETTE portrait | Component FourGlass */
@@ -292,6 +313,7 @@ select {
     justify-content: center;
     margin: 1rem;
     font-size: xx-large;
+    font-style: italic;
   }
 
   .glasses {
@@ -302,8 +324,8 @@ select {
   }
 
   .glasses img {
-    height: 300px;
-    margin: auto;
+    height: 200px;
+    margin: 3rem;
   }
 
   .glasses figcaption {
@@ -323,7 +345,8 @@ select {
     display: flex;
     justify-content: center;
     margin: 1rem;
-    font-size: xxx-large;
+    font-size: xx-large;
+    font-style: italic;
   }
 
   .glasses {
@@ -334,8 +357,8 @@ select {
   }
 
   .glasses img {
-    height: 300px;
-    margin: auto;
+    height: 250px;
+    margin: 2rem 5rem;
   }
 
   .glasses figcaption {
@@ -343,28 +366,25 @@ select {
   }
 }
 
-.glasses figure {
-  border: 6px solid #cec1c1;
-}
-
 @media screen and (min-width: 1024px) {
   .title_4glasses {
     display: flex;
     justify-content: center;
     margin: 1rem;
-    font-size: xxx-large;
+    font-size: xx-large;
+    font-style: italic;
   }
 
   .glasses {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* grid-template-rows: repeat(2, 1fr); */
+    grid-template-rows: repeat(2, 1fr);
     grid-gap: 20px;
   }
 
   .glasses img {
     height: 300px;
-    margin: auto;
+    margin: 6rem;
   }
 
   .glasses figcaption {
