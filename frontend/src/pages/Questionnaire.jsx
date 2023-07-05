@@ -69,10 +69,28 @@ export default function Questionnaire() {
   // Get the component for the current category
   const CategoryComponent = CategoryComponents[currentQuestions.categoryTitle];
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const response = await fetch("http://localhost:3050/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formState),
+    });
+
+    if (response.ok) {
+      alert("Le formulaire a été soumis avec succès !");
+    } else {
+      alert("Il y a eu une erreur lors de la soumission du formulaire.");
+    }
+  };
+
   return (
     <>
       <Navbar />
-      <form className="Questionnaire">
+      <form className="Questionnaire" onSubmit={handleSubmit}>
         <div>
           <h2>{currentQuestions.categoryTitle}</h2>
           {CategoryComponent && <CategoryComponent />}
@@ -128,11 +146,7 @@ export default function Questionnaire() {
           {currentPart >= data.length - 1 && (
             <div className="QuestBut">
               <Link to="/questionnaire/note">
-                <button
-                  className="QuestionnaireButton"
-                  type="button"
-                  onClick={HandleNextClick}
-                >
+                <button className="QuestionnaireButton" type="submit">
                   Validé
                 </button>
               </Link>
