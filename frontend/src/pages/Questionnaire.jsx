@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Stack from "@mui/material/Stack";
+import Slider from "@mui/material/Slider";
 import "./Checkbox.css";
 import Visuel from "../Pictures/Vue.png";
 import Olfatif from "../Pictures/Odorat.png";
 import Gustatif from "../Pictures/Gout.png";
-import Slider from "../components/Slider";
 import Navbar from "../components/Navbar";
 
 const questions = [
@@ -96,14 +97,78 @@ const questions = [
         responses: ["Courte", "Moyenne", "Persistante"],
       },
       {
-        title: "Acide Jeune",
+        title: "Acide",
         type: "range",
-        responses: ["Nerveuse", "Pointue", "Vive", "Fraîche", "Molle"],
+        responses: [" "],
+      },
+    ],
+  },
+];
+
+const marks = [
+  {
+    title: "Acide",
+    slider: [
+      {
+        value: 0,
+        label: "Acide Jeune",
       },
       {
-        title: "Alcool",
-        type: "range",
-        responses: ["Alcooleux", "Capiteux", "Gras", "Généreux", "Faible"],
+        value: 1,
+        label: "Nerveuse",
+      },
+      {
+        value: 2,
+        label: "Pointue",
+      },
+      {
+        value: 3,
+        label: "Vive",
+      },
+      {
+        value: 4,
+        label: "Fraîche",
+      },
+      {
+        value: 5,
+        label: "Molle",
+      },
+      {
+        value: 6,
+        label: "Acide Vieux",
+      },
+    ],
+  },
+  {
+    title: "Alcool",
+    slider: [
+      {
+        value: 0,
+        label: "Alcool -",
+      },
+      {
+        value: 1,
+        label: "Alcooleux",
+      },
+      {
+        value: 2,
+        label: "Capiteux",
+      },
+      {
+        value: 3,
+        label: "Gras",
+      },
+      {
+        value: 4,
+        label: "Généreux",
+      },
+      {
+        value: 5,
+        label: "Faible",
+      },
+      {
+        value: 6,
+        label: "Alcool +",
       },
     ],
   },
@@ -120,8 +185,6 @@ export default function Questionnaire() {
     "Familles Arômatiques": "",
     Structure: "",
     "Persistance Arômatiques": "",
-    "Acide Jeune": "",
-    Alcool: "",
   });
 
   const [currentPart, setCurrentPart] = useState(0);
@@ -153,11 +216,24 @@ export default function Questionnaire() {
             <div key={question.title}>
               <h3 className="titre">{question.title}</h3>
               {question.type === "range" ? (
-                <Slider
-                  question={question}
-                  formState={formState}
-                  setFormState={setFormState}
-                />
+                <Stack sx={{ height: 200 }} spacing={12} direction="row">
+                  {marks.map((mark) => (
+                    <Slider
+                      aria-label={mark.title}
+                      orientation="vertical"
+                      valueLabelDisplay="auto"
+                      onChange={(event) =>
+                        setFormState({
+                          ...formState,
+                          [question.title]: event.target.value,
+                        })
+                      }
+                      marks={mark.slider}
+                      min={0}
+                      max={6}
+                    />
+                  ))}
+                </Stack>
               ) : (
                 <div className="Questions">
                   {question.responses.map((response) => (
