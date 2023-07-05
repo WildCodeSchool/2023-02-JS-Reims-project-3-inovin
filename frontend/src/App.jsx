@@ -13,6 +13,7 @@ import "./App.css";
 import "./App.scss";
 import Navbar from "./components/Navbar";
 import Creation from "./pages/Creation";
+import CreationRecap from "./pages/CreationRecap";
 
 function App() {
   return (
@@ -29,6 +30,10 @@ function App() {
         <Route path="/Wine" element={<Wine />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/atelier-creation" element={<Creation />} />
+        <Route
+          path="/atelier-creation/recapitulatif"
+          element={<CreationRecap />}
+        />
       </Routes>
     </main>
   );
