@@ -9,6 +9,7 @@ import Wine from "./pages/Wine";
 import FourGlass from "./pages/FourGlass";
 import Questionnaire from "./pages/Questionnaire";
 import Score from "./pages/Score";
+import Logout from "./components/Logout";
 import "./App.css";
 import "./App.scss";
 
@@ -20,18 +21,15 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
-              <Link to="/profile">Profil</Link>
-              <Link to="/fourglass">FourGlass</Link>
               {token == null ? (
                 <>
                   <Link to="/register">S'Inscrire</Link>
                   <Link to="/login">Se connecter</Link>
                 </>
               ) : (
-                <button type="button" onClick={() => setToken(null)}>
+                <Link to="/logout" onClick={() => setToken(null)}>
                   Déconnexion
-                </button>
+                </Link>
               )}
             </li>
           </ul>
@@ -48,8 +46,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/Wine" element={<Wine />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/logout" element={<Logout />} />
         </Routes>
       </main>
     </div>

@@ -27,34 +27,31 @@ function Login() {
     }
   };
 
-  return (
-    <form
-      className="Inscription"
-      onSubmit={(event) => {
-        event.preventDefault();
+  const handleLogin = (event) => {
+    event.preventDefault();
 
-        fetch(
-          `${
-            import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-          }/login`,
-          {
-            method: "post",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify({
-              username: usernameRef.current.value,
-              password: passwordRef.current.value,
-            }),
-          }
-        )
-          .then((response) => response.json())
-          .then((data) => {
-            setToken(data.token);
-            navigate("/");
-          });
-      }}
-    >
+    fetch(
+      `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/login`,
+      {
+        method: "post",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          username: usernameRef.current.value,
+          password: passwordRef.current.value,
+        }),
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setToken(data.token);
+        navigate("/fourglass"); // Redirection vers la page "Dashboard" après la connexion réussie
+      });
+  };
+
+  return (
+    <form className="Inscription" onSubmit={handleLogin}>
       <div className="PresInscip">
         <img src={Logo} alt="Ino Vin" />
         <h1>CONNEXION</h1>
