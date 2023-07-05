@@ -10,6 +10,7 @@ function Register() {
   const passwordRef = useRef();
 
   const [selectedTaste, setSelectedTaste] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
 
@@ -21,6 +22,17 @@ function Register() {
     const dateOfBirth = dateOfBirthRef.current.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
+
+    const currentDate = new Date();
+    const selectedDate = new Date(dateOfBirth);
+
+    const ageInYears = currentDate.getFullYear() - selectedDate.getFullYear();
+
+    // Vérifier si l'utilisateur est mineur (moins de 18 ans)
+    if (ageInYears < 18) {
+      setErrorMessage("INTERDIT AUX -18 ANS !");
+      return;
+    }
 
     try {
       const response = await fetch(
@@ -198,6 +210,7 @@ function Register() {
           S'inscrire
         </button>
       </div>
+      {errorMessage && <p>{errorMessage}</p>}
     </form>
   );
 }

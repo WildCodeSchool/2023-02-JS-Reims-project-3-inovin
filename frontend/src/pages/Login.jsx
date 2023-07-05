@@ -12,6 +12,7 @@ function Login() {
 
   const [focused, setFocused] = useState(false);
   const [filled, setFilled] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleFocus = () => {
     setFocused(true);
@@ -27,34 +28,39 @@ function Login() {
     }
   };
 
-  return (
-    <form
-      className="Inscription"
-      onSubmit={(event) => {
-        event.preventDefault();
+  const handleLogin = (event) => {
+    event.preventDefault();
 
-        fetch(
-          `${
-            import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-          }/login`,
-          {
-            method: "post",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify({
-              username: usernameRef.current.value,
-              password: passwordRef.current.value,
-            }),
-          }
-        )
-          .then((response) => response.json())
-          .then((data) => {
-            setToken(data.token);
-            navigate("/");
-          });
-      }}
-    >
+    fetch(
+      `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/login`,
+      {
+        method: "post",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          username: usernameRef.current.value,
+          password: passwordRef.current.value,
+        }),
+      }
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Mail ou mot de passe incorrect"); // Lève une erreur si la réponse n'est pas réussie
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setToken(data.token);
+        navigate("/fourglass"); // Redirection vers la page "Dashboard" après la connexion réussie
+      })
+      .catch((error) => {
+        setErrorMessage(error.message); // Définit le message d'erreur
+      });
+  };
+
+  return (
+    <form className="Inscription" onSubmit={handleLogin}>
       <div className="PresInscip">
         <img src={Logo} alt="Ino Vin" />
         <h1>CONNEXION</h1>
@@ -89,6 +95,7 @@ function Login() {
           Mot de Passe
         </label>
       </div>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
       <button className="register" type="submit">
         se connecter
       </button>
