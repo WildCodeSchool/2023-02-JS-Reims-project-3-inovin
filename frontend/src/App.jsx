@@ -12,6 +12,7 @@ import Logout from "./components/Logout";
 import "./App.css";
 import "./App.scss";
 import Navbar from "./components/Navbar";
+import Creation from "./pages/Creation";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/Wine" element={<Wine />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/atelier-creation" element={<Creation />} />
       </Routes>
     </main>
   );

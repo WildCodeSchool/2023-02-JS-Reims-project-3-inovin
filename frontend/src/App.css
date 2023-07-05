@@ -392,3 +392,33 @@ select {
     font-size: xx-large;
   }
 }
+
+/*Creation*/
+.backgroundCreation {
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.backgroundCreation h1 {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.test {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2rem;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+}
+
+.verreVide {
+  width: 10rem;
+}
