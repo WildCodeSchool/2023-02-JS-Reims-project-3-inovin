@@ -81,7 +81,7 @@ CREATE TABLE response (
   option_id INT NOT NULL,
   FOREIGN KEY (option_id) REFERENCES options(id),
   question_id INT,
-  FOREIGN KEY (question_id) REFERENCES question(id)
+  FOREIGN KEY (user_id) REFERENCES user(id)
   );
 
 CREATE TABLE user (
