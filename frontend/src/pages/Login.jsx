@@ -12,6 +12,7 @@ function Login() {
 
   const [focused, setFocused] = useState(false);
   const [filled, setFilled] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleFocus = () => {
     setFocused(true);
@@ -43,10 +44,18 @@ function Login() {
         }),
       }
     )
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Mail ou mot de passe incorrect"); // Lève une erreur si la réponse n'est pas réussie
+        }
+        return response.json();
+      })
       .then((data) => {
         setToken(data.token);
         navigate("/fourglass"); // Redirection vers la page "Dashboard" après la connexion réussie
+      })
+      .catch((error) => {
+        setErrorMessage(error.message); // Définit le message d'erreur
       });
   };
 
@@ -86,6 +95,7 @@ function Login() {
           Mot de Passe
         </label>
       </div>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
       <button className="register" type="submit">
         se connecter
       </button>
