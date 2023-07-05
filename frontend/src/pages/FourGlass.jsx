@@ -1,8 +1,10 @@
 import GlassCard from "../components/GlassCard";
+import Navbar from "../components/Navbar";
 
 export default function FourGlass() {
   return (
     <div className="BackgroundGlass">
+      <Navbar />
       <section>
         <h1 className="title_4glasses">Affinez vos goûts</h1>
 

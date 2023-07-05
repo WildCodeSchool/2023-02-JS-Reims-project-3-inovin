@@ -11,12 +11,10 @@ import Score from "./pages/Score";
 import Logout from "./components/Logout";
 import "./App.css";
 import "./App.scss";
-import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <main className="App">
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/questionnaire" element={<Questionnaire />} />
