@@ -42,10 +42,8 @@ function Notation() {
       <h1>Voici La Notation</h1>
       <Stars />
 
-      <Link to="/FourGlass">
-        <button className="QuestionnaireButton" type="button">
-          Validé
-        </button>
+      <Link to="/fourglass" className="QuestionnaireButton">
+        Validé
       </Link>
     </div>
   );
