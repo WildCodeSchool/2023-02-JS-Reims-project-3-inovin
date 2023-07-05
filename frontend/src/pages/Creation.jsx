@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import Slider from "@mui/material/Slider";
-import verreVide from "../Pictures/verre-vide.png";
+import { pink } from "@mui/material/colors";
+import verre from "../Pictures/verre.png";
 
 export default function Creation() {
   const dosages = [
@@ -69,10 +71,14 @@ export default function Creation() {
     },
   ];
 
+  const style = {
+    color: "black",
+  };
+
   return (
     <section className="backgroundCreation">
       <h1>Atelier de Création</h1>
-      <div className="test">
+      <div className="dosages">
         {dosages.map((dosage) => (
           <Stack sx={{ height: 150 }} spacing={10} direction="row">
             <Slider
@@ -81,16 +87,24 @@ export default function Creation() {
               valueLabelDisplay="auto"
               labelPlacement="top"
               defaultValue={0}
+              sx={{
+                color: pink[800],
+              }}
               marks={dosage.dosage}
               min={0}
               max={3}
-              className="tests"
             />
           </Stack>
         ))}
       </div>
       <div className="image">
-        <img className="verreVide" src={verreVide} alt={verreVide} />
+        <img className="verreVide" src={verre} alt={verre} />
+      </div>
+
+      <div className="confirmationLink">
+        <Link style={style} to="/atelier-creation/recapitulatif">
+          Validé
+        </Link>
       </div>
     </section>
   );
