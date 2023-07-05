@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Logo from "../Pictures/logo3.png";
 
 function Register() {
@@ -86,7 +86,9 @@ function Register() {
 
   return (
     <form className="Inscription" onSubmit={handleSubmit}>
-      <img src={Logo} alt="Ino Vin" />
+      <Link to="/">
+        <img src={Logo} alt="Ino Vin" />
+      </Link>
       <div className="PresInscip">
         <h1>INSCRIPTION</h1>
       </div>
