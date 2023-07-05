@@ -11,6 +11,8 @@ import Score from "./pages/Score";
 import Logout from "./components/Logout";
 import "./App.css";
 import "./App.scss";
+import Creation from "./pages/Creation";
+import CreationRecap from "./pages/CreationRecap";
 
 function App() {
   return (
@@ -25,6 +27,11 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/Wine" element={<Wine />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/atelier-creation" element={<Creation />} />
+        <Route
+          path="/atelier-creation/recapitulatif"
+          element={<CreationRecap />}
+        />
       </Routes>
     </main>
   );

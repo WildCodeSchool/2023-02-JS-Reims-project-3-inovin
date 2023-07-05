@@ -158,7 +158,7 @@ input[type="date"],
   text-align: center;
 }
 
-input[type="text"],
+.Inscription input[type="text"],
 input[type="password"],
 input[type="email"],
 select {
@@ -391,4 +391,86 @@ select {
     text-align: center;
     font-size: xx-large;
   }
+}
+
+/*Creation*/
+.backgroundCreation {
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.backgroundCreation h1 {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.dosages {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2rem;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.verreVide {
+  width: 9rem;
+}
+
+.confirmationLink {
+  display: flex;
+  justify-content: center;
+  background-color: #dec439;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-weight: 800;
+  margin-right: 6rem;
+  margin-left: 6rem;
+}
+
+/*CreationRecap*/
+
+.backgroundCreationRecap {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backgroundCreationRecap h1 {
+  margin-bottom: 2rem;
+}
+
+.recap {
+  margin-bottom: 2rem;
+}
+
+.backgroundCreationRecap h2 {
+  line-height: 3.5rem;
+}
+
+.imageVerrePlein img {
+  width: 8rem;
+}
+
+.buttonRecap {
+  display: flex;
+  justify-content: center;
+  background-color: #dec439;
+  border: none;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-weight: 800;
+  margin-right: 6rem;
+  margin-left: 6rem;
+  margin-top: 2rem;
 }
