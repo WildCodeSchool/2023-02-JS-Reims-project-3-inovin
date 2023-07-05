@@ -8,6 +8,8 @@ const wineControllers = require("./controllers/wineControllers");
 
 const optionController = require("./controllers/optionsControllers");
 
+const responseControllers = require("./controllers/responseControllers");
+
 const authControllers = require("./controllers/authControllers");
 const { hashPassword, verifyPassword } = require("./services/auth");
 
@@ -28,6 +30,12 @@ router.get("/wines/:id", wineControllers.read);
 router.put("/wines/:id", wineControllers.edit);
 router.post("/wines", wineControllers.add);
 router.delete("/wines/:id", wineControllers.destroy);
+
+router.get("/responses", responseControllers.browse);
+router.get("/responses/:id", responseControllers.read);
+router.put("/responses/:id", responseControllers.edit);
+router.post("/responses", responseControllers.add);
+router.delete("/responses/:id", responseControllers.destroy);
 
 router.post(
   "/login",
