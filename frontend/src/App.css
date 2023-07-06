@@ -340,7 +340,7 @@ select {
 
 /* TABLETTE EN MODE PAYSAGE | Component FourGlass */
 
-@media screen and (min-width: 900px) and (max-width: 1024px) {
+/* @media screen and (min-width: 600px) and (max-width: 1024px) {
   .title_4glasses {
     display: flex;
     justify-content: center;
@@ -364,7 +364,7 @@ select {
   .glasses figcaption {
     text-align: center;
   }
-}
+} */
 
 @media screen and (min-width: 1024px) {
   .title_4glasses {
@@ -394,6 +394,7 @@ select {
 }
 
 /*Creation*/
+
 .backgroundCreation {
   background-color: #fff;
   min-height: 100vh;
@@ -555,5 +556,31 @@ select {
 
   .register {
     margin-top: 3rem;
+  }
+
+  /*FOUR GLASS*/
+
+  .title_4glasses {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    font-size: xx-large;
+    font-style: italic;
+  }
+
+  .glasses {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+
+  .glasses img {
+    height: 250px;
+    margin: 2rem 5rem;
+  }
+
+  .glasses figcaption {
+    text-align: center;
   }
 }
