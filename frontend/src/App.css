@@ -318,6 +318,8 @@ select {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .backgroundCreation h1 {
@@ -329,7 +331,8 @@ select {
 .dosages {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 2rem;
+  grid-column-gap: 1.5rem;
+  margin: 2rem;
 }
 
 .image {
@@ -351,8 +354,8 @@ select {
   padding: 0.5rem 1rem;
   border-radius: 2rem;
   font-weight: 800;
-  margin-right: 6rem;
-  margin-left: 6rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
 }
 
 /*CreationRecap*/
@@ -503,4 +506,11 @@ select {
   }
 
   /*ATELIER DE CREATION*/
+
+  .dosages {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10rem;
+    margin: 2rem;
+  }
 }
