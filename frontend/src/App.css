@@ -474,3 +474,36 @@ select {
   margin-left: 6rem;
   margin-top: 2rem;
 }
+
+/*RESPONSIVE*/
+
+@media screen and (min-width: 710px) {
+  body {
+    background-image: url("./Pictures/fondResponsive.png");
+    background-size: cover;
+    position: fixed;
+    background-repeat: no-repeat;
+  }
+
+  .Home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 3rem;
+    padding-top: 5rem;
+  }
+
+  .buttonRegister,
+  .buttonLogin {
+    height: 3rem;
+    width: 10rem;
+  }
+
+  .buttonRegister:hover,
+  .buttonLogin:hover {
+    border: 2px solid #fff;
+    background-color: #fff;
+    transition: 1000ms;
+  }
+}
