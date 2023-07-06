@@ -172,7 +172,7 @@ select {
 
 .taste-buttons {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -481,7 +481,6 @@ select {
   body {
     background-image: url("./Pictures/fondResponsive.png");
     background-size: cover;
-    position: fixed;
     background-repeat: no-repeat;
   }
 
@@ -493,7 +492,7 @@ select {
     justify-content: center;
     align-items: center;
     line-height: 3rem;
-    padding-top: 5rem;
+    margin-top: 5rem;
   }
 
   .buttonRegister,
@@ -507,5 +506,20 @@ select {
     border: 2px solid #fff;
     background-color: #fff;
     transition: 1000ms;
+  }
+
+  /*LOGIN & REGISTER*/
+  .Inscription {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Inscription img {
+    padding-top: 2rem;
+  }
+
+  .register {
+    margin-top: 3rem;
   }
 }
