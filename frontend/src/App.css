@@ -395,7 +395,7 @@ select {
 }
 
 /*Score*/
-.Notation {
+.Notations {
   background-color: #fff;
   height: 100vh;
   display: flex;
@@ -404,12 +404,12 @@ select {
   -webkit-tap-highlight-color: transparent;
 }
 
-.Notation h1 {
+.Notations h1 {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
-.QuestionnaireButton {
+.NotationButton {
   background-color: #dec439;
   text-decoration: none;
   color: #000000;
@@ -423,7 +423,7 @@ select {
   bottom: 0;
 }
 
-.test {
+.Notation {
   position: absolute;
   top: 20rem;
 }
@@ -501,4 +501,6 @@ select {
   .glasses figcaption {
     text-align: center;
   }
+
+  /*ATELIER DE CREATION*/
 }

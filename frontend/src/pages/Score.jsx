@@ -41,13 +41,13 @@ function Notation() {
   return (
     <>
       <Navbar />
-      <div className="Notation">
+      <div className="Notations">
         <h1>Voici La Notation</h1>
-        <div className="test">
+        <div className="Notation">
           <Stars />
         </div>
 
-        <Link to="/fourglass" className="QuestionnaireButton">
+        <Link to="/fourglass" className="NotationButton">
           Validé
         </Link>
       </div>
