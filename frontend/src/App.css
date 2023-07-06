@@ -485,6 +485,8 @@ select {
     background-repeat: no-repeat;
   }
 
+  /*HOME*/
+
   .Home {
     display: flex;
     flex-direction: column;

@@ -75,11 +75,11 @@ function Login() {
           className={filled ? "filled" : ""}
           type="text"
           id="email"
-          name="email"
-          placeholder="✉️"
+          name="email "
+          placeholder=" "
         />
         <label htmlFor="email" className="form-label">
-          Adresse mail
+          Adresse mail ✉️
         </label>
       </div>
       <div className={`form-group ${focused ? "focused" : ""}`}>
@@ -91,10 +91,10 @@ function Login() {
           type="password"
           id="password"
           name="password"
-          placeholder="🗝️"
+          placeholder=" "
         />
         <label htmlFor="password" className="form-label">
-          Mot de Passe
+          Mot de Passe 🗝️
         </label>
       </div>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
