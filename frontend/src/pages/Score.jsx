@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
 import { GiWineBottle } from "react-icons/gi";
+import Navbar from "../components/Navbar";
 
 function Stars() {
   const [rating, setRating] = useState(100);
@@ -26,8 +27,8 @@ function Stars() {
       ]}
       transition
       showTooltip
-      fillIcon={<GiWineBottle size={35} />}
-      emptyIcon={<GiWineBottle size={35} />}
+      fillIcon={<GiWineBottle size={38} />}
+      emptyIcon={<GiWineBottle size={38} />}
       fillColor="#ac1e44"
       iconsCount={10}
       onClick={handleRating}
@@ -38,14 +39,19 @@ function Stars() {
 
 function Notation() {
   return (
-    <div className="Notation">
-      <h1>Voici La Notation</h1>
-      <Stars />
+    <>
+      <Navbar />
+      <div className="Notation">
+        <h1>Voici La Notation</h1>
+        <div className="test">
+          <Stars />
+        </div>
 
-      <Link to="/fourglass" className="QuestionnaireButton">
-        Validé
-      </Link>
-    </div>
+        <Link to="/fourglass" className="QuestionnaireButton">
+          Validé
+        </Link>
+      </div>
+    </>
   );
 }
 
