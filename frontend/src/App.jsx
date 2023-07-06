@@ -15,10 +15,7 @@ import Navbar from "./components/Navbar";
 import { useAuth } from "./contexts/AuthContext";
 
 function App() {
-  const { isAdmin, setIsAdmin } = useAuth();
-
-  console.log(isAdmin);
-  console.log(setIsAdmin);
+  const { isAdmin } = useAuth();
 
   return (
     <main className="App">
