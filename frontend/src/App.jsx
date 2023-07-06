@@ -12,11 +12,19 @@ import Logout from "./components/Logout";
 import "./App.css";
 import "./App.scss";
 import Navbar from "./components/Navbar";
+import { useAuth } from "./contexts/AuthContext";
 
 function App() {
+  const { isAdmin, setIsAdmin } = useAuth();
+
+  console.log(isAdmin);
+  console.log(setIsAdmin);
+
   return (
     <main className="App">
       <Navbar />
+
+      {isAdmin && <h1> Salut l'admin </h1>}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/questionnaire" element={<Questionnaire />} />

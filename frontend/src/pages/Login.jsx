@@ -7,7 +7,7 @@ function Login() {
   const usernameRef = useRef();
   const passwordRef = useRef();
 
-  const { setToken } = useAuth();
+  const { setToken, setIsAdmin } = useAuth();
   const navigate = useNavigate();
 
   const [focused, setFocused] = useState(false);
@@ -51,6 +51,7 @@ function Login() {
         return response.json();
       })
       .then((data) => {
+        setIsAdmin(data.is_admin);
         setToken(data.token);
         navigate("/fourglass"); // Redirection vers la page "Dashboard" après la connexion réussie
       })

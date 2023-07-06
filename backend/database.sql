@@ -81,8 +81,12 @@ CREATE TABLE user (
   date_of_birth DATE,
   email varchar(255) NOT NULL,
   hashedPassword varchar(255) NOT NULL,
-  choice_of_tastes varchar(80) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  choice_of_tastes varchar(80) NOT NULL,
+  is_admin boolean DEFAULT (false)
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
 
 CREATE TABLE wine (
   id INT unsigned PRIMARY KEY not null AUTO_INCREMENT,
