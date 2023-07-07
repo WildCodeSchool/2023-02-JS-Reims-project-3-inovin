@@ -29,6 +29,20 @@ body {
   text-align: center;
 }
 
+/* Boutton pour ajouter les vins en pages fourglasse   */
+
+.ajoutermesvins {
+  border: 2px solid #dec439;
+  background-color: #dec439;
+  color: #010707;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
 /*Page Home*/
 
 .Home {

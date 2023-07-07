@@ -9,19 +9,16 @@ import FourGlass from "./pages/FourGlass";
 import Questionnaire from "./pages/Questionnaire";
 import Score from "./pages/Score";
 import Logout from "./components/Logout";
+import Ajoutermesvins from "./pages/Ajoutermesvins";
 import "./App.css";
 import "./App.scss";
 import Navbar from "./components/Navbar";
-import { useAuth } from "./contexts/AuthContext";
 
 function App() {
-  const { isAdmin } = useAuth();
-
   return (
     <main className="App">
       <Navbar />
 
-      {isAdmin && <h1> Salut l'admin </h1>}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/questionnaire" element={<Questionnaire />} />
@@ -32,6 +29,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/Wine" element={<Wine />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/ajoutermesvins" element={<Ajoutermesvins />} />
       </Routes>
     </main>
   );
