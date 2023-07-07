@@ -99,7 +99,7 @@ function Login() {
       </div>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
       <button className="register" type="submit">
-        se connecter
+        Se Connecter
       </button>
     </form>
   );

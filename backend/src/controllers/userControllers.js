@@ -28,6 +28,22 @@ const read = (req, res) => {
     });
 };
 
+const user = (req, res) => {
+  models.user
+    .find(req.payload.sub)
+    .then(([rows]) => {
+      if (rows[0] == null) {
+        res.sendStatus(404);
+      } else {
+        res.send(rows[0]);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 const getUser = (req, res) => {
   models.user
     .find(req.payload.sub)
@@ -105,4 +121,5 @@ module.exports = {
   add,
   destroy,
   getUser,
+  user,
 };
