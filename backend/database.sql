@@ -14,13 +14,15 @@ CREATE TABLE question (
 INSERT INTO question (title, category_id)
 VALUES 
 ('Couleur et nuance', (SELECT id FROM category WHERE name = 'Examen visuel')), 
+('Brillance', (SELECT id FROM category WHERE name = 'Examen visuel')), 
 ('Intensité de la couleur', (SELECT id FROM category WHERE name = 'Examen visuel')), 
 ('Fluidité des larmes', (SELECT id FROM category WHERE name = 'Examen visuel')),
 ('Intensité des arômes', (SELECT id FROM category WHERE name = 'Examen olfactif')), 
+('Impression', (SELECT id FROM category WHERE name = 'Examen olfactif')), 
 ('Familles aromatiques', (SELECT id FROM category WHERE name = 'Examen olfactif')),
 ('Saveurs', (SELECT id FROM category WHERE name = 'Examen gustatif')), 
 ('Structure', (SELECT id FROM category WHERE name = 'Examen gustatif')),
-('Arômes', (SELECT id FROM category WHERE name = 'Examen gustatif'));
+('Persistance aromatique', (SELECT id FROM category WHERE name = 'Examen gustatif'));
 
 CREATE TABLE options (
   id INT PRIMARY KEY AUTO_INCREMENT,
@@ -35,6 +37,18 @@ VALUES
 ('Cerise', (SELECT id FROM question WHERE title = 'Couleur et nuance')),
 ('Rubis', (SELECT id FROM question WHERE title = 'Couleur et nuance')),
 ('Pourpre', (SELECT id FROM question WHERE title = 'Couleur et nuance')),
+('Violet', (SELECT id FROM question WHERE title = 'Couleur et nuance')), 
+('Grenat', (SELECT id FROM question WHERE title = 'Couleur et nuance')),
+('Tuile', (SELECT id FROM question WHERE title = 'Couleur et nuance')),
+('JauneVert', (SELECT id FROM question WHERE title = 'Couleur et nuance')),
+('JaunePaille', (SELECT id FROM question WHERE title = 'Couleur et nuance')), 
+('OrVert', (SELECT id FROM question WHERE title = 'Couleur et nuance')),
+('OrJaune', (SELECT id FROM question WHERE title = 'Couleur et nuance')),
+('Dore', (SELECT id FROM question WHERE title = 'Couleur et nuance')),
+('Ambre', (SELECT id FROM question WHERE title = 'Couleur et nuance')),
+('Roux', (SELECT id FROM question WHERE title = 'Couleur et nuance')),
+('étincelante', (SELECT id FROM question WHERE title = 'Brillance')),
+('éclatante', (SELECT id FROM question WHERE title = 'Brillance')),
 ('Claire', (SELECT id FROM question WHERE title = 'Intensité de la couleur')), 
 ('Moyenne', (SELECT id FROM question WHERE title = 'Intensité de la couleur')),
 ('Trouble', (SELECT id FROM question WHERE title = 'Intensité de la couleur')),
@@ -44,6 +58,10 @@ VALUES
 ('Faible, vin fermé', (SELECT id FROM question WHERE title = 'Intensité des arômes')), 
 ('Moyenne', (SELECT id FROM question WHERE title = 'Intensité des arômes')),
 ('Forte, vin ouvert', (SELECT id FROM question WHERE title = 'Intensité des arômes')),
+('franc', (SELECT id FROM question WHERE title = 'Impression')),
+('Simple', (SELECT id FROM question WHERE title = 'Impression')),
+('Douteux', (SELECT id FROM question WHERE title = 'Impression')),
+('Default', (SELECT id FROM question WHERE title = 'Impression')),
 ('Fruits', (SELECT id FROM question WHERE title = 'Familles aromatiques')), 
 ('Fleurs', (SELECT id FROM question WHERE title = 'Familles aromatiques')),
 ('Épices', (SELECT id FROM question WHERE title = 'Familles aromatiques')),
