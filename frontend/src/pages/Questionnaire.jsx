@@ -1,193 +1,58 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Stack from "@mui/material/Stack";
-import Slider from "@mui/material/Slider";
 import "./Checkbox.css";
 import Visuel from "../Pictures/Vue.png";
 import Olfatif from "../Pictures/Odorat.png";
 import Gustatif from "../Pictures/Gout.png";
 import Navbar from "../components/Navbar";
 
-const questions = [
-  {
-    categoryTitle: "Examen Visuel",
-    categoryIcon: Visuel,
-    categoryIconAlt: "Oeil",
-    questions: [
-      {
-        title: "Couleur et nuances",
-        type: "checkbox",
-        responses: [
-          "Framboise",
-          "Jaune Vert",
-          "Cerise",
-          "Jaune Paille",
-          "Rubis",
-          "Or Vert",
-          "Pourpre",
-          "Or Jaune",
-          "Violet",
-          "Dore",
-          "Grenat",
-          "Ambre",
-          "Tuile",
-          "Roux",
-        ],
-      },
-      {
-        title: "Brillance",
-        type: "checkbox",
-        responses: ["Etincelante", "Eclatante"],
-      },
-      {
-        title: "Fluidité des larmes",
-        type: "checkbox",
-        responses: ["Fines et Fluides", "Larges et Visuqueuse"],
-      },
-      {
-        title: "Intensité de la couleur",
-        type: "checkbox",
-        responses: ["Claire", "Moyenne", "Trouble", "Opaque"],
-      },
-    ],
-  },
-  {
-    categoryTitle: "Examen Olfactif",
-    categoryIcon: Olfatif,
-    categoryIconAlt: "Nez",
-    questions: [
-      {
-        title: "Intensité des arômes",
-        type: "checkbox",
-        responses: ["Faible, vin fermé", "Moyenne", "Forte, vin ouvert"],
-      },
-      {
-        title: "Impression",
-        type: "checkbox",
-        responses: ["Franc", "Simple", "Douteux", "Défaut"],
-      },
-      {
-        title: "Familles Arômatiques",
-        type: "checkbox",
-        responses: [
-          "Fruits",
-          "Fleurs",
-          "Epices",
-          "Végétaux",
-          "Empyreumatiques",
-          "Animal",
-          "Défaut",
-        ],
-      },
-    ],
-  },
-  {
-    categoryTitle: "Examen Gustatif",
-    categoryIcon: Gustatif,
-    categoryIconAlt: "Bouche",
-    questions: [
-      {
-        title: "Structure",
-        type: "checkbox",
-        responses: ["Léger", "Fluide", "Charpenté"],
-      },
-      {
-        title: "Persistance Arômatique",
-        type: "checkbox",
-        responses: ["Courte", "Moyenne", "Persistante"],
-      },
-      {
-        title: "Acide",
-        type: "range",
-        responses: [" "],
-      },
-    ],
-  },
-];
-
-const marks = [
-  {
-    title: "Acide",
-    slider: [
-      {
-        value: 0,
-        label: "Acide Jeune",
-      },
-      {
-        value: 1,
-        label: "Nerveuse",
-      },
-      {
-        value: 2,
-        label: "Pointue",
-      },
-      {
-        value: 3,
-        label: "Vive",
-      },
-      {
-        value: 4,
-        label: "Fraîche",
-      },
-      {
-        value: 5,
-        label: "Molle",
-      },
-      {
-        value: 6,
-        label: "Acide Vieux",
-      },
-    ],
-  },
-  {
-    title: "Alcool",
-    slider: [
-      {
-        value: 0,
-        label: "Alcool -",
-      },
-      {
-        value: 1,
-        label: "Alcooleux",
-      },
-      {
-        value: 2,
-        label: "Capiteux",
-      },
-      {
-        value: 3,
-        label: "Gras",
-      },
-      {
-        value: 4,
-        label: "Généreux",
-      },
-      {
-        value: 5,
-        label: "Faible",
-      },
-      {
-        value: 6,
-        label: "Alcool +",
-      },
-    ],
-  },
-];
+const CategoryComponents = {
+  Visuel,
+  Olfatif,
+  Gustatif,
+};
 
 export default function Questionnaire() {
-  const [formState, setFormState] = useState({
-    "Couleur et nuances": "",
-    Brillance: "",
-    "Fluidité des larmes": "",
-    "Intensité de la couleur": "",
-    "Intensité des arômes": "",
-    Impression: "",
-    "Familles Arômatiques": "",
-    Structure: "",
-    "Persistance Arômatiques": "",
-  });
-
+  const [data, setData] = useState([]);
+  const [formState, setFormState] = useState({});
   const [currentPart, setCurrentPart] = useState(0);
+
+  useEffect(() => {
+    fetch("http://localhost:3050/options")
+      .then((response) => response.json())
+      .then((responseData) => {
+        const processedData = {};
+        responseData.forEach(
+          ({
+            option_name: optionName,
+            question_title: questionTitle,
+            category_name: categoryName,
+          }) => {
+            if (!processedData[categoryName]) {
+              processedData[categoryName] = { questions: [] };
+            }
+            let question = processedData[categoryName].questions.find(
+              (q) => q.title === questionTitle
+            );
+            if (!question) {
+              question = {
+                title: questionTitle,
+                type: "checkbox",
+                responses: [],
+              };
+              processedData[categoryName].questions.push(question);
+            }
+            question.responses.push(optionName);
+          }
+        );
+        setData(
+          Object.entries(processedData).map(([categoryTitle, value]) => ({
+            categoryTitle,
+            ...value,
+          }))
+        );
+      });
+  }, []);
 
   const HandleNextClick = () => {
     setCurrentPart(currentPart + 1);
@@ -197,85 +62,77 @@ export default function Questionnaire() {
     setCurrentPart(currentPart - 1);
   };
 
-  const currentQuestions = questions[currentPart];
+  const currentQuestions = data[currentPart];
+
+  if (!currentQuestions) return null;
+
+  // Get the component for the current category
+  const CategoryComponent = CategoryComponents[currentQuestions.categoryTitle];
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const response = await fetch("http://localhost:3050/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formState),
+    });
+
+    if (response.ok) {
+      alert("Le formulaire a été soumis avec succès !");
+    } else {
+      alert("Il y a eu une erreur lors de la soumission du formulaire.");
+    }
+  };
 
   return (
     <>
       <Navbar />
-      <form className="Questionnaire">
+      <form className="Questionnaire" onSubmit={handleSubmit}>
         <div>
-          <h2>
-            {currentQuestions.categoryTitle}
-            <img
-              className="QuestionnaireImage"
-              src={currentQuestions.categoryIcon}
-              alt={currentQuestions.categoryIconAlt}
-            />
-          </h2>
+          <h2>{currentQuestions.categoryTitle}</h2>
+          {CategoryComponent && <CategoryComponent />}
           {currentQuestions.questions.map((question) => (
             <div key={question.title}>
               <h3 className="titre">{question.title}</h3>
-              {question.type === "range" ? (
-                <Stack sx={{ height: 200 }} spacing={12} direction="row">
-                  {marks.map((mark) => (
-                    <Slider
-                      aria-label={mark.title}
-                      orientation="vertical"
-                      valueLabelDisplay="auto"
-                      onChange={(event) =>
-                        setFormState({
-                          ...formState,
-                          [question.title]: event.target.value,
-                        })
-                      }
-                      marks={mark.slider}
-                      min={0}
-                      max={6}
-                    />
-                  ))}
-                </Stack>
-              ) : (
-                <div className="Questions">
-                  {question.responses.map((response) => (
-                    <div className="checkbox-1" key={response}>
-                      <label className="QuestionnaireChoix">
-                        {question.type === "checkbox" && (
-                          <input
-                            id={response.replaceAll(" ", "")}
-                            type={question.type}
-                            checked={formState[question.title] === response}
-                            onChange={(event) =>
-                              setFormState({
-                                ...formState,
-                                [question.title]: event.target.checked
-                                  ? response
-                                  : "",
-                              })
-                            }
-                          />
-                        )}
-                        {question.type === "text" && (
-                          <input
-                            id={response.replaceAll(" ", "")}
-                            type={question.type}
-                            value={formState[question.title]}
-                            onChange={(event) =>
-                              setFormState({
-                                ...formState,
-                                [question.title]: event.target.value,
-                              })
-                            }
-                          />
-                        )}
-                        {response}
-                      </label>
-                    </div>
-                  ))}
-                </div>
-              )}
+              <div className="Questions">
+                {question.responses.map((response) => (
+                  <div className="checkbox-1" key={response}>
+                    <label className="QuestionnaireChoix">
+                      <input
+                        id={response.replaceAll(" ", "")}
+                        type={question.type}
+                        checked={formState[question.title] === response}
+                        onChange={(event) =>
+                          setFormState({
+                            ...formState,
+                            [question.title]: event.target.checked
+                              ? response
+                              : "",
+                          })
+                        }
+                      />
+                      {response}
+                    </label>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
-          {currentPart < 2 && (
+          {currentPart > 0 && (
+            <div className="QuestBut">
+              <button
+                className="QuestionnaireButton"
+                type="button"
+                onClick={HandlePreviousClick}
+              >
+                Précédent
+              </button>
+            </div>
+          )}
+          {currentPart < data.length - 1 && (
             <div className="QuestBut">
               <button
                 className="QuestionnaireButton"
@@ -286,28 +143,13 @@ export default function Questionnaire() {
               </button>
             </div>
           )}
-          {currentPart >= 2 && (
+          {currentPart >= data.length - 1 && (
             <div className="QuestBut">
               <Link to="/questionnaire/note">
-                <button
-                  className="QuestionnaireButton"
-                  type="button"
-                  onClick={HandleNextClick}
-                >
+                <button className="QuestionnaireButton" type="submit">
                   Validé
                 </button>
               </Link>
-            </div>
-          )}
-          {currentPart > 0 && (
-            <div className="QuestBut">
-              <button
-                className="QuestionnaireButton"
-                type="button"
-                onClick={HandlePreviousClick}
-              >
-                Précédent
-              </button>
             </div>
           )}
         </div>

@@ -12,13 +12,12 @@ import Logout from "./components/Logout";
 import Ajoutermesvins from "./pages/Ajoutermesvins";
 import "./App.css";
 import "./App.scss";
-import Navbar from "./components/Navbar";
+import Creation from "./pages/Creation";
+import CreationRecap from "./pages/CreationRecap";
 
 function App() {
   return (
     <main className="App">
-      <Navbar />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/questionnaire" element={<Questionnaire />} />
@@ -30,6 +29,11 @@ function App() {
         <Route path="/Wine" element={<Wine />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/ajoutermesvins" element={<Ajoutermesvins />} />
+        <Route path="/atelier-creation" element={<Creation />} />
+        <Route
+          path="/atelier-creation/recapitulatif"
+          element={<CreationRecap />}
+        />
       </Routes>
     </main>
   );

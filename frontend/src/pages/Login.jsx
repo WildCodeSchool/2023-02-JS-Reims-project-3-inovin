@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import Logo from "../Pictures/logo3.png";
 
@@ -63,7 +63,9 @@ function Login() {
   return (
     <form className="Inscription" onSubmit={handleLogin}>
       <div className="PresInscip">
-        <img src={Logo} alt="Ino Vin" />
+        <Link to="/">
+          <img src={Logo} alt="Ino Vin" />
+        </Link>
         <h1>CONNEXION</h1>
       </div>
       <div className={`form-group ${focused ? "focused" : ""}`}>

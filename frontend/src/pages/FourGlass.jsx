@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import GlassCard from "../components/GlassCard";
+import Navbar from "../components/Navbar";
 import { useAuth } from "../contexts/AuthContext";
 
 export default function FourGlass() {
   const { isAdmin } = useAuth();
   return (
     <div className="BackgroundGlass">
+      <Navbar />
       <section>
         <h1 className="title_4glasses">Affinez vos goûts</h1>
 
