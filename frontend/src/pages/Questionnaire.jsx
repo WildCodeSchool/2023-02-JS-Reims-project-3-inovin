@@ -88,7 +88,7 @@ export default function Questionnaire() {
   };
 
   return (
-    <>
+    <div className="backgroundQuestionnaire">
       <Navbar />
       <form className="Questionnaire" onSubmit={handleSubmit}>
         <div>
@@ -154,6 +154,6 @@ export default function Questionnaire() {
           )}
         </div>
       </form>
-    </>
+    </div>
   );
 }
