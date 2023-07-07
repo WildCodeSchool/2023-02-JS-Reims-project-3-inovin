@@ -94,7 +94,7 @@ function Register() {
       </div>
       <div className={`form-group ${focused ? "focused" : ""}`}>
         <input
-          placeholder="👤"
+          placeholder=" "
           onFocus={handleFocus}
           onBlur={handleBlur}
           className={filled ? "filled" : ""}
@@ -104,12 +104,12 @@ function Register() {
           name="lastName"
         />
         <label htmlFor="lastname" className="form-label">
-          Nom de Famille
+          Nom de Famille 👤
         </label>
       </div>
       <div className={`form-group ${focused ? "focused" : ""}`}>
         <input
-          placeholder="👤"
+          placeholder=" "
           onFocus={handleFocus}
           onBlur={handleBlur}
           ref={firstNameRef}
@@ -118,12 +118,12 @@ function Register() {
           name="firstName"
         />
         <label htmlFor="firstname" className="form-label">
-          Prénom
+          Prénom 👤
         </label>
       </div>
       <div className={`form-group ${focused ? "focused" : ""}`}>
         <input
-          placeholder="✉️"
+          placeholder=" "
           onFocus={handleFocus}
           onBlur={handleBlur}
           ref={emailRef}
@@ -132,12 +132,12 @@ function Register() {
           name="email"
         />
         <label htmlFor="email" className="form-label">
-          Adresse mail
+          Adresse mail ✉️
         </label>
       </div>
       <div className={`form-group ${focused ? "focused" : ""}`}>
         <input
-          placeholder="🗝️"
+          placeholder=" "
           onFocus={handleFocus}
           onBlur={handleBlur}
           ref={passwordRef}
@@ -146,7 +146,7 @@ function Register() {
           name="password"
         />
         <label htmlFor="password" className="form-label">
-          Mot de Passe
+          Mot de Passe 🗝️
         </label>
       </div>
       <div>

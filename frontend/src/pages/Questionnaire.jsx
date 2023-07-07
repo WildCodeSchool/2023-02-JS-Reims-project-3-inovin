@@ -88,7 +88,7 @@ export default function Questionnaire() {
   };
 
   return (
-    <>
+    <div className="backgroundQuestionnaire">
       <Navbar />
       <form className="Questionnaire" onSubmit={handleSubmit}>
         <div>
@@ -121,17 +121,6 @@ export default function Questionnaire() {
               </div>
             </div>
           ))}
-          {currentPart > 0 && (
-            <div className="QuestBut">
-              <button
-                className="QuestionnaireButton"
-                type="button"
-                onClick={HandlePreviousClick}
-              >
-                Précédent
-              </button>
-            </div>
-          )}
           {currentPart < data.length - 1 && (
             <div className="QuestBut">
               <button
@@ -140,6 +129,17 @@ export default function Questionnaire() {
                 onClick={HandleNextClick}
               >
                 Suivant
+              </button>
+            </div>
+          )}
+          {currentPart > 0 && (
+            <div className="QuestBut">
+              <button
+                className="QuestionnaireButton"
+                type="button"
+                onClick={HandlePreviousClick}
+              >
+                Précédent
               </button>
             </div>
           )}
@@ -154,6 +154,6 @@ export default function Questionnaire() {
           )}
         </div>
       </form>
-    </>
+    </div>
   );
 }
