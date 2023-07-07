@@ -204,6 +204,12 @@ select {
 
 /*Questionnaire*/
 
+.backgroundQuestionnaire {
+  background-image: url("./Pictures/Fond4.png");
+  background-size: cover;
+  min-height: 100vh;
+}
+
 .QuestionnaireChoix {
   font-size: 1rem;
   display: flex;
@@ -260,7 +266,8 @@ select {
 
 .BackgroundGlass {
   min-height: 100vh;
-  background-color: white;
+  background-image: url("./Pictures/Fond4.png");
+  background-size: cover;
   padding: 1rem;
 }
 
@@ -314,7 +321,9 @@ select {
 /*Creation*/
 
 .backgroundCreation {
-  background-color: #fff;
+  background-image: url("./Pictures/Fond4.png");
+  background-color: #000000;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -359,7 +368,8 @@ select {
 /*CreationRecap*/
 
 .backgroundCreationRecap {
-  background-color: #fff;
+  background-image: url("./Pictures/Fond4.png");
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -397,7 +407,8 @@ select {
 
 /*Score*/
 .Notations {
-  background-color: #fff;
+  background-image: url("./Pictures/Fond4.png");
+  background-size: cover;
   height: 100vh;
   display: flex;
   flex-direction: column;
