@@ -3,9 +3,9 @@ import Navbar from "../components/Navbar";
 
 export default function FourGlass() {
   return (
-    <div className="BackgroundGlass">
+    <div>
       <Navbar />
-      <section>
+      <section className="BackgroundGlass">
         <h1 className="title_4glasses">Affinez vos goûts</h1>
 
         <div className="glasses">
