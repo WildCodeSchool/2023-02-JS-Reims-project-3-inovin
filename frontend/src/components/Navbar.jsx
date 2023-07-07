@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Logo from "../Pictures/Logo.jpg";
 import { useAuth } from "../contexts/AuthContext";
 import deco from "../Pictures/deco.png";
+import Profile from "../Pictures/profil.png";
 import "../App.css";
 
 export default function Navbar() {
@@ -21,13 +22,19 @@ export default function Navbar() {
                 <Link to="/login" />
               </>
             ) : (
-              <Link
-                to="/logout"
-                className="deconnexion"
-                onClick={() => setToken(null)}
-              >
-                <img src={deco} alt="deconnexion" />
-              </Link>
+              <>
+                <Link to="/profile" className="logoprofil">
+                  <img src={Profile} alt="Profil" />
+                </Link>
+
+                <Link
+                  to="/logout"
+                  className="deconnexion"
+                  onClick={() => setToken(null)}
+                >
+                  <img src={deco} alt="deconnexion" />
+                </Link>
+              </>
             )}
           </li>
         </ul>
