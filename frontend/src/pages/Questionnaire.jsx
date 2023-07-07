@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./Checkbox.css";
 import Visuel from "../Pictures/Vue.png";
 import Olfatif from "../Pictures/Odorat.png";
 import Gustatif from "../Pictures/Gout.png";
 import Navbar from "../components/Navbar";
+import "./Checkbox.css";
 
 const CategoryComponents = {
   Visuel,
@@ -18,7 +18,7 @@ export default function Questionnaire() {
   const [currentPart, setCurrentPart] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:3050/options")
+    fetch("http://localhost:5000/options")
       .then((response) => response.json())
       .then((responseData) => {
         const processedData = {};
@@ -72,7 +72,7 @@ export default function Questionnaire() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await fetch("http://localhost:3050/submit", {
+    const response = await fetch("http://localhost:5000/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

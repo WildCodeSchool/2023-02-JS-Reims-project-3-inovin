@@ -28,15 +28,47 @@ const read = (req, res) => {
     });
 };
 
+const user = (req, res) => {
+  models.user
+    .find(req.payload.sub)
+    .then(([rows]) => {
+      if (rows[0] == null) {
+        res.sendStatus(404);
+      } else {
+        res.send(rows[0]);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
+const getUser = (req, res) => {
+  models.user
+    .find(req.payload.sub)
+    .then(([rows]) => {
+      if (rows[0] == null) {
+        res.sendStatus(404);
+      } else {
+        res.send(rows[0]);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 const edit = (req, res) => {
-  const user = req.body;
+  const userData = req.body;
 
   // TODO validations (length, format...)
 
-  user.id = parseInt(req.params.id, 10);
+  userData.id = parseInt(req.params.id, 10);
 
   models.user
-    .update(user)
+    .update(userData)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -51,12 +83,12 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const user = req.body;
+  const userData = req.body;
 
   // TODO validations (length, format...)
 
   models.user
-    .insert(user)
+    .insert(userData)
     .then(([result]) => {
       res.location(`/users/${result.insertId}`).sendStatus(201);
     })
@@ -88,4 +120,6 @@ module.exports = {
   edit,
   add,
   destroy,
+  getUser,
+  user,
 };
