@@ -10,7 +10,112 @@
 
 /*Page Profil*/
 .profil {
-  background-color: #312e2e;
-  min-height: 100vh;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .Information {
+    .title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-style: italic;
+      font-size: 2rem;
+      text-transform: capitalize;
+      color: #000000;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      -webkit-text-stroke: 0.5px #ffffff;
+      padding-bottom: 1rem;
+    }
+    .title:hover {
+      color: whitesmoke;
+    }
+    .userInfo {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+
+      .Nom {
+        text-align: center;
+        width: 20rem;
+        padding: 1rem 5rem;
+        border: 1px solid #ecf0f1;
+        border-radius: 2rem;
+        box-sizing: border-box;
+        background-color: #ecf0f1;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+      }
+      .Prenom {
+        text-align: center;
+        width: 20rem;
+        padding: 1rem 5rem;
+        border: 1px solid #ecf0f1;
+        border-radius: 2rem;
+        box-sizing: border-box;
+        background-color: #ecf0f1;
+        margin-bottom: 1rem;
+      }
+      .Email {
+        text-align: center;
+        width: 20rem;
+        padding: 1rem 5rem;
+        border: 1px solid #ecf0f1;
+        border-radius: 2rem;
+        box-sizing: border-box;
+        background-color: #ecf0f1;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+      }
+      .Gout {
+        text-align: center;
+        width: 20rem;
+        padding: 1rem 5rem;
+        border: 1px solid #ecf0f1;
+        border-radius: 2rem;
+        box-sizing: border-box;
+        background-color: #ecf0f1;
+        margin-bottom: 1rem;
+      }
+      .Date {
+        text-align: center;
+        width: 20rem;
+        padding: 1rem 5rem;
+        border: 1px solid #ecf0f1;
+        border-radius: 2rem;
+        box-sizing: border-box;
+        background-color: #ecf0f1;
+      }
+    }
+  }
+  .gouts {
+    .title {
+      padding-top: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-style: italic;
+      font-size: 2rem;
+      text-transform: capitalize;
+      color: #000000;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      -webkit-text-stroke: 0.5px #ffffff;
+      padding-bottom: 1rem;
+    }
+    .title:hover {
+      color: whitesmoke;
+    }
+  }
+  .buttonRegister {
+    border: 2px solid #dec439;
+    background-color: #dec439;
+    color: #010707;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
 }

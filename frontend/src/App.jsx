@@ -9,10 +9,10 @@ import FourGlass from "./pages/FourGlass";
 import Questionnaire from "./pages/Questionnaire";
 import Score from "./pages/Score";
 import Logout from "./components/Logout";
-import "./App.css";
-import "./App.scss";
 import Creation from "./pages/Creation";
 import CreationRecap from "./pages/CreationRecap";
+import "./App.css";
+import "./App.scss";
 
 function App() {
   return (

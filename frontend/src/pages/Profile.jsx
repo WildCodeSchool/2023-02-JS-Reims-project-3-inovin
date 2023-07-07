@@ -51,29 +51,41 @@ function Profile() {
     <>
       <Navbar />
       <div className="profil">
-        <h1>PROFIL</h1>
-        <div className="INFORMATION">
-          <h2>Informations du compte</h2>
+        <div className="Information">
+          <h2 className="title">Informations du compte</h2>
 
           {informations.map((user) => (
-            <div key={user.id}>
-              <p>Nom: {user.lastname}</p>
-              <p>Prénom: {user.firstname}</p>
-              <p>Email: {user.email}</p>
-              <p>Date de Naissance: {user.date_of_birth}</p>
+            <div key={user.id} className="userInfo">
+              <div className="Nom">
+                <p>Nom: {user.lastname}</p>
+              </div>
+              <div className="Prenom">
+                <p>Prénom: {user.firstname}</p>
+              </div>
+              <div className="Email">
+                <p>Email: {user.email}</p>
+              </div>
+              <div className="Gout">
+                <p>Gout de base : {user.choice_of_tastes}</p>
+              </div>
+              <div className="Date">
+                <p>Date de Naissance: {user.date_of_birth}</p>
+              </div>
             </div>
           ))}
         </div>
 
         <div className="gouts">
-          <h2>Vos goûts</h2>
+          <h2 className="title">Vos goûts</h2>
           {tastes.map((response) => (
             <div key={response.id}>
               <p>Marque: {response.option_id}</p>
             </div>
           ))}
         </div>
-        <Link to="/">Retour</Link>
+        <Link to="/fourglass" className="buttonRegister">
+          Retour
+        </Link>
       </div>
     </>
   );

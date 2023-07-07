@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./Checkbox.css";
 import Visuel from "../Pictures/Vue.png";
 import Olfatif from "../Pictures/Odorat.png";
 import Gustatif from "../Pictures/Gout.png";
 import Navbar from "../components/Navbar";
+import "./Checkbox.css";
 
 const CategoryComponents = {
   Visuel,
