@@ -221,7 +221,7 @@ select {
 .Questionnaire {
   margin: 0.5rem;
   border: 3px solid #dec439;
-  background-color: #ffffff;
+  background-color: #925b215b;
   border-radius: 2rem;
   padding-left: 2rem;
 }
@@ -248,10 +248,14 @@ select {
 }
 
 .Questionnaire h2 {
-  margin-top: 1rem;
-  padding-bottom: 0.2rem;
   display: flex;
   justify-content: center;
+  margin: 2rem;
+  font-style: italic;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  color: #000000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .titre {
