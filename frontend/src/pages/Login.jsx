@@ -60,14 +60,14 @@ function Login() {
   };
 
   return (
-    <form className="Inscription" onSubmit={handleLogin}>
+    <form className="Inscription Connexion" onSubmit={handleLogin}>
       <div className="PresInscip">
         <Link to="/">
           <img src={Logo} alt="Ino Vin" />
         </Link>
         <h1>CONNEXION</h1>
       </div>
-      <div className={`form-group ${focused ? "focused" : ""}`}>
+      <div className={`form-group ${focused ? "focused" : ""} inputLogin`}>
         <input
           ref={usernameRef}
           onFocus={handleFocus}

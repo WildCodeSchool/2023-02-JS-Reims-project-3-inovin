@@ -103,6 +103,16 @@ body {
   top: 0.6rem;
 }
 
+/*Page Login*/
+
+.Connexion {
+  margin-top: 2rem;
+}
+
+.inputLogin {
+  margin-top: 3rem;
+}
+
 /*Page Register*/
 
 .PresInscip {
