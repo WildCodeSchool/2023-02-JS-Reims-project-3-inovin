@@ -280,7 +280,6 @@ select {
   text-transform: capitalize;
   color: #000000;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  -webkit-text-stroke: 0.5px #ffffff;
   padding-bottom: 1rem;
 }
 
@@ -336,7 +335,6 @@ select {
 }
 
 /*Creation*/
-
 .backgroundCreation {
   background-image: url("./Pictures/Fond4.png");
   background-color: #000000;
@@ -501,6 +499,69 @@ select {
   background-color: #dd801c47;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.profil {
+  background-image: url("./Pictures/Fond4.png");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profil h2 {
+  margin: 2rem;
+  font-style: italic;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  color: #000000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.userInfo {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-row-gap: 20px;
+}
+
+.information {
+  font-size: 1.2rem;
+  text-align: center;
+  width: 20rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: #000000;
+  background-color: #925b215b;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.informationSpan {
+  font-weight: 800;
+}
+
+.buttonReturn {
+  border: none;
+  background-color: #dec439;
+  color: #010707;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  width: 8rem;
+  height: 1.5rem;
+  position: absolute;
+  bottom: 0;
+}
+
+.buttonReturn:hover {
+  background-color: #fff;
+  transition: 1000ms;
 }
 
 /*RESPONSIVE*/
