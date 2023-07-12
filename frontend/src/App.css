@@ -1,3 +1,13 @@
+/*POLICE D ECRITURE*/
+@font-face {
+  font-family: "exo_2light";
+  src: url("./assets/fonts/exo2-light-webfont.woff2") format("woff2"),
+    url("./assets/fonts/exo2-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/**/
 * {
   margin: auto;
   padding: 0;
@@ -9,6 +19,7 @@ body {
   background-image: url("../src/Pictures/Backgroud.png");
   background-attachment: fixed;
   background-repeat: no-repeat;
+  font-family: "exo_2light";
 }
 
 /*Component Header*/
@@ -216,11 +227,12 @@ select {
   align-items: center;
   padding-bottom: 0.2rem;
   margin: 0.1rem;
+  font-size: 1rem;
 }
 
 .Questionnaire {
   margin: 0.5rem;
-  border: 3px solid #dec439;
+  border: 3px solid black;
   background-color: #925b215b;
   border-radius: 2rem;
   padding-left: 2rem;
@@ -235,10 +247,11 @@ select {
 
 .QuestionnaireButton {
   border-radius: 2rem;
-  background-color: transparent;
-  border: 2px solid #dec439;
+  border: none;
+  background-color: #dec439;
   padding: 0.5rem;
   margin: 0.3rem;
+  font-weight: 600;
   margin-right: 2.7rem;
 }
 
