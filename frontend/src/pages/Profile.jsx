@@ -85,7 +85,7 @@ function Profile() {
               <div className="Date information">
                 <p>
                   <span className="informationSpan">Date de Naissance:</span>{" "}
-                  {user.date_of_birth}
+                  {user.date_of_birth.slice(0, 10)}
                 </p>
               </div>
             </div>
