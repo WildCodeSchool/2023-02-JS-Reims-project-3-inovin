@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function AddWine() {
   const [name, setName] = useState("");
@@ -76,7 +77,11 @@ export default function AddWine() {
             Envoyer
           </button>
         </form>
-      </section>{" "}
+
+        <Link to="/afficher-mes-vins" className="buttonLogin">
+          Voire la liste des vins
+        </Link>
+      </section>
     </>
   );
 }

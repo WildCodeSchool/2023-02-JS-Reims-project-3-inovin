@@ -12,6 +12,7 @@ import Logout from "./components/Logout";
 import Creation from "./pages/Creation";
 import CreationRecap from "./pages/CreationRecap";
 import AddWine from "./pages/AddWine";
+import ViewWine from "./pages/ViewWine";
 import "./App.css";
 import "./App.scss";
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/Wine" element={<Wine />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/ajouter-mes-vins" element={<AddWine />} />
+        <Route path="/afficher-mes-vins" element={<ViewWine />} />
         <Route path="/atelier-creation" element={<Creation />} />
         <Route
           path="/atelier-creation/recapitulatif"
