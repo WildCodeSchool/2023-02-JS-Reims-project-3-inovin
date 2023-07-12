@@ -47,7 +47,7 @@ function Notation() {
           <Stars />
         </div>
 
-        <Link to="/fourglass" className="NotationButton">
+        <Link to="/degustation" className="NotationButton">
           Validé
         </Link>
       </div>

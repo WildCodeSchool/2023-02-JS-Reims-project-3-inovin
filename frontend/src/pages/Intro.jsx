@@ -34,7 +34,7 @@ export default function Intro() {
         <h1>Bienvenue {user.firstname}</h1>
       ))}
       <div className="linkDiv">
-        <Link className="linkStart" to="/FourGlass">
+        <Link className="linkStart" to="/degustation">
           COMMENCEZ L'AVENTURE
         </Link>
       </div>
