@@ -9,11 +9,11 @@ import FourGlass from "./pages/FourGlass";
 import Questionnaire from "./pages/Questionnaire";
 import Score from "./pages/Score";
 import Logout from "./components/Logout";
-import Ajoutermesvins from "./pages/Ajoutermesvins";
-import "./App.css";
-import "./App.scss";
 import Creation from "./pages/Creation";
 import CreationRecap from "./pages/CreationRecap";
+import AddWine from "./pages/AddWine";
+import "./App.css";
+import "./App.scss";
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/Wine" element={<Wine />} />
         <Route path="/logout" element={<Logout />} />
-        <Route path="/ajoutermesvins" element={<Ajoutermesvins />} />
+        <Route path="/ajouter-mes-vins" element={<AddWine />} />
         <Route path="/atelier-creation" element={<Creation />} />
         <Route
           path="/atelier-creation/recapitulatif"

@@ -7,8 +7,8 @@ class WineManager extends AbstractManager {
 
   insert(wine) {
     return this.database.query(
-      `insert into ${this.table} (grape_variety) values (?)`,
-      [wine.grape_variety]
+      `insert into ${this.table} (color,name, grape_variety) values (?,?,?)`,
+      [wine.color, wine.name, wine.grape_variety]
     );
   }
 

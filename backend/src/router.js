@@ -22,7 +22,6 @@ router.put("/options/:id", optionController.edit);
 router.post("/options", optionController.add);
 router.delete("/options/:id", optionController.destroy);
 
-router.get("/users", userControllers.browse);
 router.get("/users/:id", userControllers.read);
 router.put("/users/:id", hashPassword, userControllers.edit);
 router.post("/users", hashPassword, userControllers.add);
@@ -44,5 +43,6 @@ router.use(verifyToken); // mur d'authentification
 
 router.post("/users", userControllers.add);
 router.get("/users", userControllers.browse);
+router.get("/user", userControllers.user);
 
 module.exports = router;
