@@ -440,6 +440,52 @@ select {
   top: 20rem;
 }
 
+/*INTRO*/
+.backgroundIntro {
+  background-image: url("./Pictures/Fond4.png");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.backgroundIntro h1 {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+}
+
+.backgroundIntro img {
+  position: absolute;
+  top: 1rem;
+  width: 23rem;
+}
+
+.linkDiv {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1rem;
+}
+
+.linkStart {
+  color: #000000;
+  background-color: #a9621647;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.linkStart:hover {
+  color: #ffffff;
+  background-color: #dd801c47;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
 /*RESPONSIVE*/
 
 @media screen and (min-width: 710px) {

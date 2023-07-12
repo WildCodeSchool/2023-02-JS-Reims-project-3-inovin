@@ -13,6 +13,7 @@ import Creation from "./pages/Creation";
 import CreationRecap from "./pages/CreationRecap";
 import "./App.css";
 import "./App.scss";
+import Intro from "./pages/Intro";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/questionnaire/note" element={<Score />} />
         <Route path="/fourglass" element={<FourGlass />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/accueil" element={<Intro />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Wine" element={<Wine />} />
