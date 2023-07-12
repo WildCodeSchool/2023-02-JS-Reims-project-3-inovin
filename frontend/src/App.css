@@ -454,6 +454,37 @@ select {
   top: 20rem;
 }
 
+.adwines {
+  background-image: url("./Pictures/Fond4.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  padding: 2rem;
+}
+.adwines form div {
+  padding: 1rem;
+  font-size: x-large;
+  border: 6px solid #cec1c1;
+  background: #9b9471;
+  border-radius: 2rem;
+  border: 2px solid #111111;
+  margin: 1rem;
+}
+.adwines form button {
+  border: 1px solid #111111;
+  margin: 1rem;
+  text-align: center;
+}
+.adwines h1 {
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+  margin: 1rem;
+}
+
 /*RESPONSIVE*/
 
 @media screen and (min-width: 710px) {
