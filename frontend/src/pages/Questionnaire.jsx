@@ -18,7 +18,7 @@ export default function Questionnaire() {
   const [currentPart, setCurrentPart] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:5000/options")
+    fetch("http://localhost:3050/options")
       .then((response) => response.json())
       .then((responseData) => {
         const processedData = {};

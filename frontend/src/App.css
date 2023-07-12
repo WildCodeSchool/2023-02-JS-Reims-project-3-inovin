@@ -283,6 +283,7 @@ select {
   -webkit-text-stroke: 0.5px #ffffff;
   padding-bottom: 1rem;
 }
+
 .title_4glasses:hover {
   color: whitesmoke;
 }
@@ -313,9 +314,25 @@ select {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 6px solid #cec1c1;
-  background: rgba(235, 220, 139, 0.78);
+  background: #a9621647;
   border-radius: 2rem;
+}
+
+.buttonDiv {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonFourGlass {
+  background-color: #dec539ae;
+  border: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 /*Creation*/
