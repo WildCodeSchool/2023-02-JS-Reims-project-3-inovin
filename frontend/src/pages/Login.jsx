@@ -52,7 +52,7 @@ function Login() {
       })
       .then((data) => {
         setToken(data.token);
-        navigate("/fourglass"); // Redirection vers la page "Dashboard" après la connexion réussie
+        navigate("/accueil"); // Redirection vers la page "Dashboard" après la connexion réussie
       })
       .catch((error) => {
         setErrorMessage(error.message); // Définit le message d'erreur

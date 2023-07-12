@@ -56,7 +56,7 @@ function Register() {
       if (!response.ok) {
         throw new Error("Une erreur s'est produite lors de l'inscription.");
       }
-      navigate("/");
+      navigate("/login");
     } catch (error) {
       console.error("Erreur lors de l'inscription :", error);
       // Gérer l'erreur et afficher un message d'erreur à l'utilisateur si nécessaire
