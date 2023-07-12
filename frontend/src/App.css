@@ -528,6 +528,8 @@ select {
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
+/*Profil*/
+
 .profil {
   background-image: url("./Pictures/Fond4.png");
   background-size: cover;
@@ -672,5 +674,20 @@ select {
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 10rem;
     margin: 2rem;
+  }
+
+  /*INTRO*/
+  .backgroundIntro h1 {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+  }
+
+  .backgroundIntro img {
+    width: 40rem;
+  }
+
+  .linkStart {
+    font-size: 1.3rem;
   }
 }
