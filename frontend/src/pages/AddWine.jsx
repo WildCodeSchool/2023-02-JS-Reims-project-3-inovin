@@ -33,55 +33,53 @@ export default function AddWine() {
   };
 
   return (
-    <>
-      <section className="adwines">
-        <h1>Ajouter un vin</h1>
+    <section className="adwines">
+      <h1>Ajouter un vin</h1>
 
-        <form onSubmit={aaddwine}>
-          <div>
-            <label htmlFor="name">Nom :</label>
-            <input
-              type="text"
-              id="name"
-              name="user_name"
-              onChange={(event) => {
-                setName(event.target.value);
-              }}
-              value={name}
-            />
-          </div>
-          <div>
-            <label htmlFor="Couleur">Couleur:</label>
-            <input
-              type="text"
-              name="Couleur"
-              onChange={(event) => {
-                setColor(event.target.value);
-              }}
-              value={color}
-            />
-          </div>
-          <div>
-            <label htmlFor="Saveur">Saveur :</label>
-            <input
-              type="text"
-              name="Saveur"
-              onChange={(event) => {
-                setSaveur(event.target.value);
-              }}
-              value={saveur}
-            />
-          </div>
+      <form onSubmit={aaddwine}>
+        <div>
+          <label htmlFor="name">Nom :</label>
+          <input
+            type="text"
+            id="name"
+            name="user_name"
+            onChange={(event) => {
+              setName(event.target.value);
+            }}
+            value={name}
+          />
+        </div>
+        <div>
+          <label htmlFor="Couleur">Couleur:</label>
+          <input
+            type="text"
+            name="Couleur"
+            onChange={(event) => {
+              setColor(event.target.value);
+            }}
+            value={color}
+          />
+        </div>
+        <div>
+          <label htmlFor="Saveur">Saveur :</label>
+          <input
+            type="text"
+            name="Saveur"
+            onChange={(event) => {
+              setSaveur(event.target.value);
+            }}
+            value={saveur}
+          />
+        </div>
 
-          <button className="buttonLogin" type="submit">
-            Envoyer
-          </button>
-        </form>
+        <button className="buttonLogin" type="submit">
+          Envoyer
+        </button>
+      </form>
 
-        <Link to="/afficher-mes-vins" className="buttonLogin">
-          Voire la liste des vins
-        </Link>
-      </section>
-    </>
+      <Link to="/afficher-mes-vins" className="buttonLogin">
+        Voire la liste des vins
+      </Link>
+    </section>
   );
 }
