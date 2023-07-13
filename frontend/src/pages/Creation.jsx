@@ -89,7 +89,7 @@ export default function Creation() {
                 orientation="vertical"
                 valueLabelDisplay="auto"
                 labelPlacement="top"
-                defaultValue={0}
+                defaultValue={1}
                 sx={{
                   color: pink[800],
                 }}

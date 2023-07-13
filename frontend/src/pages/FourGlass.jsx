@@ -20,7 +20,7 @@ export default function FourGlass() {
   );
 
   return (
-    <div>
+    <>
       <Navbar />
       <section className="BackgroundGlass">
         <h1 className="title_4glasses">Affinez vos goûts</h1>
@@ -56,13 +56,18 @@ export default function FourGlass() {
             Ajouter mes vins
           </Link>
         )}
+        <div className="buttonDiv">
+          <Link to="/atelier-creation">
+            <button
+              className="buttonFourGlass"
+              type="button"
+              disabled={!allCardsCompleted}
+            >
+              Passer à la page suivante
+            </button>
+          </Link>
+        </div>
       </section>
-
-      <Link to="/atelier-creation">
-        <button type="button" disabled={!allCardsCompleted}>
-          Passer à la page suivante
-        </button>
-      </Link>
-    </div>
+    </>
   );
 }
