@@ -84,14 +84,6 @@ VALUES
 ('Moyenne', (SELECT id FROM question WHERE title = 'Persistance aromatique')),
 ('Persistante', (SELECT id FROM question WHERE title = 'Persistance aromatique'));
 
-CREATE TABLE response (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  option_id INT NOT NULL,
-  FOREIGN KEY (option_id) REFERENCES options(id),
-  question_id INT,
-  FOREIGN KEY (question_id) REFERENCES question(id)
-  );
-
 CREATE TABLE user (
   id INT unsigned PRIMARY KEY not null AUTO_INCREMENT,
   firstname varchar(80) NOT NULL,
@@ -107,6 +99,16 @@ CREATE TABLE wine (
   name varchar(80) NOT NULL,
   grape_variety varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE response (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  option_id INT NOT NULL,
+  FOREIGN KEY (option_id) REFERENCES options(id),
+  user_id INT unsigned,
+  FOREIGN KEY (user_id) REFERENCES user(id),
+  wine_id INT unsigned,
+  FOREIGN KEY (wine_id) REFERENCES wine(id)
+  );
 
 CREATE TABLE user_wine (
   id INT unsigned AUTO_INCREMENT PRIMARY KEY,

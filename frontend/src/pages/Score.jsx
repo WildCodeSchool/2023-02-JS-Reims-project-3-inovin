@@ -37,7 +37,7 @@ function Stars() {
   );
 }
 
-function Notation() {
+function Score() {
   return (
     <>
       <Navbar />
@@ -55,4 +55,4 @@ function Notation() {
   );
 }
 
-export default Notation;
+export default Score;
