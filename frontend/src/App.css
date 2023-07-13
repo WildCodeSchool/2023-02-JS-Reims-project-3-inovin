@@ -638,37 +638,57 @@ select {
   transition: 1000ms;
 }
 
-/*ADDWINE & VIEWWINES*/
+/*ADDWINE*/
 
-.adwines {
+.backgroundAdwines {
   background-image: url("./Pictures/Fond4.png");
   background-size: cover;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
   justify-content: center;
-  padding: 2rem;
 }
-.adwines form div {
-  padding: 1rem;
-  font-size: x-large;
-  border: 6px solid #cec1c1;
-  background: #9b9471;
-  border-radius: 2rem;
-  border: 2px solid #111111;
+
+.backgroundAdwines h1 {
+  margin: 2rem;
+  font-style: italic;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  color: #000000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: xx-large;
+}
+
+.backgroundAdwines form div {
   margin: 1rem;
+  color: black;
 }
-.adwines form button {
-  border: 1px solid #111111;
+
+.backgroundAdwines form button {
   margin: 1rem;
   text-align: center;
 }
-.adwines h1 {
+
+.backgroundAdwines .buttonSubmit,
+.buttonListWines {
+  background-color: #dec439;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 2em;
+  font-size: 1rem;
+  color: black;
+}
+
+.backgroundAdwines .buttonListWines {
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  font-weight: 700;
+}
+
+.divButtonSubmit {
   display: flex;
   justify-content: center;
-  font-size: xx-large;
-  margin: 1rem;
 }
 
 /*RESPONSIVE*/

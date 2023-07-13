@@ -1,3 +1,4 @@
+import { Box, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -33,52 +34,71 @@ export default function AddWine() {
   };
 
   return (
-    <section className="adwines">
+    <section className="backgroundAdwines">
       <h1>Ajouter un vin</h1>
 
       <form onSubmit={aaddwine}>
-        <div>
-          <label htmlFor="name">Nom :</label>
-          <input
-            type="text"
-            id="name"
-            name="user_name"
+        <Box
+          sx={{
+            "& .MuiTextField-root": { m: 1, width: "20rem" },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <TextField
+            id="filled-size-normal"
+            label="Nom"
+            variant="filled"
             onChange={(event) => {
               setName(event.target.value);
             }}
             value={name}
           />
-        </div>
-        <div>
-          <label htmlFor="Couleur">Couleur:</label>
-          <input
-            type="text"
-            name="Couleur"
+        </Box>
+        <Box
+          sx={{
+            "& .MuiTextField-root": { m: 1, width: "20rem" },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <TextField
+            id="filled-size-normal"
+            label="Couleur"
+            variant="filled"
             onChange={(event) => {
               setColor(event.target.value);
             }}
-            value={color}
+            value={name}
           />
-        </div>
-        <div>
-          <label htmlFor="Saveur">Saveur :</label>
-          <input
-            type="text"
-            name="Saveur"
+        </Box>
+        <Box
+          sx={{
+            "& .MuiTextField-root": { m: 1, width: "20rem" },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <TextField
+            id="filled-size-normal"
+            label="Saveur"
+            variant="filled"
             onChange={(event) => {
               setSaveur(event.target.value);
             }}
-            value={saveur}
+            value={name}
           />
-        </div>
+        </Box>
 
-        <button className="buttonLogin" type="submit">
-          Envoyer
-        </button>
+        <div className="divButtonSubmit">
+          <button className="buttonSubmit" type="submit">
+            Envoyer
+          </button>
+        </div>
       </form>
 
-      <Link to="/afficher-mes-vins" className="buttonLogin">
-        Voire la liste des vins
+      <Link to="/afficher-mes-vins" className="buttonListWines">
+        Liste des vins
       </Link>
     </section>
   );
