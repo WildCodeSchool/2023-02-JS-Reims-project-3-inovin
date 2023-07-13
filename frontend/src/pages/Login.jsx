@@ -52,7 +52,7 @@ function Login() {
       })
       .then((data) => {
         setToken(data.token);
-        navigate("/fourglass"); // Redirection vers la page "Dashboard" après la connexion réussie
+        navigate("/accueil"); // Redirection vers la page "Dashboard" après la connexion réussie
       })
       .catch((error) => {
         setErrorMessage(error.message); // Définit le message d'erreur
@@ -60,14 +60,14 @@ function Login() {
   };
 
   return (
-    <form className="Inscription" onSubmit={handleLogin}>
+    <form className="Inscription Connexion" onSubmit={handleLogin}>
       <div className="PresInscip">
         <Link to="/">
           <img src={Logo} alt="Ino Vin" />
         </Link>
         <h1>CONNEXION</h1>
       </div>
-      <div className={`form-group ${focused ? "focused" : ""}`}>
+      <div className={`form-group ${focused ? "focused" : ""} inputLogin`}>
         <input
           ref={usernameRef}
           onFocus={handleFocus}
