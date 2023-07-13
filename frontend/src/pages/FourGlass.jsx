@@ -1,11 +1,13 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import GlassCard from "../components/GlassCard";
 import Navbar from "../components/Navbar";
+import { useAuth } from "../contexts/AuthContext";
 import { markCardCompleted } from "../components/glassCardReducer";
 
 export default function FourGlass() {
+  const { isAdmin } = useAuth();
   const dispatch = useDispatch();
   const isCardCompleted = useSelector((state) => state);
 
@@ -16,6 +18,7 @@ export default function FourGlass() {
   const allCardsCompleted = Object.values(isCardCompleted).every(
     (value) => value
   );
+
   return (
     <>
       <Navbar />
@@ -48,6 +51,11 @@ export default function FourGlass() {
             onClick={() => handleGlassCardClick("vin4")}
           />
         </div>
+        {isAdmin && (
+          <Link to="/ajouter-mes-vins" className="ajoutermesvins">
+            Ajouter mes vins
+          </Link>
+        )}
         <div className="buttonDiv">
           <Link to="/atelier-creation">
             <button

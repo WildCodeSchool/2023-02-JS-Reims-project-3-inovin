@@ -41,6 +41,20 @@ body {
   text-align: center;
 }
 
+/* Boutton pour ajouter les vins en pages fourglasse   */
+
+.ajoutermesvins {
+  border: 2px solid #dec439;
+  background-color: #dec439;
+  color: #010707;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
 /*Page Home*/
 
 .Home {
@@ -591,6 +605,37 @@ select {
 .buttonReturn:hover {
   background-color: #fff;
   transition: 1000ms;
+}
+
+.adwines {
+  background-image: url("./Pictures/Fond4.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  padding: 2rem;
+}
+.adwines form div {
+  padding: 1rem;
+  font-size: x-large;
+  border: 6px solid #cec1c1;
+  background: #9b9471;
+  border-radius: 2rem;
+  border: 2px solid #111111;
+  margin: 1rem;
+}
+.adwines form button {
+  border: 1px solid #111111;
+  margin: 1rem;
+  text-align: center;
+}
+.adwines h1 {
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+  margin: 1rem;
 }
 
 /*RESPONSIVE*/
