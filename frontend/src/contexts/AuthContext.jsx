@@ -5,9 +5,10 @@ const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
   const [token, setToken] = useState();
+  const [isAdmin, setIsAdmin] = useState("");
 
   const tokenManage = useMemo(() => {
-    return { token, setToken };
+    return { token, setToken, isAdmin, setIsAdmin };
   }, [token]);
 
   return (

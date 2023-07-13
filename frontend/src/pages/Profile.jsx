@@ -1,3 +1,4 @@
+import { IoIosWine } from "react-icons/io";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
@@ -50,26 +51,46 @@ function Profile() {
   return (
     <>
       <Navbar />
-      <div className="profil">
-        <div className="Information">
+      <section className="profil">
+        <div className="informations">
           <h2 className="title">Informations du compte</h2>
 
           {informations.map((user) => (
             <div key={user.id} className="userInfo">
-              <div className="Nom">
-                <p>Nom: {user.lastname}</p>
+              <div className="Nom information">
+                <p>
+                  <span className="informationSpan">Nom:</span> {user.lastname}
+                </p>
               </div>
-              <div className="Prenom">
-                <p>Prénom: {user.firstname}</p>
+              <div className="Prenom information">
+                <p>
+                  <span className="informationSpan">Prénom:</span>{" "}
+                  {user.firstname}
+                </p>
               </div>
-              <div className="Email">
-                <p>Email: {user.email}</p>
+              <div className="Email information">
+                <p>
+                  <span className="informationSpan">Email:</span> {user.email}
+                </p>
               </div>
-              <div className="Gout">
-                <p>Gout de base : {user.choice_of_tastes}</p>
+              <div className="Gout information">
+                <p>
+                  <span className="informationSpan">
+                    Préférence de goût
+                    <IoIosWine /> :
+                  </span>
+                  {user.choice_of_tastes}
+                </p>
               </div>
-              <div className="Date">
-                <p>Date de Naissance: {user.date_of_birth}</p>
+              <div className="Date information">
+                <p>
+                  <span className="informationSpan">Date de Naissance:</span>{" "}
+                  {user.date_of_birth
+                    .slice(0, 10)
+                    .split("-")
+                    .reverse()
+                    .join("-")}
+                </p>
               </div>
             </div>
           ))}
@@ -81,10 +102,10 @@ function Profile() {
             <p key={response.wine_id}> Marque: {response.option_name}</p>
           ))}
         </div>
-        <Link to="/fourglass" className="buttonRegister">
+        <Link to="/degustation" className="buttonReturn">
           Retour
         </Link>
-      </div>
+      </section>
     </>
   );
 }

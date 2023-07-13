@@ -11,8 +11,11 @@ import Score from "./pages/Score";
 import Logout from "./components/Logout";
 import Creation from "./pages/Creation";
 import CreationRecap from "./pages/CreationRecap";
+import AddWine from "./pages/AddWine";
+import ViewWine from "./pages/ViewWine";
 import "./App.css";
 import "./App.scss";
+import Intro from "./pages/Intro";
 
 function App() {
   return (
@@ -21,12 +24,15 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/questionnaire/:wineId/note" element={<Score />} />
         <Route path="/questionnaire/:wineId" element={<Questionnaire />} />
-        <Route path="/fourglass" element={<FourGlass />} />
+        <Route path="/degustation" element={<FourGlass />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/accueil" element={<Intro />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Wine" element={<Wine />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/ajouter-mes-vins" element={<AddWine />} />
+        <Route path="/afficher-mes-vins" element={<ViewWine />} />
         <Route path="/atelier-creation" element={<Creation />} />
         <Route
           path="/atelier-creation/recapitulatif"
