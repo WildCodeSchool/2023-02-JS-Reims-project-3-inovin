@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import Logo from "../Pictures/logo3.png";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const firstNameRef = useRef();
@@ -85,12 +84,9 @@ function Register() {
   };
 
   return (
-    <form className="Inscription" onSubmit={handleSubmit}>
-      <Link to="/">
-        <img src={Logo} alt="Ino Vin" />
-      </Link>
+    <form className="Inscription Register" onSubmit={handleSubmit}>
       <div className="PresInscip">
-        <h1>INSCRIPTION</h1>
+        <h1>INSCRIRE UN UTILISATEUR</h1>
       </div>
       <div className={`form-group ${focused ? "focused" : ""}`}>
         <input
@@ -119,6 +115,20 @@ function Register() {
         />
         <label htmlFor="firstname" className="form-label">
           Prénom 👤
+        </label>
+      </div>
+      <div className={`form-group ${focused ? "focused" : ""}`}>
+        <input
+          placeholder=" "
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          // ref={numberPhone}
+          type="text"
+          id="numberPhone"
+          name="numberPhone"
+        />
+        <label htmlFor="numberPhone" className="form-label">
+          Numéro de Téléphone
         </label>
       </div>
       <div className={`form-group ${focused ? "focused" : ""}`}>
@@ -207,9 +217,23 @@ function Register() {
           </button>
         </div>
       </div>
+      <div className={`form-group ${focused ? "focused" : ""} comment`}>
+        <input
+          placeholder=" "
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          // ref={numberPhone}
+          type="text"
+          id="comment"
+          name="comment"
+        />
+        <label htmlFor="comment" className="form-label">
+          Commentaire
+        </label>
+      </div>
       <div>
         <button className="register" type="submit">
-          S'inscrire
+          Inscrire l'utilisateur
         </button>
       </div>
       {errorMessage && <p>{errorMessage}</p>}

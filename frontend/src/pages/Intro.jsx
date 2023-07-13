@@ -6,6 +6,7 @@ import { useAuth } from "../contexts/AuthContext";
 export default function Intro() {
   const [informations, setInformations] = useState([]);
   const { token } = useAuth();
+  const { isAdmin } = useAuth();
 
   const fetchInformationsData = () => {
     fetch(
@@ -38,6 +39,19 @@ export default function Intro() {
           COMMENCEZ L'AVENTURE
         </Link>
       </div>
+      {isAdmin && (
+        <div className="">
+          <Link to="/ajouter-mes-vins" className="ajoutermesvins">
+            Ajouter mes vins
+          </Link>
+          <Link className="ajoutermesvins" to="/register">
+            Inscrire un nouvel utilisateur
+          </Link>
+          <Link className="ajoutermesvins" to="/">
+            Créer un atelier
+          </Link>
+        </div>
+      )}
     </section>
   );
 }

@@ -96,7 +96,7 @@ body {
   position: relative;
 
   & + .form-group {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
 }
 
@@ -108,12 +108,19 @@ body {
   z-index: 10;
   transition: transform 150ms ease-out, font-size 150ms ease-out;
 }
-
-:not(:placeholder-shown) + .form-label,
+.Connexion :not(:placeholder-shown) + .form-label,
 :focus + .form-label {
   transform: translateY(-125%);
   font-size: 1.5em;
   color: #dec439;
+  top: 0.6rem;
+}
+
+.Register :not(:placeholder-shown) + .form-label,
+:focus + .form-label {
+  transform: translateY(-125%);
+  font-size: 1.5em;
+  color: black;
   top: 0.6rem;
 }
 
@@ -127,15 +134,35 @@ body {
   margin-top: 3rem;
 }
 
+.Connexion h1 {
+  margin: 1rem;
+  font-style: italic;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  color: #dec439;
+  text-shadow: 2px 2px 4px rgba(6, 6, 0, 0.5);
+}
+
 /*Page Register*/
+
+.Register {
+  background-image: url(./Pictures/Fond4.png);
+  background-size: cover;
+  min-height: 100vh;
+}
 
 .PresInscip {
   text-align: center;
   margin-bottom: 1rem;
 }
 
-.PresInscip h1 {
-  color: #dec439;
+.Register h1 {
+  margin: 1rem;
+  font-style: italic;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  color: #000000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .Inscription label {
@@ -162,6 +189,10 @@ body {
   width: 10rem;
   border-radius: 2rem;
   margin: 1rem;
+}
+
+.comment {
+  margin-top: 1.5rem;
 }
 
 /*date inputs */
@@ -606,6 +637,8 @@ select {
   background-color: #fff;
   transition: 1000ms;
 }
+
+/*ADDWINE & VIEWWINES*/
 
 .adwines {
   background-image: url("./Pictures/Fond4.png");
