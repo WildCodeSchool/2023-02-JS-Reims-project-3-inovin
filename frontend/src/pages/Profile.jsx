@@ -99,9 +99,7 @@ function Profile() {
         <div className="gouts">
           <h2 className="title">Vos goûts</h2>
           {tastes.map((response) => (
-            <div key={response.id}>
-              <p>Marque: {response.option_id}</p>
-            </div>
+            <p key={response.wine_id}> Marque: {response.option_name}</p>
           ))}
         </div>
         <Link to="/degustation" className="buttonReturn">

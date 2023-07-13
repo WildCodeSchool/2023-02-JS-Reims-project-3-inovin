@@ -10,6 +10,8 @@ const optionController = require("./controllers/optionsControllers");
 
 const authControllers = require("./controllers/authControllers");
 
+const responseControllers = require("./controllers/responseControllers");
+
 const {
   hashPassword,
   verifyPassword,
@@ -44,5 +46,8 @@ router.use(verifyToken); // mur d'authentification
 router.post("/users", userControllers.add);
 router.get("/users", userControllers.browse);
 router.get("/user", userControllers.user);
+
+router.post("/responses", responseControllers.add);
+router.get("/responses", responseControllers.browseByUser);
 
 module.exports = router;
