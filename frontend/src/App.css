@@ -573,6 +573,13 @@ select {
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
+.introRoute {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 1rem;
+  margin-top: 5rem;
+}
+
 /*Profil*/
 
 .profil {
@@ -689,6 +696,25 @@ select {
 .divButtonSubmit {
   display: flex;
   justify-content: center;
+}
+
+/*VIEWWINE*/
+.backgroundViewWines {
+  background-image: url("./Pictures/Fond4.png");
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backgroundViewWines h1 {
+  margin: 2rem;
+  font-style: italic;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  color: #000000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: xx-large;
 }
 
 /*RESPONSIVE*/
