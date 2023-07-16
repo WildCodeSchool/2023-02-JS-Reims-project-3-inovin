@@ -40,7 +40,7 @@ export default function Intro() {
         </Link>
       </div>
       {isAdmin && (
-        <div className="">
+        <div className="introRoute">
           <Link to="/ajouter-mes-vins" className="ajoutermesvins">
             Ajouter mes vins
           </Link>
