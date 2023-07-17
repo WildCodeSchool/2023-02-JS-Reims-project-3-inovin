@@ -35,11 +35,13 @@ export default function Intro() {
         <h1>Bienvenue {user.firstname}</h1>
       ))}
       <div className="linkDiv">
-        <Link className="linkStart" to="/degustation">
-          COMMENCEZ L'AVENTURE
-        </Link>
+        {isAdmin !== 1 && (
+          <Link className="linkStart" to="/degustation">
+            COMMENCEZ L'AVENTURE
+          </Link>
+        )}
       </div>
-      {isAdmin && (
+      {isAdmin === 1 && (
         <div className="introRoute">
           <Link to="/ajouter-mes-vins" className="ajoutermesvins">
             Ajouter mes vins
