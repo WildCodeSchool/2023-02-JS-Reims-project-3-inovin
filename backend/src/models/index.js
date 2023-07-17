@@ -46,6 +46,11 @@ const WineManager = require("./WineManager");
 models.wine = new WineManager();
 models.wine.setDatabase(pool);
 
+const ResponseManager = require("./responseManager");
+
+models.response = new ResponseManager();
+models.response.setDatabase(pool);
+
 // bonus: use a proxy to personalize error message,
 // bonus : utiliser un proxy pour personnaliser le message d'erreur,
 
