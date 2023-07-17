@@ -47,6 +47,7 @@ export default function AddWine() {
         >
           <TextField
             id="filled-size-normal"
+            color="secondary"
             label="Nom"
             variant="filled"
             onChange={(event) => {
@@ -65,11 +66,12 @@ export default function AddWine() {
           <TextField
             id="filled-size-normal"
             label="Couleur"
+            color="secondary"
             variant="filled"
             onChange={(event) => {
               setColor(event.target.value);
             }}
-            value={name}
+            value={color}
           />
         </Box>
         <Box
@@ -82,11 +84,12 @@ export default function AddWine() {
           <TextField
             id="filled-size-normal"
             label="Saveur"
+            color="secondary"
             variant="filled"
             onChange={(event) => {
               setSaveur(event.target.value);
             }}
-            value={name}
+            value={saveur}
           />
         </Box>
 
