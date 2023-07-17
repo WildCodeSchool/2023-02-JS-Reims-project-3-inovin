@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
+import { Link } from "react-router-dom";
 
 const columns = [
   { field: "id", headerName: "ID", width: 90 },
@@ -44,6 +45,9 @@ export default function ViewWine() {
           checkboxSelection
         />
       </div>
+      <Link className="returnViewWines" to="/ajouter-mes-vins">
+        Retour
+      </Link>
     </section>
   );
 }
