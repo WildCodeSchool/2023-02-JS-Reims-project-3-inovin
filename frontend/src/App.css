@@ -717,6 +717,11 @@ select {
   font-size: xx-large;
 }
 
+.arrayViewWines {
+  background-color: rgba(165, 42, 42, 0.879);
+  width: 100%;
+  border-radius: 1rem;
+}
 /*RESPONSIVE*/
 
 @media screen and (min-width: 710px) {
@@ -813,5 +818,17 @@ select {
 
   .linkStart {
     font-size: 1.3rem;
+  }
+
+  /*VIEWWINES*/
+  .arrayViewWines {
+    width: 55rem;
+  }
+}
+
+@media screen and (min-width: 1290px) {
+  /*VIEWWINES*/
+  .arrayViewWines {
+    width: 80rem;
   }
 }
