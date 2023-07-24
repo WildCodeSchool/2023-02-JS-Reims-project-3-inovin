@@ -6,6 +6,23 @@ export default function AddWine() {
   const [color, setColor] = useState("");
   const [saveur, setSaveur] = useState("");
 
+  const [focused, setFocused] = useState(false);
+  const [filled, setFilled] = useState(false);
+
+  const handleFocus = () => {
+    setFocused(true);
+  };
+
+  const handleBlur = (event) => {
+    const inputValue = event.target.value;
+    if (inputValue === "") {
+      setFilled(false);
+      setFocused(false);
+    } else {
+      setFilled(true);
+    }
+  };
+
   const aaddwine = (event) => {
     event.preventDefault();
     fetch(
@@ -33,53 +50,80 @@ export default function AddWine() {
   };
 
   return (
-    <section className="adwines">
+    <section className="backgroundAdwines">
       <h1>Ajouter un vin</h1>
 
       <form onSubmit={aaddwine}>
-        <div>
-          <label htmlFor="name">Nom :</label>
+        <div className={`form-group ${focused ? "focused" : ""} inputAddWine`}>
           <input
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            className={filled ? "filled" : ""}
             type="text"
-            id="name"
-            name="user_name"
+            id="NameVin"
+            name="NameVin"
+            placeholder=" "
             onChange={(event) => {
               setName(event.target.value);
             }}
             value={name}
           />
+          <label htmlFor="NameVin" className="form-label  labelAddWines">
+            Nom du vin
+          </label>
         </div>
-        <div>
-          <label htmlFor="Couleur">Couleur:</label>
+        <div className={`form-group ${focused ? "focused" : ""} inputAddWine`}>
           <input
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            className={filled ? "filled" : ""}
             type="text"
-            name="Couleur"
+            id="Color"
+            name="Color"
+            placeholder=" "
             onChange={(event) => {
               setColor(event.target.value);
             }}
             value={color}
           />
+          <label htmlFor="Color" className="form-label labelAddWines">
+            La couleur
+          </label>
         </div>
-        <div>
-          <label htmlFor="Saveur">Saveur :</label>
+        <div className={`form-group ${focused ? "focused" : ""} inputAddWine`}>
           <input
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            className={filled ? "filled" : ""}
             type="text"
+            id="Saveur"
             name="Saveur"
+            placeholder=" "
             onChange={(event) => {
               setSaveur(event.target.value);
             }}
             value={saveur}
           />
+          <label htmlFor="Saveur" className="form-label labelAddWines">
+            Les saveurs
+          </label>
         </div>
 
-        <button className="buttonLogin" type="submit">
-          Envoyer
-        </button>
+        <div className="divButtonSubmit">
+          <button className="buttonSubmit" type="submit">
+            Envoyer
+          </button>
+        </div>
       </form>
 
-      <Link to="/afficher-mes-vins" className="buttonLogin">
-        Voire la liste des vins
-      </Link>
+      <div className="divButtonAddWines">
+        <Link to="/accueil" className="buttonReturnAddWines">
+          Retour
+        </Link>
+        <Link to="/afficher-mes-vins" className="buttonListWines">
+          Liste des vins
+        </Link>
+      </div>
     </section>
   );
 }

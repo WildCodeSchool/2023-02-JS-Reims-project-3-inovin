@@ -94,10 +94,6 @@ body {
 
 .form-group {
   position: relative;
-
-  & + .form-group {
-    margin-top: 1rem;
-  }
 }
 
 .form-label {
@@ -109,11 +105,19 @@ body {
   transition: transform 150ms ease-out, font-size 150ms ease-out;
 }
 
-:not(:placeholder-shown) + .form-label,
+.Connexion :not(:placeholder-shown) + .form-label,
 :focus + .form-label {
   transform: translateY(-125%);
   font-size: 1.5em;
   color: #dec439;
+  top: 0.6rem;
+}
+
+.Register :not(:placeholder-shown) + .form-label,
+:focus + .form-label {
+  transform: translateY(-125%);
+  font-size: 1.5em;
+  color: black;
   top: 0.6rem;
 }
 
@@ -125,17 +129,38 @@ body {
 
 .inputLogin {
   margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.Connexion h1 {
+  margin: 1rem;
+  font-style: italic;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  color: #dec439;
+  text-shadow: 2px 2px 4px rgba(6, 6, 0, 0.5);
 }
 
 /*Page Register*/
+
+.Register {
+  background-image: url(./Pictures/Fond4.png);
+  background-size: cover;
+  min-height: 100vh;
+}
 
 .PresInscip {
   text-align: center;
   margin-bottom: 1rem;
 }
 
-.PresInscip h1 {
-  color: #dec439;
+.Register h1 {
+  margin: 1rem;
+  font-style: italic;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  color: #000000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .Inscription label {
@@ -162,6 +187,10 @@ body {
   width: 10rem;
   border-radius: 2rem;
   margin: 1rem;
+}
+
+.comment {
+  margin-top: 1.5rem;
 }
 
 /*date inputs */
@@ -498,35 +527,32 @@ select {
 
 /*INTRO*/
 .backgroundIntro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-image: url("./Pictures/Fond4.png");
   background-size: cover;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .backgroundIntro h1 {
-  margin-top: 1.5rem;
   font-size: 2rem;
+  z-index: 1;
 }
 
 .backgroundIntro img {
-  position: absolute;
-  top: 1rem;
   width: 23rem;
 }
 
 .linkDiv {
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 3rem;
   right: 1rem;
 }
 
 .linkStart {
   color: #000000;
-  background-color: #a9621647;
+  background-color: #934c1d7a;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   padding: 0.5rem;
@@ -542,12 +568,24 @@ select {
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
+.logout {
+  margin-top: 2.5rem;
+}
+
+.introRoute {
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 1rem;
+  margin-top: 2rem;
+}
+
 /*Profil*/
 
 .profil {
   background-image: url("./Pictures/Fond4.png");
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -598,8 +636,7 @@ select {
   font-weight: 800;
   width: 8rem;
   height: 1.5rem;
-  position: absolute;
-  bottom: 0;
+  margin-top: 2rem;
 }
 
 .buttonReturn:hover {
@@ -607,37 +644,127 @@ select {
   transition: 1000ms;
 }
 
-.adwines {
+/*ADDWINE*/
+
+.backgroundAdwines {
   background-image: url("./Pictures/Fond4.png");
   background-size: cover;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  justify-content: center;
-  padding: 2rem;
+  justify-content: start;
 }
-.adwines form div {
-  padding: 1rem;
-  font-size: x-large;
-  border: 6px solid #cec1c1;
-  background: #9b9471;
-  border-radius: 2rem;
-  border: 2px solid #111111;
+
+.backgroundAdwines h1 {
+  margin: 2.5rem;
+  margin-bottom: 4rem;
+  font-style: italic;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  color: #000000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: xx-large;
+}
+
+.backgroundAdwines form div {
   margin: 1rem;
+  color: black;
 }
-.adwines form button {
-  border: 1px solid #111111;
+
+.backgroundAdwines form button {
   margin: 1rem;
   text-align: center;
 }
-.adwines h1 {
+
+.backgroundAdwines .buttonSubmit,
+.buttonListWines,
+.buttonReturnAddWines {
   display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: xx-large;
-  margin: 1rem;
+  background-color: #dec439;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 2em;
+  font-size: 1rem;
+  font-weight: 300;
+  color: black;
 }
 
+.backgroundAdwines .buttonListWines {
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  font-weight: 800;
+}
+
+.divButtonAddWines {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 3rem;
+  margin-top: 1rem;
+}
+
+.divButtonSubmit {
+  display: flex;
+  justify-content: center;
+}
+
+.inputAddWine input[type="text"],
+select {
+  width: 20rem;
+  padding: 1rem 5rem;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 2rem;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.inputAddWine :not(:placeholder-shown) + .form-label,
+:focus + .form-label {
+  transform: translateY(-125%);
+  font-size: 1.5em;
+  color: black;
+  top: 0.6rem;
+}
+
+/*VIEWWINE*/
+.backgroundViewWines {
+  background-image: url("./Pictures/Fond4.png");
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backgroundViewWines h1 {
+  margin: 2rem;
+  font-style: italic;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  color: #000000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: xx-large;
+}
+
+.arrayViewWines {
+  background-color: rgba(165, 42, 42, 0.879);
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.returnViewWines {
+  color: #000000;
+  background-color: #dec439;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 0.5rem;
+  position: absolute;
+  bottom: 0.9rem;
+  padding: 0.5rem;
+  font-weight: 700;
+}
 /*RESPONSIVE*/
 
 @media screen and (min-width: 710px) {
@@ -729,10 +856,33 @@ select {
   }
 
   .backgroundIntro img {
+    position: absolute;
     width: 40rem;
   }
 
-  .linkStart {
-    font-size: 1.3rem;
+  .linkDiv {
+    right: 5rem;
+  }
+
+  .introRoute {
+    position: absolute;
+    top: 50%;
+  }
+
+  /*ADDWINES*/
+  .backgroundAdwines .buttonListWines {
+    margin-top: -1rem;
+  }
+
+  /*VIEWWINES*/
+  .arrayViewWines {
+    width: 55rem;
+  }
+}
+
+@media screen and (min-width: 1290px) {
+  /*VIEWWINES*/
+  .arrayViewWines {
+    width: 80rem;
   }
 }

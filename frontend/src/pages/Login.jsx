@@ -51,7 +51,9 @@ function Login() {
         return response.json();
       })
       .then((data) => {
+        sessionStorage.setItem("isAdmin", data.is_admin);
         setIsAdmin(data.is_admin);
+        sessionStorage.setItem("token", data.token);
         setToken(data.token);
         navigate("/accueil"); // Redirection vers la page "Dashboard" après la connexion réussie
       })

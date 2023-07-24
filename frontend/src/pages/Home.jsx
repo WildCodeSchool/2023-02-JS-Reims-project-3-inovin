@@ -15,9 +15,6 @@ export default function Home() {
         <Link className="buttonLogin" to="/login">
           Se Connecter
         </Link>
-        <Link className="buttonRegister" to="/register">
-          S'inscrire
-        </Link>
       </div>
     </div>
   );
