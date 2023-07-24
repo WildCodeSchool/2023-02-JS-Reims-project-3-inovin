@@ -826,11 +826,16 @@ select {
   }
 
   .backgroundIntro img {
+    position: absolute;
     width: 40rem;
   }
 
   .linkStart {
     font-size: 1.3rem;
+  }
+
+  .linkDiv {
+    right: 5rem;
   }
 
   /*VIEWWINES*/
