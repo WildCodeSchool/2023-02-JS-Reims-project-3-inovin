@@ -20,7 +20,7 @@ export default function GlassCard({ wine, isCompleted, onClick }) {
 
 GlassCard.propTypes = {
   wine: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
   }).isRequired,
   isCompleted: PropTypes.bool.isRequired,
