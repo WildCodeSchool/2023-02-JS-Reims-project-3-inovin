@@ -34,13 +34,13 @@ export default function Intro() {
       {informations.map((user) => (
         <h1>Bienvenue {user.firstname}</h1>
       ))}
-      <div className="linkDiv">
-        {isAdmin !== 1 && (
+      {isAdmin !== 1 && (
+        <div className="linkDiv">
           <Link className="linkStart" to="/degustation">
             COMMENCEZ L'AVENTURE
           </Link>
-        )}
-      </div>
+        </div>
+      )}
       {isAdmin === 1 && (
         <div className="introRoute">
           <Link to="/ajouter-mes-vins" className="ajoutermesvins">

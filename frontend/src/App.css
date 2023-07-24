@@ -539,6 +539,7 @@ select {
 
 .backgroundIntro h1 {
   font-size: 2rem;
+  z-index: 1;
 }
 
 .backgroundIntro img {
@@ -570,6 +571,7 @@ select {
 }
 
 .introRoute {
+  z-index: 2;
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 1rem;
@@ -836,6 +838,11 @@ select {
 
   .linkDiv {
     right: 5rem;
+  }
+
+  .introRoute {
+    position: absolute;
+    top: 50%;
   }
 
   /*VIEWWINES*/
