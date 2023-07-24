@@ -82,7 +82,7 @@ export default function Questionnaire() {
     const promises = Object.values(formState).map((option) =>
       fetch(
         `${
-          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:3050"
         }/responses`,
         {
           method: "POST",
