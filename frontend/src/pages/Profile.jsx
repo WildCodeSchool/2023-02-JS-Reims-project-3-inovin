@@ -73,13 +73,10 @@ function Profile() {
                   <span className="informationSpan">Email:</span> {user.email}
                 </p>
               </div>
-              <div className="Gout information">
+              <div className="Prenom information">
                 <p>
-                  <span className="informationSpan">
-                    Préférence de goût
-                    <IoIosWine /> :
-                  </span>
-                  {user.choice_of_tastes}
+                  <span className="informationSpan">Numéro de téléphone :</span>{" "}
+                  {user.numberPhone}
                 </p>
               </div>
               <div className="Date information">
@@ -90,6 +87,15 @@ function Profile() {
                     .split("-")
                     .reverse()
                     .join("-")}
+                </p>
+              </div>
+              <div className="Gout information">
+                <p>
+                  <span className="informationSpan">
+                    Préférence de goût
+                    <IoIosWine /> :
+                  </span>
+                  {user.choice_of_tastes}
                 </p>
               </div>
             </div>

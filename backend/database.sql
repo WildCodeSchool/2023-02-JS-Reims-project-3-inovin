@@ -90,6 +90,7 @@ CREATE TABLE user (
   lastname varchar(80) NOT NULL,
   date_of_birth DATE,
   email varchar(255) NOT NULL,
+  numberPhone varchar(10),
   hashedPassword varchar(255) NOT NULL,
   choice_of_tastes varchar(80) NOT NULL,
   is_admin boolean DEFAULT (false)

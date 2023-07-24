@@ -151,7 +151,7 @@ body {
 
 .PresInscip {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .Register h1 {
@@ -219,13 +219,14 @@ input[type="date"],
 /*Input text*/
 
 .Inscription input {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
 .Inscription input[type="text"],
 input[type="password"],
 input[type="email"],
+input[type="tel"],
 select {
   width: 20rem;
   padding: 1rem 5rem;

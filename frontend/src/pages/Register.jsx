@@ -7,6 +7,7 @@ function Register() {
   const dateOfBirthRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
+  const numberPhoneRef = useRef();
 
   const [selectedTaste, setSelectedTaste] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -21,6 +22,7 @@ function Register() {
     const dateOfBirth = dateOfBirthRef.current.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
+    const numberPhone = numberPhoneRef.current.value;
 
     const currentDate = new Date();
     const selectedDate = new Date(dateOfBirth);
@@ -46,6 +48,7 @@ function Register() {
             lastName,
             dateOfBirth,
             email,
+            numberPhone,
             password,
             choiceOfTastes: selectedTaste,
           }),
@@ -98,6 +101,7 @@ function Register() {
           type="text"
           id="lastName"
           name="lastName"
+          required
         />
         <label htmlFor="lastname" className="form-label">
           Nom de Famille 👤
@@ -112,6 +116,7 @@ function Register() {
           type="text"
           id="firstName"
           name="firstName"
+          required
         />
         <label htmlFor="firstname" className="form-label">
           Prénom 👤
@@ -122,10 +127,12 @@ function Register() {
           placeholder=" "
           onFocus={handleFocus}
           onBlur={handleBlur}
-          // ref={numberPhone}
-          type="text"
+          ref={numberPhoneRef}
+          type="tel"
+          maxLength="10"
           id="numberPhone"
           name="numberPhone"
+          required
         />
         <label htmlFor="numberPhone" className="form-label">
           Numéro de Téléphone
@@ -140,6 +147,7 @@ function Register() {
           type="email"
           id="email"
           name="email"
+          required
         />
         <label htmlFor="email" className="form-label">
           Adresse mail ✉️
@@ -154,6 +162,7 @@ function Register() {
           type="password"
           id="password"
           name="password"
+          required
         />
         <label htmlFor="password" className="form-label">
           Mot de Passe 🗝️
@@ -166,6 +175,7 @@ function Register() {
           type="date"
           id="dateOfBirth"
           name="dateOfBirth"
+          required
         />
       </div>
       <div>
