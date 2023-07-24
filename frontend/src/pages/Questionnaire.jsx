@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Visuel from "../Pictures/Vue.png";
 import Olfatif from "../Pictures/Odorat.png";
 import Gustatif from "../Pictures/Gout.png";
 import Navbar from "../components/Navbar";
 import "./Checkbox.css";
+import { useAuth } from "../contexts/AuthContext";
 
 const CategoryComponents = {
   Visuel,
@@ -17,13 +18,21 @@ export default function Questionnaire() {
   const [formState, setFormState] = useState({});
   const [currentPart, setCurrentPart] = useState(0);
 
+  const { token } = useAuth();
+  const { wineId } = useParams();
+
+  const navigate = useNavigate();
+
   useEffect(() => {
-    fetch("http://localhost:3050/options")
+    fetch(
+      `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/options`
+    )
       .then((response) => response.json())
       .then((responseData) => {
         const processedData = {};
         responseData.forEach(
           ({
+            id,
             option_name: optionName,
             question_title: questionTitle,
             category_name: categoryName,
@@ -42,7 +51,7 @@ export default function Questionnaire() {
               };
               processedData[categoryName].questions.push(question);
             }
-            question.responses.push(optionName);
+            question.responses.push({ id, responseLabel: optionName });
           }
         );
         setData(
@@ -53,7 +62,6 @@ export default function Questionnaire() {
         );
       });
   }, []);
-
   const HandleNextClick = () => {
     setCurrentPart(currentPart + 1);
   };
@@ -71,22 +79,34 @@ export default function Questionnaire() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const promises = Object.values(formState).map((option) =>
+      fetch(
+        `${
+          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+        }/responses`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            option_id: option,
+            wine_id: wineId,
+          }),
+        }
+      )
+    );
+    Promise.all(promises).then((responses) => {
+      if (responses.every((response) => response.ok)) {
+        alert("Le formulaire a été soumis avec succès !");
 
-    const response = await fetch("http://localhost:5000/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formState),
+        navigate(`/questionnaire/${wineId}/note`);
+      } else {
+        alert("Il y a eu une erreur lors de la soumission du formulaire.");
+      }
     });
-
-    if (response.ok) {
-      alert("Le formulaire a été soumis avec succès !");
-    } else {
-      alert("Il y a eu une erreur lors de la soumission du formulaire.");
-    }
   };
-
   return (
     <div className="backgroundQuestionnaire">
       <Navbar />
@@ -99,22 +119,22 @@ export default function Questionnaire() {
               <h3 className="titre">{question.title}</h3>
               <div className="Questions">
                 {question.responses.map((response) => (
-                  <div className="checkbox-1" key={response}>
+                  <div className="checkbox-1" key={response.id}>
                     <label className="QuestionnaireChoix">
                       <input
-                        id={response.replaceAll(" ", "")}
+                        id={response.responseLabel}
                         type={question.type}
-                        checked={formState[question.title] === response}
+                        checked={formState[question.title] === response.id}
                         onChange={(event) =>
                           setFormState({
                             ...formState,
                             [question.title]: event.target.checked
-                              ? response
+                              ? response.id
                               : "",
                           })
                         }
                       />
-                      {response}
+                      {response.responseLabel}
                     </label>
                   </div>
                 ))}
@@ -145,11 +165,11 @@ export default function Questionnaire() {
           )}
           {currentPart >= data.length - 1 && (
             <div className="QuestBut">
-              <Link to="/questionnaire/note">
-                <button className="QuestionnaireButton" type="submit">
-                  Validé
-                </button>
-              </Link>
+              {/* <Link to="/questionnaire/note"> */}
+              <button className="QuestionnaireButton" type="submit">
+                Validé
+              </button>
+              {/* </Link> */}
             </div>
           )}
         </div>

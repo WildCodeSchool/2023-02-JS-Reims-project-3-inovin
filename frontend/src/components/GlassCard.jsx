@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import glassWine from "../Pictures/glassWine.png";
 import glass from "../Pictures/glass.png";
 
-export default function GlassCard({ title, isCompleted, onClick }) {
+export default function GlassCard({ wine, isCompleted, onClick }) {
   return (
-    <Link to="/Questionnaire" onClick={onClick}>
+    <Link to={`/questionnaire/${wine.id}`} onClick={onClick}>
       <figure className="glassAll">
-        <figcaption> {title}</figcaption>
+        <figcaption> {wine.name}</figcaption>
         {isCompleted ? (
           <img src={glassWine} alt="filled glass" />
         ) : (
@@ -19,7 +19,10 @@ export default function GlassCard({ title, isCompleted, onClick }) {
 }
 
 GlassCard.propTypes = {
-  title: PropTypes.string.isRequired,
+  wine: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  }).isRequired,
   isCompleted: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
 };
