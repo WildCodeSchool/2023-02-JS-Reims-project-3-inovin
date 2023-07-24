@@ -1,4 +1,3 @@
-import { Box, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -6,6 +5,23 @@ export default function AddWine() {
   const [name, setName] = useState("");
   const [color, setColor] = useState("");
   const [saveur, setSaveur] = useState("");
+
+  const [focused, setFocused] = useState(false);
+  const [filled, setFilled] = useState(false);
+
+  const handleFocus = () => {
+    setFocused(true);
+  };
+
+  const handleBlur = (event) => {
+    const inputValue = event.target.value;
+    if (inputValue === "") {
+      setFilled(false);
+      setFocused(false);
+    } else {
+      setFilled(true);
+    }
+  };
 
   const aaddwine = (event) => {
     event.preventDefault();
@@ -38,60 +54,60 @@ export default function AddWine() {
       <h1>Ajouter un vin</h1>
 
       <form onSubmit={aaddwine}>
-        <Box
-          sx={{
-            "& .MuiTextField-root": { m: 1, width: "20rem" },
-          }}
-          noValidate
-          autoComplete="off"
-        >
-          <TextField
-            id="filled-size-normal"
-            color="secondary"
-            label="Nom"
-            variant="filled"
+        <div className={`form-group ${focused ? "focused" : ""} inputAddWine`}>
+          <input
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            className={filled ? "filled" : ""}
+            type="text"
+            id="NameVin"
+            name="NameVin"
+            placeholder=" "
             onChange={(event) => {
               setName(event.target.value);
             }}
             value={name}
           />
-        </Box>
-        <Box
-          sx={{
-            "& .MuiTextField-root": { m: 1, width: "20rem" },
-          }}
-          noValidate
-          autoComplete="off"
-        >
-          <TextField
-            id="filled-size-normal"
-            label="Couleur"
-            color="secondary"
-            variant="filled"
+          <label htmlFor="NameVin" className="form-label  labelAddWines">
+            Nom du vin
+          </label>
+        </div>
+        <div className={`form-group ${focused ? "focused" : ""} inputAddWine`}>
+          <input
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            className={filled ? "filled" : ""}
+            type="text"
+            id="Color"
+            name="Color"
+            placeholder=" "
             onChange={(event) => {
               setColor(event.target.value);
             }}
             value={color}
           />
-        </Box>
-        <Box
-          sx={{
-            "& .MuiTextField-root": { m: 1, width: "20rem" },
-          }}
-          noValidate
-          autoComplete="off"
-        >
-          <TextField
-            id="filled-size-normal"
-            label="Saveur"
-            color="secondary"
-            variant="filled"
+          <label htmlFor="Color" className="form-label labelAddWines">
+            La couleur
+          </label>
+        </div>
+        <div className={`form-group ${focused ? "focused" : ""} inputAddWine`}>
+          <input
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            className={filled ? "filled" : ""}
+            type="text"
+            id="Saveur"
+            name="Saveur"
+            placeholder=" "
             onChange={(event) => {
               setSaveur(event.target.value);
             }}
             value={saveur}
           />
-        </Box>
+          <label htmlFor="Saveur" className="form-label labelAddWines">
+            Les saveurs
+          </label>
+        </div>
 
         <div className="divButtonSubmit">
           <button className="buttonSubmit" type="submit">

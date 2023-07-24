@@ -94,10 +94,6 @@ body {
 
 .form-group {
   position: relative;
-
-  & + .form-group {
-    margin-top: 1.5rem;
-  }
 }
 
 .form-label {
@@ -108,6 +104,7 @@ body {
   z-index: 10;
   transition: transform 150ms ease-out, font-size 150ms ease-out;
 }
+
 .Connexion :not(:placeholder-shown) + .form-label,
 :focus + .form-label {
   transform: translateY(-125%);
@@ -648,14 +645,16 @@ select {
 .backgroundAdwines {
   background-image: url("./Pictures/Fond4.png");
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: start;
 }
 
 .backgroundAdwines h1 {
-  margin: 2rem;
+  margin: 2.5rem;
+  margin-bottom: 4rem;
   font-style: italic;
   font-size: 1.7rem;
   text-transform: capitalize;
@@ -692,13 +691,35 @@ select {
   font-size: 1.2rem;
   border-radius: 1rem;
   font-weight: 800;
-  position: absolute;
-  bottom: 2rem;
 }
 
 .divButtonSubmit {
   display: flex;
   justify-content: center;
+}
+
+.inputAddWine input[type="text"],
+select {
+  width: 20rem;
+  padding: 1rem 5rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  background-color: #925b2177;
+  margin-bottom: 2rem;
+}
+
+.inputAddWine :not(:placeholder-shown) + .form-label,
+:focus + .form-label {
+  transform: translateY(-125%);
+  font-size: 1.5em;
+  color: black;
+  top: 0.6rem;
+}
+
+.labelAddWines {
+  color: black;
+  font-weight: 600;
 }
 
 /*VIEWWINE*/
@@ -843,6 +864,11 @@ select {
   .introRoute {
     position: absolute;
     top: 50%;
+  }
+
+  /*ADDWINES*/
+  .backgroundAdwines .buttonListWines {
+    margin-top: -1rem;
   }
 
   /*VIEWWINES*/
