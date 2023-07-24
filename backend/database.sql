@@ -93,6 +93,7 @@ CREATE TABLE user (
   numberPhone varchar(10),
   hashedPassword varchar(255) NOT NULL,
   choice_of_tastes varchar(80) NOT NULL,
+  comment varchar(255),
   is_admin boolean DEFAULT (false)
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

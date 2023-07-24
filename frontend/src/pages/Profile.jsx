@@ -73,7 +73,7 @@ function Profile() {
                   <span className="informationSpan">Email:</span> {user.email}
                 </p>
               </div>
-              <div className="Prenom information">
+              <div className="Number information">
                 <p>
                   <span className="informationSpan">Numéro de téléphone :</span>{" "}
                   {user.numberPhone}

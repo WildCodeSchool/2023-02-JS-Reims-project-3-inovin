@@ -226,7 +226,6 @@ input[type="date"],
 .Inscription input[type="text"],
 input[type="password"],
 input[type="email"],
-input[type="tel"],
 select {
   width: 20rem;
   padding: 1rem 5rem;

@@ -8,6 +8,7 @@ function Register() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const numberPhoneRef = useRef();
+  const commentRef = useRef();
 
   const [selectedTaste, setSelectedTaste] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -23,6 +24,7 @@ function Register() {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     const numberPhone = numberPhoneRef.current.value;
+    const comment = commentRef.current.value;
 
     const currentDate = new Date();
     const selectedDate = new Date(dateOfBirth);
@@ -48,6 +50,7 @@ function Register() {
             lastName,
             dateOfBirth,
             email,
+            comment,
             numberPhone,
             password,
             choiceOfTastes: selectedTaste,
@@ -128,7 +131,7 @@ function Register() {
           onFocus={handleFocus}
           onBlur={handleBlur}
           ref={numberPhoneRef}
-          type="tel"
+          type="text"
           maxLength="10"
           id="numberPhone"
           name="numberPhone"
@@ -232,7 +235,7 @@ function Register() {
           placeholder=" "
           onFocus={handleFocus}
           onBlur={handleBlur}
-          // ref={numberPhone}
+          ref={commentRef}
           type="text"
           id="comment"
           name="comment"
