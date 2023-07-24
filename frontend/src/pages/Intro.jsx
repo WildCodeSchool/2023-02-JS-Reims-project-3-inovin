@@ -5,7 +5,7 @@ import { useAuth } from "../contexts/AuthContext";
 
 export default function Intro() {
   const [informations, setInformations] = useState([]);
-  const { token } = useAuth();
+  const { token, setToken } = useAuth();
   const { isAdmin } = useAuth();
 
   const fetchInformationsData = () => {
@@ -51,6 +51,17 @@ export default function Intro() {
           </Link>
           <Link className="ajoutermesvins" to="/">
             Créer un atelier
+          </Link>
+          <Link
+            to="/logout"
+            className="linkStart logout"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+            onClick={() => setToken(null)}
+          >
+            Déconnexion
           </Link>
         </div>
       )}

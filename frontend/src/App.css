@@ -552,7 +552,7 @@ select {
 
 .linkStart {
   color: #000000;
-  background-color: #a9621647;
+  background-color: #934c1d7a;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   padding: 0.5rem;
@@ -566,6 +566,10 @@ select {
   background-color: #dd801c47;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.logout {
+  margin-top: 2.5rem;
 }
 
 .introRoute {
@@ -855,10 +859,6 @@ select {
   .backgroundIntro img {
     position: absolute;
     width: 40rem;
-  }
-
-  .linkStart {
-    font-size: 1.3rem;
   }
 
   .linkDiv {
