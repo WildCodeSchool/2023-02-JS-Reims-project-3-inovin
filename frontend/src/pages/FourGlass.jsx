@@ -18,7 +18,8 @@ export default function FourGlass() {
       .then((data) => {
         setWines(data);
       });
-  });
+  }, []);
+
   const handleGlassCardClick = (cardKey) => {
     dispatch(markCardCompleted(cardKey));
   };

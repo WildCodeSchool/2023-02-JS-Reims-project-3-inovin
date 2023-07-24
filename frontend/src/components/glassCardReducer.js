@@ -6,13 +6,13 @@ export const markCardCompleted = (cardKey) => ({
 });
 
 const initialState = {
+  vin0: false,
   vin1: false,
   vin2: false,
   vin3: false,
-  vin4: false,
 };
 
-const glassCardReducer = (state = initialState, action) => {
+const glassCardReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case MARK_CARD_COMPLETED:
       return {
