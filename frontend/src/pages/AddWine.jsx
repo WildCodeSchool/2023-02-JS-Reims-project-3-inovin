@@ -116,9 +116,14 @@ export default function AddWine() {
         </div>
       </form>
 
-      <Link to="/afficher-mes-vins" className="buttonListWines">
-        Liste des vins
-      </Link>
+      <div className="divButtonAddWines">
+        <Link to="/accueil" className="buttonReturnAddWines">
+          Retour
+        </Link>
+        <Link to="/afficher-mes-vins" className="buttonListWines">
+          Liste des vins
+        </Link>
+      </div>
     </section>
   );
 }

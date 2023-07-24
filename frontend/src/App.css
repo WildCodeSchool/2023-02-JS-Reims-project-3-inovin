@@ -129,6 +129,7 @@ body {
 
 .inputLogin {
   margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
 .Connexion h1 {
@@ -674,7 +675,8 @@ select {
 }
 
 .backgroundAdwines .buttonSubmit,
-.buttonListWines {
+.buttonListWines,
+.buttonReturnAddWines {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -683,7 +685,7 @@ select {
   padding: 0.6rem;
   border-radius: 2em;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 300;
   color: black;
 }
 
@@ -691,6 +693,13 @@ select {
   font-size: 1.2rem;
   border-radius: 1rem;
   font-weight: 800;
+}
+
+.divButtonAddWines {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 3rem;
+  margin-top: 1rem;
 }
 
 .divButtonSubmit {
@@ -702,10 +711,10 @@ select {
 select {
   width: 20rem;
   padding: 1rem 5rem;
-  border: 2px solid black;
+  border: 2px solid rgb(255, 255, 255);
   border-radius: 2rem;
   box-sizing: border-box;
-  background-color: #925b2177;
+  background-color: #ffffff;
   margin-bottom: 2rem;
 }
 
@@ -715,11 +724,6 @@ select {
   font-size: 1.5em;
   color: black;
   top: 0.6rem;
-}
-
-.labelAddWines {
-  color: black;
-  font-weight: 600;
 }
 
 /*VIEWWINE*/

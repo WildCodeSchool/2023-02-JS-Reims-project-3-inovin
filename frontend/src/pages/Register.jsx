@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Register() {
   const firstNameRef = useRef();
@@ -237,6 +237,9 @@ function Register() {
         </button>
       </div>
       {errorMessage && <p>{errorMessage}</p>}
+      <Link to="/accueil" className="buttonReturnAddWines">
+        Retour
+      </Link>
     </form>
   );
 }
