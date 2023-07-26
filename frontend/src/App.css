@@ -645,7 +645,6 @@ select {
 }
 
 .profil input[type="text"],
-input[type="email"],
 select {
   width: 10rem;
   padding: 0.5rem;

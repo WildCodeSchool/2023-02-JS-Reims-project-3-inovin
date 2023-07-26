@@ -112,7 +112,7 @@ CREATE TABLE response (
   option_id INT NOT NULL,
   FOREIGN KEY (option_id) REFERENCES options(id),
   user_id INT unsigned,
-  FOREIGN KEY (user_id) REFERENCES user(id),
+  FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
   wine_id INT unsigned,
   FOREIGN KEY (wine_id) REFERENCES wine(id)
   );
