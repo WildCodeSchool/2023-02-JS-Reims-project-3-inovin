@@ -22,8 +22,6 @@ export default function ViewUser() {
       });
   }, []);
 
-  const handleButtonClick = () => {};
-
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
     {
@@ -35,16 +33,6 @@ export default function ViewUser() {
     },
     { field: "email", headerName: "Mail", width: 200 },
     { field: "comment", headerName: "Commentaire", width: 250 },
-    {
-      field: "button",
-      headerName: "Modifier",
-      width: 250,
-      renderCell: (params) => (
-        <button type="button" onClick={() => handleButtonClick(params)}>
-          Supprimer
-        </button>
-      ),
-    },
   ];
 
   return (
