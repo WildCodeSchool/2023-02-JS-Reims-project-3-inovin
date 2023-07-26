@@ -1,22 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
-
-const columns = [
-  { field: "id", headerName: "ID", width: 90 },
-  { field: "name", headerName: "Nom", width: 150 },
-  { field: "color", headerName: "Cépage", width: 170 },
-  {
-    field: "grape_variety",
-    headerName: "Variété",
-    width: 540,
-  },
-];
+import { useAuth } from "../contexts/AuthContext";
 
 export default function ViewWine() {
   const [wines, setWines] = useState([]);
 
-  useEffect(() => {
+  const { token } = useAuth();
+
+  const Data = () => {
     fetch(
       `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/wines`
     )
@@ -24,6 +16,53 @@ export default function ViewWine() {
       .then((data) => {
         setWines(data);
       });
+  };
+
+  const fetchDeleteData = (event, id) => {
+    event.preventDefault();
+    fetch(
+      `${
+        import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+      }/wines/${id}`,
+      {
+        method: "delete",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+      .then(() => Data())
+      .catch((error) => {
+        console.error("Error", error);
+      });
+  };
+
+  const columns = [
+    { field: "id", headerName: "ID", width: 90 },
+    { field: "name", headerName: "Nom", width: 150 },
+    { field: "color", headerName: "Cépage", width: 170 },
+    {
+      field: "grape_variety",
+      headerName: "Variété",
+      width: 540,
+    },
+    {
+      field: "button",
+      headerName: "Modifier",
+      width: 250,
+      renderCell: (params) => (
+        <button
+          type="button"
+          onClick={(event) => fetchDeleteData(event, params.id)}
+        >
+          Supprimer
+        </button>
+      ),
+    },
+  ];
+
+  useEffect(() => {
+    Data();
   }, []);
 
   return (
