@@ -90,8 +90,10 @@ CREATE TABLE user (
   lastname varchar(80) NOT NULL,
   date_of_birth DATE,
   email varchar(255) NOT NULL,
+  numberPhone varchar(10),
   hashedPassword varchar(255) NOT NULL,
   choice_of_tastes varchar(80) NOT NULL,
+  comment varchar(255),
   is_admin boolean DEFAULT (false)
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -110,7 +112,7 @@ CREATE TABLE response (
   option_id INT NOT NULL,
   FOREIGN KEY (option_id) REFERENCES options(id),
   user_id INT unsigned,
-  FOREIGN KEY (user_id) REFERENCES user(id),
+  FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
   wine_id INT unsigned,
   FOREIGN KEY (wine_id) REFERENCES wine(id)
   );

@@ -1,20 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { DataGrid } from "@mui/x-data-grid";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { DataGrid } from "@mui/x-data-grid";
 import { useAuth } from "../contexts/AuthContext";
 
-export default function ViewWine() {
-  const [wines, setWines] = useState([]);
-
+export default function ViewUser() {
   const { token } = useAuth();
+  const [informations, setInformations] = useState([]);
 
-  const fetchWinesData = () => {
+  const fetchUsersData = () => {
     fetch(
-      `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/wines`
+      `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/users`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
     )
       .then((response) => response.json())
       .then((data) => {
-        setWines(data);
+        setInformations(data);
       });
   };
 
@@ -23,7 +27,7 @@ export default function ViewWine() {
     fetch(
       `${
         import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-      }/wines/${id}`,
+      }/users/${id}`,
       {
         method: "delete",
         headers: {
@@ -31,21 +35,27 @@ export default function ViewWine() {
         },
       }
     )
-      .then(() => fetchWinesData())
+      .then(() => fetchUsersData())
       .catch((error) => {
         console.error("Error", error);
       });
   };
 
+  useEffect(() => {
+    fetchUsersData();
+  }, []);
+
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
-    { field: "name", headerName: "Nom", width: 150 },
-    { field: "color", headerName: "Cépage", width: 170 },
     {
-      field: "grape_variety",
-      headerName: "Variété",
-      width: 540,
+      field: "full name",
+      headerName: "Nom & Prénom",
+      width: 200,
+      valueGetter: (params) =>
+        `${params.row.lastname || ""} ${params.row.firstname || ""}`,
     },
+    { field: "email", headerName: "Mail", width: 200 },
+    { field: "comment", headerName: "Commentaire", width: 250 },
     {
       field: "button",
       headerName: "Modifier",
@@ -62,19 +72,13 @@ export default function ViewWine() {
     },
   ];
 
-  useEffect(() => {
-    fetchWinesData();
-  }, []);
-
   return (
-    <section className="backgroundViewWines">
-      <h1>Liste des vins</h1>
+    <section className="backgroundViewUser">
+      <h1>Les utilisateurs</h1>
       <div className="arrayViewWines">
         <DataGrid
-          style={{
-            border: "none",
-          }}
-          rows={wines}
+          style={{ border: "none" }}
+          rows={informations}
           columns={columns}
           initialState={{
             pagination: {
@@ -84,7 +88,7 @@ export default function ViewWine() {
           pageSizeOptions={[5, 10, 25]}
         />
       </div>
-      <Link className="returnViewWines" to="/ajouter-mes-vins">
+      <Link to="/accueil" className="returnViewUser">
         Retour
       </Link>
     </section>

@@ -151,7 +151,7 @@ body {
 
 .PresInscip {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .Register h1 {
@@ -219,7 +219,7 @@ input[type="date"],
 /*Input text*/
 
 .Inscription input {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -604,7 +604,6 @@ select {
 .userInfo {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
   grid-row-gap: 20px;
 }
 
@@ -643,6 +642,34 @@ select {
 .buttonReturn:hover {
   background-color: #fff;
   transition: 1000ms;
+}
+
+.profil input[type="text"],
+select {
+  width: 10rem;
+  padding: 0.5rem;
+  border: 1px solid #ecf0f1;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  background-color: #ecf0f1;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.validation {
+  background-color: green;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  color: black;
+}
+
+.error {
+  color: red;
 }
 
 /*ADDWINE*/
@@ -733,6 +760,7 @@ select {
 /*VIEWWINE*/
 .backgroundViewWines {
   background-image: url("./Pictures/Fond4.png");
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -766,6 +794,56 @@ select {
   padding: 0.5rem;
   font-weight: 700;
 }
+
+.buttonDelete {
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: none;
+}
+
+.buttonDelete:hover {
+  transition: 500ms;
+  background-color: #dec439;
+}
+
+/*VIEWUSER*/
+.backgroundViewUser {
+  background-image: url("../src/Pictures/Fond4.png");
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.backgroundViewUser h1 {
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  color: #000000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: xx-large;
+  padding: 2rem;
+}
+
+.returnViewUser {
+  color: #000000;
+  background-color: #dec439;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 0.5rem;
+  position: absolute;
+  bottom: 0.9rem;
+  padding: 0.5rem;
+  font-weight: 700;
+}
+
+.arrayViewWines {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /*RESPONSIVE*/
 
 @media screen and (min-width: 710px) {
@@ -878,6 +956,13 @@ select {
   /*VIEWWINES*/
   .arrayViewWines {
     width: 55rem;
+  }
+
+  /*VIEWUSER*/
+  .backgroundViewUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 

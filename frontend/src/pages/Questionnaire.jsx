@@ -165,11 +165,9 @@ export default function Questionnaire() {
           )}
           {currentPart >= data.length - 1 && (
             <div className="QuestBut">
-              {/* <Link to="/questionnaire/note"> */}
               <button className="QuestionnaireButton" type="submit">
-                Validé
+                Valider
               </button>
-              {/* </Link> */}
             </div>
           )}
         </div>

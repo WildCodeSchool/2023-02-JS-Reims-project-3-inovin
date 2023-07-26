@@ -49,8 +49,8 @@ export default function Intro() {
           <Link className="ajoutermesvins" to="/register">
             Inscrire un nouvel utilisateur
           </Link>
-          <Link className="ajoutermesvins" to="/">
-            Créer un atelier
+          <Link className="ajoutermesvins" to="/afficher-utilisateur">
+            Voir les utilisateurs
           </Link>
           <Link
             to="/logout"

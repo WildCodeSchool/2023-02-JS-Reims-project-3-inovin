@@ -46,6 +46,7 @@ router.use(verifyToken); // mur d'authentification
 router.post("/users", userControllers.add);
 router.get("/users", userControllers.browse);
 router.get("/user", userControllers.user);
+router.put("/user", userControllers.modification);
 
 router.post("/responses", responseControllers.add);
 router.get("/responses", responseControllers.browseByUser);
