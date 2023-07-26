@@ -644,6 +644,35 @@ select {
   transition: 1000ms;
 }
 
+.profil input[type="text"],
+input[type="email"],
+select {
+  width: 10rem;
+  padding: 0.5rem;
+  border: 1px solid #ecf0f1;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  background-color: #ecf0f1;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.validation {
+  background-color: green;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  color: black;
+}
+
+.error {
+  color: red;
+}
+
 /*ADDWINE*/
 
 .backgroundAdwines {
@@ -796,14 +825,6 @@ select {
   bottom: 0.9rem;
   padding: 0.5rem;
   font-weight: 700;
-}
-
-.validation {
-  color: green;
-}
-
-.error {
-  color: red;
 }
 
 /*RESPONSIVE*/

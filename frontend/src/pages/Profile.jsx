@@ -108,66 +108,56 @@ function Profile() {
             <form>
               <div key={user.id} className="userInfo">
                 <div className="Nom information">
-                  <p>
-                    <span className="informationSpan">Nom:</span>
-                    {!modification && <span>{user.lastname}</span>}
-                    {modification && (
-                      <input
-                        type="text"
-                        value={user.lastname}
-                        onChange={(event) => {
-                          setUser({ ...user, lastname: event.target.value });
-                        }}
-                      />
-                    )}
-                  </p>
+                  <span className="informationSpan">Nom:</span>
+                  {!modification && <span>{user.lastname}</span>}
+                  {modification && (
+                    <input
+                      type="text"
+                      value={user.lastname}
+                      onChange={(event) => {
+                        setUser({ ...user, lastname: event.target.value });
+                      }}
+                    />
+                  )}
                 </div>
                 <div className="Prenom information">
-                  <p>
-                    <span className="informationSpan">Prénom:</span>{" "}
-                    {!modification && <span>{user.firstname}</span>}
-                    {modification && (
-                      <input
-                        type="text"
-                        value={user.firstname}
-                        onChange={(event) => {
-                          setUser({ ...user, firstname: event.target.value });
-                        }}
-                      />
-                    )}
-                  </p>
+                  <span className="informationSpan">Prénom:</span>{" "}
+                  {!modification && <span>{user.firstname}</span>}
+                  {modification && (
+                    <input
+                      type="text"
+                      value={user.firstname}
+                      onChange={(event) => {
+                        setUser({ ...user, firstname: event.target.value });
+                      }}
+                    />
+                  )}
                 </div>
                 <div className="Email information">
-                  <p>
-                    <span className="informationSpan">Email:</span>
-                    {!modification && <span>{user.email}</span>}
-                    {modification && (
-                      <input
-                        type="text"
-                        value={user.email}
-                        onChange={(event) => {
-                          setUser({ ...user, email: event.target.value });
-                        }}
-                      />
-                    )}
-                  </p>
+                  <span className="informationSpan">Email:</span>
+                  {!modification && <span>{user.email}</span>}
+                  {modification && (
+                    <input
+                      type="text"
+                      value={user.email}
+                      onChange={(event) => {
+                        setUser({ ...user, email: event.target.value });
+                      }}
+                    />
+                  )}
                 </div>
                 <div className="Number information">
-                  <p>
-                    <span className="informationSpan">
-                      Numéro de téléphone :
-                    </span>
-                    {!modification && <span>{user.numberPhone}</span>}
-                    {modification && (
-                      <input
-                        type="text"
-                        value={user.numberPhone}
-                        onChange={(event) => {
-                          setUser({ ...user, numberPhone: event.target.value });
-                        }}
-                      />
-                    )}
-                  </p>
+                  <span className="informationSpan">Numéro de téléphone :</span>
+                  {!modification && <span>{user.numberPhone}</span>}
+                  {modification && (
+                    <input
+                      type="text"
+                      value={user.numberPhone}
+                      onChange={(event) => {
+                        setUser({ ...user, numberPhone: event.target.value });
+                      }}
+                    />
+                  )}
                 </div>
                 <div className="Date information">
                   <p>
