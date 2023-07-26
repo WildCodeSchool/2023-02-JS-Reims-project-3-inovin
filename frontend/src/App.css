@@ -604,7 +604,6 @@ select {
 .userInfo {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
   grid-row-gap: 20px;
 }
 
@@ -733,6 +732,7 @@ select {
 /*VIEWWINE*/
 .backgroundViewWines {
   background-image: url("./Pictures/Fond4.png");
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -766,6 +766,46 @@ select {
   padding: 0.5rem;
   font-weight: 700;
 }
+
+/*VIEWUSER*/
+.backgroundViewUser {
+  background-image: url("../src/Pictures/Fond4.png");
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.backgroundViewUser h1 {
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  color: #000000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: xx-large;
+  padding: 2rem;
+}
+
+.returnViewUser {
+  color: #000000;
+  background-color: #dec439;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 0.5rem;
+  position: absolute;
+  bottom: 0.9rem;
+  padding: 0.5rem;
+  font-weight: 700;
+}
+
+.validation {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
 /*RESPONSIVE*/
 
 @media screen and (min-width: 710px) {

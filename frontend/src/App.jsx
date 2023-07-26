@@ -16,6 +16,7 @@ import ViewWine from "./pages/ViewWine";
 import "./App.css";
 import "./App.scss";
 import Intro from "./pages/Intro";
+import ViewUser from "./pages/ViewUser";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/ajouter-mes-vins" element={<AddWine />} />
         <Route path="/afficher-mes-vins" element={<ViewWine />} />
+        <Route path="/afficher-utilisateur" element={<ViewUser />} />
         <Route path="/atelier-creation" element={<Creation />} />
         <Route
           path="/atelier-creation/recapitulatif"

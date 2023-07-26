@@ -42,7 +42,6 @@ export default function ViewWine() {
             },
           }}
           pageSizeOptions={[5, 10, 25]}
-          checkboxSelection
         />
       </div>
       <Link className="returnViewWines" to="/ajouter-mes-vins">

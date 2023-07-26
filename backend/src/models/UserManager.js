@@ -19,7 +19,9 @@ class UserManager extends AbstractManager {
   }
 
   findAll() {
-    return this.database.query(`select email from  ${this.table}`);
+    return this.database.query(
+      `select id, firstname, lastname, date_of_birth, email, comment, choice_of_tastes from  ${this.table}`
+    );
   }
 
   insert(user) {
@@ -52,6 +54,13 @@ class UserManager extends AbstractManager {
         user.choiceOfTastes,
         user.id,
       ]
+    );
+  }
+
+  modification(user, id) {
+    return this.database.query(
+      `update ${this.table} set firstname = ?, lastname = ?, email = ?,numberPhone = ? where id = ?`,
+      [user.firstname, user.lastname, user.email, user.numberPhone, id]
     );
   }
 }

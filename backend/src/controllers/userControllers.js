@@ -82,6 +82,22 @@ const edit = (req, res) => {
     });
 };
 
+const modification = (req, res) => {
+  models.user
+    .modification(req.body, req.payload.sub)
+    .then(([result]) => {
+      if (result.affectedRows === 0) {
+        res.sendStatus(404);
+      } else {
+        res.sendStatus(204);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
+
 const add = (req, res) => {
   const userData = req.body;
 
@@ -122,4 +138,5 @@ module.exports = {
   destroy,
   getUser,
   user,
+  modification,
 };
