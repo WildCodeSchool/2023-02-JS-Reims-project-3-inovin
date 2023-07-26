@@ -796,6 +796,18 @@ select {
   font-weight: 700;
 }
 
+.buttonDelete {
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: none;
+}
+
+.buttonDelete:hover {
+  transition: 500ms;
+  background-color: #dec439;
+}
+
 /*VIEWUSER*/
 .backgroundViewUser {
   background-image: url("../src/Pictures/Fond4.png");
@@ -825,6 +837,12 @@ select {
   bottom: 0.9rem;
   padding: 0.5rem;
   font-weight: 700;
+}
+
+.arrayViewWines {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*RESPONSIVE*/
@@ -939,6 +957,13 @@ select {
   /*VIEWWINES*/
   .arrayViewWines {
     width: 55rem;
+  }
+
+  /*VIEWUSER*/
+  .backgroundViewUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 

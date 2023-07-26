@@ -7,7 +7,7 @@ export default function ViewUser() {
   const { token } = useAuth();
   const [informations, setInformations] = useState([]);
 
-  useEffect(() => {
+  const fetchUsersData = () => {
     fetch(
       `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/users`,
       {
@@ -20,6 +20,29 @@ export default function ViewUser() {
       .then((data) => {
         setInformations(data);
       });
+  };
+
+  const fetchDeleteData = (event, id) => {
+    event.preventDefault();
+    fetch(
+      `${
+        import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+      }/users/${id}`,
+      {
+        method: "delete",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+      .then(() => fetchUsersData())
+      .catch((error) => {
+        console.error("Error", error);
+      });
+  };
+
+  useEffect(() => {
+    fetchUsersData();
   }, []);
 
   const columns = [
@@ -33,6 +56,20 @@ export default function ViewUser() {
     },
     { field: "email", headerName: "Mail", width: 200 },
     { field: "comment", headerName: "Commentaire", width: 250 },
+    {
+      field: "button",
+      headerName: "Modifier",
+      width: 250,
+      renderCell: (params) => (
+        <button
+          className="buttonDelete"
+          type="button"
+          onClick={(event) => fetchDeleteData(event, params.id)}
+        >
+          Supprimer
+        </button>
+      ),
+    },
   ];
 
   return (

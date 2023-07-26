@@ -8,7 +8,7 @@ export default function ViewWine() {
 
   const { token } = useAuth();
 
-  const Data = () => {
+  const fetchWinesData = () => {
     fetch(
       `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/wines`
     )
@@ -31,7 +31,7 @@ export default function ViewWine() {
         },
       }
     )
-      .then(() => Data())
+      .then(() => fetchWinesData())
       .catch((error) => {
         console.error("Error", error);
       });
@@ -52,6 +52,7 @@ export default function ViewWine() {
       width: 250,
       renderCell: (params) => (
         <button
+          className="buttonDelete"
           type="button"
           onClick={(event) => fetchDeleteData(event, params.id)}
         >
@@ -62,7 +63,7 @@ export default function ViewWine() {
   ];
 
   useEffect(() => {
-    Data();
+    fetchWinesData();
   }, []);
 
   return (
